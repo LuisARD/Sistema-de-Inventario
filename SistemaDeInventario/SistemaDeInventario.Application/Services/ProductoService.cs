@@ -50,7 +50,7 @@ public class ProductoService : IProductoService
         // Validar categoría y proveedor
         var categoria = await _categoriaRepository.GetByIdAsync(dto.CategoriaId);
         if (categoria == null)
-            throw new InvalidOperationException($"Categoría con ID {dto.CategoriaId} no encontrada");
+            throw new InvalidOperationException($"Categoria con ID {dto.CategoriaId} no encontrada");
 
         var proveedor = await _proveedorRepository.GetByIdAsync(dto.ProveedorId);
         if (proveedor == null)
@@ -81,10 +81,10 @@ public class ProductoService : IProductoService
         if (producto == null)
             throw new InvalidOperationException($"Producto con ID {dto.ProductoId} no encontrado");
 
-        // Validar categoría y proveedor
+        // Validar categoria y proveedor
         var categoria = await _categoriaRepository.GetByIdAsync(dto.CategoriaId);
         if (categoria == null)
-            throw new InvalidOperationException($"Categoría con ID {dto.CategoriaId} no encontrada");
+            throw new InvalidOperationException($"Categoria con ID {dto.CategoriaId} no encontrada");
 
         var proveedor = await _proveedorRepository.GetByIdAsync(dto.ProveedorId);
         if (proveedor == null)

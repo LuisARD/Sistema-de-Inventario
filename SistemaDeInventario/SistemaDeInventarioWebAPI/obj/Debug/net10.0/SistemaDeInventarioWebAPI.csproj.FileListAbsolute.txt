@@ -78,3 +78,9 @@ D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventarioWeb
 D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventarioWebAPI\obj\Debug\net10.0\SistemaDeInventarioWebAPI.pdb
 D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventarioWebAPI\obj\Debug\net10.0\SistemaDeInventarioWebAPI.genruntimeconfig.cache
 D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventarioWebAPI\obj\Debug\net10.0\ref\SistemaDeInventarioWebAPI.dll
+D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventarioWebAPI\bin\Debug\net10.0\BCrypt.Net-Next.dll
+D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventarioWebAPI\bin\Debug\net10.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventarioWebAPI\bin\Debug\net10.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventarioWebAPI\bin\Debug\net10.0\Microsoft.IdentityModel.Logging.dll
+D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventarioWebAPI\bin\Debug\net10.0\Microsoft.IdentityModel.Tokens.dll
+D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventarioWebAPI\bin\Debug\net10.0\System.IdentityModel.Tokens.Jwt.dll

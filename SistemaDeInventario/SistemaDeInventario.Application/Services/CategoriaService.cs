@@ -31,7 +31,7 @@ public class CategoriaService : ICategoriaService
     {
         var existente = await _categoriaRepository.GetByNombreAsync(dto.Nombre);
         if (existente != null)
-            throw new InvalidOperationException($"Ya existe una categoría con el nombre: {dto.Nombre}");
+            throw new InvalidOperationException($"Ya existe una categoria con el nombre: {dto.Nombre}");
 
         var categoria = new Categoria
         {
@@ -47,7 +47,7 @@ public class CategoriaService : ICategoriaService
     {
         var categoria = await _categoriaRepository.GetByIdAsync(dto.CategoriaId);
         if (categoria == null)
-            throw new InvalidOperationException($"Categoría con ID {dto.CategoriaId} no encontrada");
+            throw new InvalidOperationException($"Categoria con ID {dto.CategoriaId} no encontrada");
 
         categoria.Nombre = dto.Nombre;
         categoria.Descripcion = dto.Descripcion;
@@ -64,7 +64,7 @@ public class CategoriaService : ICategoriaService
 
         // Validar que no tenga productos asociados
         if (categoria.Productos.Any())
-            throw new InvalidOperationException("No se puede eliminar una categoría con productos asociados");
+            throw new InvalidOperationException("No se puede eliminar una categoria con productos asociados");
 
         await _categoriaRepository.DeleteAsync(id);
         return true;

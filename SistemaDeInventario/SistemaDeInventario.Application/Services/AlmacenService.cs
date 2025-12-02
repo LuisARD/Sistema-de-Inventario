@@ -50,7 +50,7 @@ public class AlmacenService : IAlmacenService
     {
         var almacen = await _almacenRepository.GetByIdAsync(dto.AlmacenId);
         if (almacen == null)
-            throw new InvalidOperationException($"Almacén con ID {dto.AlmacenId} no encontrado");
+            throw new InvalidOperationException($"Almacen con ID {dto.AlmacenId} no encontrado");
 
         almacen.Nombre = dto.Nombre;
         almacen.Ubicacion = dto.Ubicacion;

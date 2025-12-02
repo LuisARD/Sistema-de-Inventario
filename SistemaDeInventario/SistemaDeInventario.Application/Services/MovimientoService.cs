@@ -61,20 +61,20 @@ public class MovimientoService : IMovimientoService
 
     private async Task<MovimientoDto> RegistrarMovimientoAsync(CreateMovimientoDto dto)
     {
-        // Validar usuario y almacén
+        // Validar usuario y almacen
         var usuario = await _usuarioRepository.GetByIdAsync(dto.UsuarioId);
         if (usuario == null)
             throw new InvalidOperationException($"Usuario con ID {dto.UsuarioId} no encontrado");
 
         var almacenOrigen = await _almacenRepository.GetByIdAsync(dto.AlmacenOrigenId);
         if (almacenOrigen == null)
-            throw new InvalidOperationException($"Almacén origen con ID {dto.AlmacenOrigenId} no encontrado");
+            throw new InvalidOperationException($"Almacen origen con ID {dto.AlmacenOrigenId} no encontrado");
 
         if (dto.AlmacenDestinoId.HasValue)
         {
             var almacenDestino = await _almacenRepository.GetByIdAsync(dto.AlmacenDestinoId.Value);
             if (almacenDestino == null)
-                throw new InvalidOperationException($"Almacén destino con ID {dto.AlmacenDestinoId} no encontrado");
+                throw new InvalidOperationException($"Almacen destino con ID {dto.AlmacenDestinoId} no encontrado");
         }
 
         // Crear movimiento
@@ -140,7 +140,7 @@ public class MovimientoService : IMovimientoService
             await _existenciaRepository.AddAsync(existencia);
         }
 
-        // Actualizar cantidad según tipo de movimiento
+        // Actualizar cantidad segun tipo de movimiento
         if (tipoMovimiento == "ENTRADA")
         {
             existencia.CantidadActual += cantidad;
