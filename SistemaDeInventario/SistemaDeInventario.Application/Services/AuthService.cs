@@ -34,7 +34,7 @@ public class AuthService : IAuthService
 
         // Generar token JWT
         var token = GenerateJwtToken(usuario);
-        var expiracion = DateTime.UtcNow.AddHours(24); // Token válido por 24 horas
+        var expiracion = DateTime.UtcNow.AddHours(24); 
 
         return new LoginResponseDto
         {
@@ -65,7 +65,7 @@ public class AuthService : IAuthService
 
     public string HashPassword(string password)
     {
-        // Usar BCrypt para hashear contraseñas (más seguro que SHA256)
+        // Usar BCrypt
         return BCrypt.Net.BCrypt.HashPassword(password, BCrypt.Net.BCrypt.GenerateSalt(12));
     }
 
@@ -84,9 +84,9 @@ public class AuthService : IAuthService
     private string GenerateJwtToken(Domain.Entities.Usuario usuario)
     {
         var jwtSettings = _configuration.GetSection("JwtSettings");
-        var secretKey = jwtSettings["SecretKey"] ?? "SuperSecretKey12345678901234567890"; // Fallback
-        var issuer = jwtSettings["Issuer"] ?? "SistemaInventarioAPI";
-        var audience = jwtSettings["Audience"] ?? "SistemaInventarioClients";
+        var secretKey = jwtSettings["SecretKey"];
+        var issuer = jwtSettings["Issuer"];
+        var audience = jwtSettings["Audience"];
 
         var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
         var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
