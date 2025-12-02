@@ -7,7 +7,7 @@ public class Almacen
     public string? Ubicacion { get; set; }
     public bool Activo { get; set; } = true;
 
-    // propiedades del navegador
+    // Propiedades de navegacion
     public virtual ICollection<Existencia> Existencias { get; set; } = new List<Existencia>();
     public virtual ICollection<Movimiento> MovimientosOrigen { get; set; } = new List<Movimiento>();
     public virtual ICollection<Movimiento> MovimientosDestino { get; set; } = new List<Movimiento>();

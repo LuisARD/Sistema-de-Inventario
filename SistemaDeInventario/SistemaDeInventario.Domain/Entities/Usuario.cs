@@ -10,7 +10,7 @@ public class Usuario
     public DateTime FechaCreacion { get; set; } = DateTime.UtcNow;
     public bool Activo { get; set; } = true;
 
-    // Navigation properties
+    // Propiedades de navegacion
     public virtual Rol Rol { get; set; } = null!;
     public virtual ICollection<Movimiento> Movimientos { get; set; } = new List<Movimiento>();
 }

@@ -9,7 +9,7 @@ public class Existencia
     public string? UbicacionPasillo { get; set; }
     public DateTime UltimaActualizacion { get; set; } = DateTime.UtcNow;
 
-    // propiedades del navegador
+    // Propiedades de navegacion
     public virtual Producto Producto { get; set; } = null!;
     public virtual Almacen Almacen { get; set; } = null!;
 }

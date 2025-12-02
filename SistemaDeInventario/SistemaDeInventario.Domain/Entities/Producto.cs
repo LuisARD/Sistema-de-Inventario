@@ -15,7 +15,7 @@ public class Producto
     public bool Activo { get; set; } = true;
     public DateTime FechaCreacion { get; set; } = DateTime.UtcNow;
 
-    // Navigation properties
+    // Propiedades de navegacion
     public virtual Categoria Categoria { get; set; } = null!;
     public virtual Proveedor Proveedor { get; set; } = null!;
     public virtual ICollection<Existencia> Existencias { get; set; } = new List<Existencia>();

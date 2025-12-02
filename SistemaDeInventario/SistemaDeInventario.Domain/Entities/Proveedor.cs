@@ -9,6 +9,6 @@ public class Proveedor
     public string? Email { get; set; }
     public string? Direccion { get; set; }
 
-    // Navigation properties
+    // Propiedades de navegacion
     public virtual ICollection<Producto> Productos { get; set; } = new List<Producto>();
 }

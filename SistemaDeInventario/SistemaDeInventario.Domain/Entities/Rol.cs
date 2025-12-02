@@ -6,6 +6,6 @@ public class Rol
     public string Nombre { get; set; } = string.Empty;
     public string? Descripcion { get; set; }
 
-    // Navigation properties
+    // Propiedades de navegacion
     public virtual ICollection<Usuario> Usuarios { get; set; } = new List<Usuario>();
 }

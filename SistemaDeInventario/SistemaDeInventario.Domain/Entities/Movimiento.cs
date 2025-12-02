@@ -11,7 +11,7 @@ public class Movimiento
     public int AlmacenOrigenId { get; set; }
     public int? AlmacenDestinoId { get; set; }
 
-    // Pro
+    // Propiedades de navegacion
     public virtual Usuario Usuario { get; set; } = null!;
     public virtual Almacen AlmacenOrigen { get; set; } = null!;
     public virtual Almacen? AlmacenDestino { get; set; }
