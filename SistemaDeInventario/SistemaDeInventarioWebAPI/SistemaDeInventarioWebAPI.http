@@ -1,0 +1,11 @@
+@SistemaDeInventarioWebAPI_HostAddress = http://localhost:5196
+
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/todos/
+Accept: application/json
+
+###
+
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/todos/1
+Accept: application/json
+
+###
