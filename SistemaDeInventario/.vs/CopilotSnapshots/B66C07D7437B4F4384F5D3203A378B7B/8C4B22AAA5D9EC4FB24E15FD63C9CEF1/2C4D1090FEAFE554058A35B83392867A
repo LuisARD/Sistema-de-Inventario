@@ -1,0 +1,14 @@
+﻿{
+  "JwtSettings": {
+    "SecretKey": "8XsgcuqhdcaFc9pHiTfMB7dqbgPqQcrhEr9PoUlAqVw",
+    "Issuer": "SistemaInventarioAPI",
+    "Audience": "SistemaInventarioClients"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*"
+}

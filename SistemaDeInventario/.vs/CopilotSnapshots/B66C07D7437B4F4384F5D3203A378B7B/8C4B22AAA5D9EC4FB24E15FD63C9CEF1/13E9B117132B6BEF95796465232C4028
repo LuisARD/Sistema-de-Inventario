@@ -1,12 +1,13 @@
+﻿SistemaDeInventario/.vs/*
+SistemaDeInventario/SistemaDeInventarioWebAPI/obj/*
+SistemaDeInventario/SistemaDeInventarioWebAPI/bin/*
+SistemaDeInventario/SistemaDeInventarioWebAPI/*.user
+SistemaDeInventario/SistemaDeInventarioWebAPI/*.suo
+SistemaDeInventario/SistemaDeInventarioWebAPI/*.pdb
+SistemaDeInventario/SistemaDeInventarioWebAPI/*.cache
+SistemaDeInventario/SistemaDeInventarioWebAPI/*.log
+SistemaDeInventario/SistemaDeInventarioWebAPI/*.vspscc
 
-SistemaDeInventarioWebAPI/obj/
-SistemaDeInventarioWebAPI/bin/
-SistemaDeInventario.Application/obj/
-SistemaDeInventario.Application/bin/
-SistemaDeInventario.Domain/obj/
-SistemaDeInventario.Domain/bin/
-SistemaDeInventario.Infrastructure/obj/
-SistemaDeInventario.Infrastructure/bin/
 # Visual Studio Code
 .vscode/*
 !.vscode/settings.json
@@ -16,7 +17,6 @@ SistemaDeInventario.Infrastructure/bin/
 .history/*
 !.history/README.md
 *.code-workspace
-
 # User-specific files
 *.suo
 *.user
@@ -27,7 +27,6 @@ SistemaDeInventario.Infrastructure/bin/
 *.pdb
 *.cache
 *.log
-
 # Build results
 bin/
 obj/
@@ -41,13 +40,6 @@ build/
 [Rr]elease*/
 x64*/
 x86*/
-
 # NuGet Packages
 *.nupkg
-
-# ?? PROTEGER SECRETOS
-**/appsettings.Development.json
-**/appsettings.Production.json
-**/appsettings.Staging.json
-
 SistemaDeInventario/SistemaDeInventario.Application/obj/Debug/net10.0/SistemaDeInventario.Application.AssemblyInfo.cs
