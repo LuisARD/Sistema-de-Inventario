@@ -9,3 +9,15 @@ C:\Users\luisa\PROG-Proyectos\SistemaDeInventario\SistemaDeInventario.Domain\obj
 C:\Users\luisa\PROG-Proyectos\SistemaDeInventario\SistemaDeInventario.Domain\obj\Debug\net10.0\refint\SistemaDeInventario.Domain.dll
 C:\Users\luisa\PROG-Proyectos\SistemaDeInventario\SistemaDeInventario.Domain\obj\Debug\net10.0\SistemaDeInventario.Domain.pdb
 C:\Users\luisa\PROG-Proyectos\SistemaDeInventario\SistemaDeInventario.Domain\obj\Debug\net10.0\ref\SistemaDeInventario.Domain.dll
+D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Domain\bin\Debug\net10.0\SistemaDeInventario.Domain.deps.json
+D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Domain\bin\Debug\net10.0\SistemaDeInventario.Domain.dll
+D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Domain\bin\Debug\net10.0\SistemaDeInventario.Domain.pdb
+D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Domain\obj\Debug\net10.0\SistemaDeInventario.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Domain\obj\Debug\net10.0\SistemaDeInventario.Domain.AssemblyInfoInputs.cache
+D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Domain\obj\Debug\net10.0\SistemaDeInventario.Domain.AssemblyInfo.cs
+D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Domain\obj\Debug\net10.0\SistemaDeInventario.Domain.csproj.CoreCompileInputs.cache
+D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Domain\obj\Debug\net10.0\SistemaDeInventario.Domain.sourcelink.json
+D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Domain\obj\Debug\net10.0\SistemaDeInventario.Domain.dll
+D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Domain\obj\Debug\net10.0\refint\SistemaDeInventario.Domain.dll
+D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Domain\obj\Debug\net10.0\SistemaDeInventario.Domain.pdb
+D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Domain\obj\Debug\net10.0\ref\SistemaDeInventario.Domain.dll
