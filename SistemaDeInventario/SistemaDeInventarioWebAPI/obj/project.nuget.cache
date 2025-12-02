@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "RprsarT8Sq7zJs5SGHXcegLVskTAXIiEbJAM1RXxGdocT63NX85EPb/h0MrXpAIp5Uq9qE6E+XozwwOtBqFOwQ==",
+  "dgSpecHash": "j6owb3pTtv4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\luisa\\PROG-Proyectos\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Emmanuel\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.0\\microsoft.aspnetcore.openapi.10.0.0.nupkg.sha512",
+    "C:\\Users\\Emmanuel\\.nuget\\packages\\microsoft.dotnet.ilcompiler\\10.0.0\\microsoft.dotnet.ilcompiler.10.0.0.nupkg.sha512",
+    "C:\\Users\\Emmanuel\\.nuget\\packages\\microsoft.net.illink.tasks\\10.0.0\\microsoft.net.illink.tasks.10.0.0.nupkg.sha512",
+    "C:\\Users\\Emmanuel\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512",
+    "C:\\Users\\Emmanuel\\.nuget\\packages\\runtime.win-x64.microsoft.dotnet.ilcompiler\\10.0.0\\runtime.win-x64.microsoft.dotnet.ilcompiler.10.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
