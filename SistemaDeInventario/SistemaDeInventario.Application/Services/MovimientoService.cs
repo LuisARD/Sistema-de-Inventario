@@ -1,4 +1,4 @@
-using SistemaDeInventario.Application.DTOs.Request;
+using SistemaDeInventario.Application.DTOs.Request.CreateDto;
 using SistemaDeInventario.Application.DTOs.Response;
 using SistemaDeInventario.Application.Services.Interfaces;
 using SistemaDeInventario.Domain.Entities;

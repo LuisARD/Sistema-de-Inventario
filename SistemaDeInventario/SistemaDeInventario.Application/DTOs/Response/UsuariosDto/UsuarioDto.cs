@@ -1,4 +1,4 @@
-namespace SistemaDeInventario.Application.DTOs.Response;
+namespace SistemaDeInventario.Application.DTOs.Response.UsuariosDto;
 
 public class UsuarioDto
 {

@@ -1,8 +1,8 @@
-namespace SistemaDeInventario.Application.DTOs.Request;
+namespace SistemaDeInventario.Application.DTOs.Request.CreateDto;
 
-public class UpdateProductoDto
+public class CreateProductoDto
 {
-    public int ProductoId { get; set; }
+    public string CodigoSku { get; set; } = string.Empty;
     public string Nombre { get; set; } = string.Empty;
     public string? Descripcion { get; set; }
     public int CategoriaId { get; set; }
@@ -10,6 +10,5 @@ public class UpdateProductoDto
     public decimal PrecioCompra { get; set; }
     public decimal PrecioVenta { get; set; }
     public string UnidadMedida { get; set; } = "Unidad";
-    public int StockMinimo { get; set; }
-    public bool Activo { get; set; }
+    public int StockMinimo { get; set; } = 5;
 }

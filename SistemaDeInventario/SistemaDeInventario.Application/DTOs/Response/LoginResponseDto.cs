@@ -1,3 +1,5 @@
+using SistemaDeInventario.Application.DTOs.Response.UsuariosDto;
+
 namespace SistemaDeInventario.Application.DTOs.Response;
 
 public class LoginResponseDto

@@ -6,6 +6,9 @@ using SistemaDeInventario.Infrastructure.Persistence;
 using SistemaDeInventario.Infrastructure.Repositories;
 using SistemaDeInventario.Application.Services;
 using SistemaDeInventario.Application.Services.Interfaces;
+using SistemaDeInventario.Application.Services.Interfaces.UsuariosService;
+using SistemaDeInventario.Application.Services.UsuariosService;
+using SistemaDeInventario.Infrastructure.Repositories.UsuariosRepository;
 
 namespace SistemaDeInventario.Infrastructure;
 

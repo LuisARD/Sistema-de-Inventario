@@ -3,7 +3,7 @@ using SistemaDeInventario.Domain.Entities;
 using SistemaDeInventario.Domain.Interfaces;
 using SistemaDeInventario.Infrastructure.Persistence;
 
-namespace SistemaDeInventario.Infrastructure.Repositories;
+namespace SistemaDeInventario.Infrastructure.Repositories.UsuariosRepository;
 
 public class RolRepository : Repository<Rol>, IRolRepository
 {

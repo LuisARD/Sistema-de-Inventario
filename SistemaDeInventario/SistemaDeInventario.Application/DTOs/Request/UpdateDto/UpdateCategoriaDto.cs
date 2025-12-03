@@ -1,4 +1,4 @@
-namespace SistemaDeInventario.Application.DTOs.Request;
+namespace SistemaDeInventario.Application.DTOs.Request.UpdateDto;
 
 public class UpdateCategoriaDto
 {

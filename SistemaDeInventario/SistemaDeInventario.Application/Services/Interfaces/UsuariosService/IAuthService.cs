@@ -1,7 +1,7 @@
 using SistemaDeInventario.Application.DTOs.Request;
 using SistemaDeInventario.Application.DTOs.Response;
 
-namespace SistemaDeInventario.Application.Services.Interfaces;
+namespace SistemaDeInventario.Application.Services.Interfaces.UsuariosService;
 
 public interface IAuthService
 {
