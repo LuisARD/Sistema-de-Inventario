@@ -6,14 +6,34 @@ import CategoriesList from '../views/categories/CategoriesList.vue'
 import SuppliersList from '../views/suppliers/SuppliersList.vue'
 import ReportsView from '../views/reports/ReportsView.vue'
 import LoginView from '../views/LoginView.vue'
+import ProductForm from '../views/products/ProductForm.vue'  
+
 
 const routes = [
   { path: '/', component: DashboardView, name: 'Dashboard' },
+
+  // PRODUCTOS
   { path: '/products', component: ProductsList, name: 'Products' },
+
+  { 
+    path: '/products/create',
+    name: 'ProductCreate',
+    component: ProductForm  
+  },
+
+  // MOVIMIENTOS
   { path: '/movements', component: MovementsList, name: 'Movements' },
+
+  // CATEGORÍAS
   { path: '/categories', component: CategoriesList, name: 'Categories' },
+
+  // PROVEEDORES
   { path: '/suppliers', component: SuppliersList, name: 'Suppliers' },
+
+  // REPORTES
   { path: '/reports', component: ReportsView, name: 'Reports' },
+
+  // LOGIN
   { path: '/login', component: LoginView, name: 'Login' }
 ]
 
