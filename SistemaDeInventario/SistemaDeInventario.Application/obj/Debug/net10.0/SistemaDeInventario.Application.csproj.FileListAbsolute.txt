@@ -14,7 +14,10 @@ C:\Users\luisa\PROG-Proyectos\SistemaDeInventario\SistemaDeInventario.Applicatio
 C:\Users\luisa\PROG-Proyectos\SistemaDeInventario\SistemaDeInventario.Application\obj\Debug\net10.0\SistemaDeInventario.Application.pdb
 C:\Users\luisa\PROG-Proyectos\SistemaDeInventario\SistemaDeInventario.Application\obj\Debug\net10.0\ref\SistemaDeInventario.Application.dll
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 C:\Users\luisa\PROG-Proyectos\Sis-DGA\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Application\bin\Debug\net10.0\SistemaDeInventario.Application.deps.json
 C:\Users\luisa\PROG-Proyectos\Sis-DGA\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Application\bin\Debug\net10.0\SistemaDeInventario.Application.dll
 C:\Users\luisa\PROG-Proyectos\Sis-DGA\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Application\bin\Debug\net10.0\SistemaDeInventario.Application.pdb
@@ -31,6 +34,9 @@ C:\Users\luisa\PROG-Proyectos\Sis-DGA\Sistema-de-Inventario\SistemaDeInventario\
 C:\Users\luisa\PROG-Proyectos\Sis-DGA\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Application\obj\Debug\net10.0\refint\SistemaDeInventario.Application.dll
 C:\Users\luisa\PROG-Proyectos\Sis-DGA\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Application\obj\Debug\net10.0\SistemaDeInventario.Application.pdb
 C:\Users\luisa\PROG-Proyectos\Sis-DGA\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Application\obj\Debug\net10.0\ref\SistemaDeInventario.Application.dll
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Application\bin\Debug\net10.0\SistemaDeInventario.Application.deps.json
 D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Application\bin\Debug\net10.0\SistemaDeInventario.Application.dll

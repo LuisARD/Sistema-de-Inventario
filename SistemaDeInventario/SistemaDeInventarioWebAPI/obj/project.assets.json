@@ -381,12 +381,15 @@
       "Microsoft.OpenApi/2.3.0": {
         "type": "package",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
       "Microsoft.OpenApi/2.0.0": {
         "type": "package",
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
         "compile": {
@@ -547,6 +550,9 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
       "System.IdentityModel.Tokens.Jwt/8.2.1": {
         "type": "package",
@@ -566,7 +572,10 @@
         }
       },
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
       "System.Memory.Data/8.0.1": {
         "type": "package",
         "compile": {
@@ -621,6 +630,9 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
       "SistemaDeInventario.Application/1.0.0": {
         "type": "project",
@@ -944,12 +956,16 @@
       "sha512": "NCWCGiwRwje8773yzPQhvucYnnfeR+ZoB1VRIrIMp4uaeUNw7jvEPHij3HIbwCDuNCrNcphA00KSAR9yD9qmbg==",
       "type": "package",
       "path": "microsoft.extensions.apidescription.server/10.0.0",
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
         "THIRD-PARTY-NOTICES.TXT",
         "build/BuildFrameworkNativeObjects.proj",
@@ -969,6 +985,8 @@
         "tools/netstandard/ILCompiler.Build.Tasks.deps.json",
         "tools/netstandard/ILCompiler.Build.Tasks.dll"
 =======
+=======
+>>>>>>> Stashed changes
         "build/Microsoft.Extensions.ApiDescription.Server.props",
         "build/Microsoft.Extensions.ApiDescription.Server.targets",
         "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.props",
@@ -1554,6 +1572,9 @@
         "useSharedDesignerContext.txt"
       ]
     },
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     "System.IdentityModel.Tokens.Jwt/8.2.1": {
       "sha512": "GVQmbjr2N8awFWPTWyThLxgKnFINObG1P+oX7vFrBY8um3V7V7Dh3wnxaGxNH6v6lSTeVQrY+SaUUBX9H3TPcw==",
@@ -1580,7 +1601,10 @@
       ]
     },
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
     "System.Memory.Data/8.0.1": {
       "sha512": "BVYuec3jV23EMRDeR7Dr1/qhx7369dZzJ9IWy2xylvb4YfXsrUxspWc4UWYid/tj4zZK58uGZqn2WQiaDMhmAg==",
       "type": "package",
@@ -1678,6 +1702,9 @@
         "useSharedDesignerContext.txt"
       ]
     },
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     "SistemaDeInventario.Application/1.0.0": {
       "type": "project",

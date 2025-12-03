@@ -1,6 +1,10 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 using Microsoft.AspNetCore.Http.HttpResults;
 using System.Text.Json.Serialization;
+=======
+﻿using SistemaDeInventario.Infrastructure;
+>>>>>>> Stashed changes
 =======
 ﻿using SistemaDeInventario.Infrastructure;
 >>>>>>> Stashed changes
@@ -14,6 +18,7 @@ namespace SistemaDeInventarioWebAPI
             var builder = WebApplication.CreateSlimBuilder(args);
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             builder.Services.ConfigureHttpJsonOptions(options =>
             {
                 options.SerializerOptions.TypeInfoResolverChain.Insert(0, AppJsonSerializerContext.Default);
@@ -22,6 +27,8 @@ namespace SistemaDeInventarioWebAPI
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
 =======
+=======
+>>>>>>> Stashed changes
             // Agregar Infrastructure (DbContext + Repositorios + Servicios)
             builder.Services.AddInfrastructure(builder.Configuration);
 
@@ -37,6 +44,9 @@ namespace SistemaDeInventarioWebAPI
             // Configurar Swagger
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
             var app = builder.Build();
@@ -49,6 +59,7 @@ namespace SistemaDeInventarioWebAPI
                 options.RoutePrefix = string.Empty;
             });
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
             Todo[] sampleTodos =
     
@@ -70,6 +81,8 @@ namespace SistemaDeInventarioWebAPI
                     : TypedResults.NotFound())
                 .WithName("GetTodoById");
 =======
+=======
+>>>>>>> Stashed changes
             app.UseHttpsRedirection();
             
             // CORS (opcional)
@@ -79,6 +92,9 @@ namespace SistemaDeInventarioWebAPI
                 .AllowAnyHeader());
 
             app.MapControllers();
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
             app.Run();

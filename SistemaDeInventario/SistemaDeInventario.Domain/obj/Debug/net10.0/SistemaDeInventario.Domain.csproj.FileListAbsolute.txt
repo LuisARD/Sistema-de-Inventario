@@ -10,7 +10,10 @@ C:\Users\luisa\PROG-Proyectos\SistemaDeInventario\SistemaDeInventario.Domain\obj
 C:\Users\luisa\PROG-Proyectos\SistemaDeInventario\SistemaDeInventario.Domain\obj\Debug\net10.0\SistemaDeInventario.Domain.pdb
 C:\Users\luisa\PROG-Proyectos\SistemaDeInventario\SistemaDeInventario.Domain\obj\Debug\net10.0\ref\SistemaDeInventario.Domain.dll
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 C:\Users\luisa\PROG-Proyectos\Sis-DGA\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Domain\bin\Debug\net10.0\SistemaDeInventario.Domain.deps.json
 C:\Users\luisa\PROG-Proyectos\Sis-DGA\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Domain\bin\Debug\net10.0\SistemaDeInventario.Domain.dll
 C:\Users\luisa\PROG-Proyectos\Sis-DGA\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Domain\bin\Debug\net10.0\SistemaDeInventario.Domain.pdb
@@ -23,6 +26,9 @@ C:\Users\luisa\PROG-Proyectos\Sis-DGA\Sistema-de-Inventario\SistemaDeInventario\
 C:\Users\luisa\PROG-Proyectos\Sis-DGA\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Domain\obj\Debug\net10.0\refint\SistemaDeInventario.Domain.dll
 C:\Users\luisa\PROG-Proyectos\Sis-DGA\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Domain\obj\Debug\net10.0\SistemaDeInventario.Domain.pdb
 C:\Users\luisa\PROG-Proyectos\Sis-DGA\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Domain\obj\Debug\net10.0\ref\SistemaDeInventario.Domain.dll
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Domain\bin\Debug\net10.0\SistemaDeInventario.Domain.deps.json
 D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Domain\bin\Debug\net10.0\SistemaDeInventario.Domain.dll
