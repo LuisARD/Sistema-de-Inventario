@@ -18,8 +18,11 @@ C:\Users\luisa\PROG-Proyectos\SistemaDeInventario\SistemaDeInventario.Infrastruc
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Infrastructure\bin\Debug\net10.0\SistemaDeInventario.Infrastructure.deps.json
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -140,6 +143,9 @@ D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.In
 D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Infrastructure\bin\Debug\net10.0\SistemaDeInventario.Infrastructure.runtimeconfig.json
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -164,6 +170,10 @@ D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.In
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Infrastructure\obj\Debug\net10.0\SistemaDeInventario.Infrastructure.genruntimeconfig.cache
+>>>>>>> Stashed changes
 =======
 D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Infrastructure\obj\Debug\net10.0\SistemaDeInventario.Infrastructure.genruntimeconfig.cache
 >>>>>>> Stashed changes

@@ -16,6 +16,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "System.GC.DynamicAdaptationMode": 1,
       "System.Globalization.Invariant": true,
       "System.Globalization.PredefinedCulturesOnly": true,
@@ -38,6 +39,11 @@
       "Microsoft.AspNetCore.SignalR.Hub.IsCustomAwaitableSupported": false,
       "Microsoft.AspNetCore.Mvc.ApiExplorer.IsEnhancedModelMetadataSupported": false,
       "Microsoft.AspNetCore.Components.Endpoints.NavigationManager.DisableThrowNavigationException": false
+=======
+      "System.Globalization.Invariant": false,
+      "System.Reflection.NullabilityInfoContext.IsSupported": true,
+      "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": false
+>>>>>>> Stashed changes
 =======
       "System.Globalization.Invariant": false,
       "System.Reflection.NullabilityInfoContext.IsSupported": true,
