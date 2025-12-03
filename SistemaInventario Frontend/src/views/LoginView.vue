@@ -1,11 +1,8 @@
 <template>
-  <div>
-    <h1>Pantalla de Login</h1>
-  </div>
+<header>
+
+</header>
+
+
 </template>
 
-<script>
-export default {
-  name: "LoginView"
-}
-</script>
