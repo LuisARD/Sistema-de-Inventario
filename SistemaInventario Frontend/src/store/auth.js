@@ -1,4 +1,3 @@
-import axios from "axios";
 import { defineStore } from "pinia";
 import { jwtDecode } from "jwt-decode";
 import API from "../services/axios";

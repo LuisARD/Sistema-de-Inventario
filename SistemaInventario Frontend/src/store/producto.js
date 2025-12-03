@@ -1,8 +1,29 @@
+import { useCrudApi } from "../composable/useCrudApi"
 
 
 
-export const useProductosStore = defineStore("producto", () => {
+export const useProductosStore = defineStore("productos", () => {
 
-    const producto = ref([])
+    const productos = ref([])
 
+
+    const {fetchItems, createItemApi, updateItemApi, deleteItemApi, loading, error} = useCrudApi({productos})
+
+
+    const fetchProductos = () => fetchItems("Productos", "productos")
+    const addItem = (nuevoProducto) => createItemApi("Productos", "productos", nuevoProducto)
+    const editItem = (productoID, datosActualizado) => updateItemApi("Productos", "productos", productoID, datosActualizado)
+    const deleteItem = (productoID) => deleteItemApi("Productos", "productos", productoID)
+
+
+
+    return{
+        productos,
+        fetchProductos,
+        addItem,
+        editItem,
+        deleteItem,
+        loading,
+        error,
+    }
 })
