@@ -2,6 +2,7 @@
   "version": 2,
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   "dgSpecHash": "pIYfPthf8gI=",
   "success": true,
   "projectFilePath": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj",
@@ -19,6 +20,12 @@
   "success": true,
   "projectFilePath": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj",
   "expectedPackageFiles": [
+=======
+  "dgSpecHash": "TKXesSk1P9E=",
+  "success": true,
+  "projectFilePath": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj",
+  "expectedPackageFiles": [
+>>>>>>> Stashed changes
 =======
   "dgSpecHash": "TKXesSk1P9E=",
   "success": true,
@@ -95,6 +102,9 @@
     "C:\\Users\\Emmanuel\\.nuget\\packages\\system.security.permissions\\9.0.0\\system.security.permissions.9.0.0.nupkg.sha512",
     "C:\\Users\\Emmanuel\\.nuget\\packages\\system.windows.extensions\\9.0.0\\system.windows.extensions.9.0.0.nupkg.sha512"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

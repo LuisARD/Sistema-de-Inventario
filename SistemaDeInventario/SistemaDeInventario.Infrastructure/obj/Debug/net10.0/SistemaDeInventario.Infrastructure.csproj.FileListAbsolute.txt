@@ -17,8 +17,11 @@ C:\Users\luisa\PROG-Proyectos\SistemaDeInventario\SistemaDeInventario.Infrastruc
 C:\Users\luisa\PROG-Proyectos\SistemaDeInventario\SistemaDeInventario.Infrastructure\obj\Debug\net10.0\ref\SistemaDeInventario.Infrastructure.dll
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Infrastructure\bin\Debug\net10.0\SistemaDeInventario.Infrastructure.deps.json
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 C:\Users\luisa\PROG-Proyectos\Sis-DGA\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Infrastructure\bin\Debug\net10.0\BuildHost-net472\Microsoft.Build.Locator.dll
@@ -136,6 +139,9 @@ D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.In
 D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Infrastructure\bin\Debug\net10.0\SistemaDeInventario.Infrastructure.deps.json
 D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Infrastructure\bin\Debug\net10.0\SistemaDeInventario.Infrastructure.runtimeconfig.json
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -157,6 +163,10 @@ D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.In
 D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Infrastructure\obj\Debug\net10.0\SistemaDeInventario.Infrastructure.pdb
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Infrastructure\obj\Debug\net10.0\SistemaDeInventario.Infrastructure.genruntimeconfig.cache
+>>>>>>> Stashed changes
 =======
 D:\Repositorios\Sistema-de-Inventario\SistemaDeInventario\SistemaDeInventario.Infrastructure\obj\Debug\net10.0\SistemaDeInventario.Infrastructure.genruntimeconfig.cache
 >>>>>>> Stashed changes

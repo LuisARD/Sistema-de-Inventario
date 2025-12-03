@@ -1,7 +1,11 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 using Microsoft.AspNetCore.Http.HttpResults;
 using System.Text.Json.Serialization;
+=======
+﻿using SistemaDeInventario.Infrastructure;
+>>>>>>> Stashed changes
 =======
 ﻿using SistemaDeInventario.Infrastructure;
 >>>>>>> Stashed changes
@@ -19,6 +23,7 @@ namespace SistemaDeInventarioWebAPI
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             builder.Services.ConfigureHttpJsonOptions(options =>
             {
                 options.SerializerOptions.TypeInfoResolverChain.Insert(0, AppJsonSerializerContext.Default);
@@ -27,6 +32,8 @@ namespace SistemaDeInventarioWebAPI
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
             // Agregar Infrastructure (DbContext + Repositorios + Servicios)
@@ -45,6 +52,9 @@ namespace SistemaDeInventarioWebAPI
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -59,6 +69,7 @@ namespace SistemaDeInventarioWebAPI
                 options.RoutePrefix = string.Empty;
             });
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
             Todo[] sampleTodos =
@@ -83,6 +94,8 @@ namespace SistemaDeInventarioWebAPI
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
             app.UseHttpsRedirection();
             
             // CORS (opcional)
@@ -93,6 +106,9 @@ namespace SistemaDeInventarioWebAPI
 
             app.MapControllers();
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
