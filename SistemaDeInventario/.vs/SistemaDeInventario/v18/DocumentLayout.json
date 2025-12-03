@@ -3,8 +3,99 @@
   "WorkspaceRootPath": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EA1C9731-DB63-4318-AABC-3E29585865F4}|SistemaDeInventario.Application\\SistemaDeInventario.Application.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventario.application\\services\\existenciaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA1C9731-DB63-4318-AABC-3E29585865F4}|SistemaDeInventario.Application\\SistemaDeInventario.Application.csproj|solutionrelative:sistemadeinventario.application\\services\\existenciaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventariowebapi\\controllers\\rolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|solutionrelative:sistemadeinventariowebapi\\controllers\\rolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Programas\\Visual producto\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventariowebapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|solutionrelative:sistemadeinventariowebapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventariowebapi\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|solutionrelative:sistemadeinventariowebapi\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventariowebapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|solutionrelative:sistemadeinventariowebapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventariowebapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|solutionrelative:sistemadeinventariowebapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventariowebapi\\controllers\\movimientoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|solutionrelative:sistemadeinventariowebapi\\controllers\\movimientoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventariowebapi\\sistemadeinventariowebapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|solutionrelative:sistemadeinventariowebapi\\sistemadeinventariowebapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06C5848F-EF5C-41CE-9854-B6CD1444C856}|SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventario.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06C5848F-EF5C-41CE-9854-B6CD1444C856}|SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj|solutionrelative:sistemadeinventario.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06C5848F-EF5C-41CE-9854-B6CD1444C856}|SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventario.infrastructure\\persistence\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06C5848F-EF5C-41CE-9854-B6CD1444C856}|SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj|solutionrelative:sistemadeinventario.infrastructure\\persistence\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventariowebapi\\controllers\\productoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|solutionrelative:sistemadeinventariowebapi\\controllers\\productoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventariowebapi\\controllers\\proveedorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|solutionrelative:sistemadeinventariowebapi\\controllers\\proveedorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventariowebapi\\controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|solutionrelative:sistemadeinventariowebapi\\controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventariowebapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|solutionrelative:sistemadeinventariowebapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventariowebapi\\sistemadeinventariowebapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|solutionrelative:sistemadeinventariowebapi\\sistemadeinventariowebapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06C5848F-EF5C-41CE-9854-B6CD1444C856}|SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventario.infrastructure\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06C5848F-EF5C-41CE-9854-B6CD1444C856}|SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj|solutionrelative:sistemadeinventario.infrastructure\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06C5848F-EF5C-41CE-9854-B6CD1444C856}|SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventario.infrastructure\\repositories\\categoriarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06C5848F-EF5C-41CE-9854-B6CD1444C856}|SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj|solutionrelative:sistemadeinventario.infrastructure\\repositories\\categoriarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06C5848F-EF5C-41CE-9854-B6CD1444C856}|SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventario.infrastructure\\repositories\\proveedorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06C5848F-EF5C-41CE-9854-B6CD1444C856}|SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj|solutionrelative:sistemadeinventario.infrastructure\\repositories\\proveedorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06C5848F-EF5C-41CE-9854-B6CD1444C856}|SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventario.infrastructure\\repositories\\productorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06C5848F-EF5C-41CE-9854-B6CD1444C856}|SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj|solutionrelative:sistemadeinventario.infrastructure\\repositories\\productorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06C5848F-EF5C-41CE-9854-B6CD1444C856}|SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventario.infrastructure\\repositories\\almacenrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06C5848F-EF5C-41CE-9854-B6CD1444C856}|SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj|solutionrelative:sistemadeinventario.infrastructure\\repositories\\almacenrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06C5848F-EF5C-41CE-9854-B6CD1444C856}|SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventario.infrastructure\\repositories\\rolrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06C5848F-EF5C-41CE-9854-B6CD1444C856}|SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj|solutionrelative:sistemadeinventario.infrastructure\\repositories\\rolrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06C5848F-EF5C-41CE-9854-B6CD1444C856}|SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventario.infrastructure\\repositories\\existenciarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06C5848F-EF5C-41CE-9854-B6CD1444C856}|SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj|solutionrelative:sistemadeinventario.infrastructure\\repositories\\existenciarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06C5848F-EF5C-41CE-9854-B6CD1444C856}|SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventario.infrastructure\\repositories\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06C5848F-EF5C-41CE-9854-B6CD1444C856}|SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj|solutionrelative:sistemadeinventario.infrastructure\\repositories\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventariowebapi\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -85,10 +176,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{EA1C9731-DB63-4318-AABC-3E29585865F4}|SistemaDeInventario.Application\\SistemaDeInventario.Application.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventario.application\\services\\interfaces\\icategoriaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EA1C9731-DB63-4318-AABC-3E29585865F4}|SistemaDeInventario.Application\\SistemaDeInventario.Application.csproj|solutionrelative:sistemadeinventario.application\\services\\interfaces\\icategoriaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EA1C9731-DB63-4318-AABC-3E29585865F4}|SistemaDeInventario.Application\\SistemaDeInventario.Application.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventario.application\\services\\existenciaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA1C9731-DB63-4318-AABC-3E29585865F4}|SistemaDeInventario.Application\\SistemaDeInventario.Application.csproj|solutionrelative:sistemadeinventario.application\\services\\existenciaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EA1C9731-DB63-4318-AABC-3E29585865F4}|SistemaDeInventario.Application\\SistemaDeInventario.Application.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventario.application\\dtos\\request\\createusuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -179,14 +266,6 @@
       "RelativeMoniker": "D:0:0:{EA1C9731-DB63-4318-AABC-3E29585865F4}|SistemaDeInventario.Application\\SistemaDeInventario.Application.csproj|solutionrelative:sistemadeinventario.application\\dtos\\request\\createcategoriadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventariowebapi\\sistemadeinventariowebapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|solutionrelative:sistemadeinventariowebapi\\sistemadeinventariowebapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{06C5848F-EF5C-41CE-9854-B6CD1444C856}|SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventario.infrastructure\\persistence\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06C5848F-EF5C-41CE-9854-B6CD1444C856}|SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj|solutionrelative:sistemadeinventario.infrastructure\\persistence\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{68FCD7D6-259E-4BF7-A91E-00280A9D0AA4}|SistemaDeInventario.Domain\\SistemaDeInventario.Domain.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventario.domain\\interfaces\\iusuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{68FCD7D6-259E-4BF7-A91E-00280A9D0AA4}|SistemaDeInventario.Domain\\SistemaDeInventario.Domain.csproj|solutionrelative:sistemadeinventario.domain\\interfaces\\iusuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -263,16 +342,35 @@
       "RelativeMoniker": "D:0:0:{68FCD7D6-259E-4BF7-A91E-00280A9D0AA4}|SistemaDeInventario.Domain\\SistemaDeInventario.Domain.csproj|solutionrelative:sistemadeinventario.domain\\entities\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventariowebapi\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|solutionrelative:sistemadeinventariowebapi\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EA1C9731-DB63-4318-AABC-3E29585865F4}|SistemaDeInventario.Application\\SistemaDeInventario.Application.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventario.application\\sistemadeinventario.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{EA1C9731-DB63-4318-AABC-3E29585865F4}|SistemaDeInventario.Application\\SistemaDeInventario.Application.csproj|solutionrelative:sistemadeinventario.application\\sistemadeinventario.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06C5848F-EF5C-41CE-9854-B6CD1444C856}|SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventario.infrastructure\\repositories\\movimientorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06C5848F-EF5C-41CE-9854-B6CD1444C856}|SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj|solutionrelative:sistemadeinventario.infrastructure\\repositories\\movimientorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06C5848F-EF5C-41CE-9854-B6CD1444C856}|SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventario.infrastructure\\repositories\\detallemovimientorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06C5848F-EF5C-41CE-9854-B6CD1444C856}|SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj|solutionrelative:sistemadeinventario.infrastructure\\repositories\\detallemovimientorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventariowebapi\\controllers\\almacenescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|solutionrelative:sistemadeinventariowebapi\\controllers\\almacenescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventariowebapi\\controllers\\existenciascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|solutionrelative:sistemadeinventariowebapi\\controllers\\existenciascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|d:\\repositorios\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventariowebapi\\controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|solutionrelative:sistemadeinventariowebapi\\controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Emmanuel\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\869611129\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -282,7 +380,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -291,45 +389,394 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "SistemaDeInventarioWebAPI\\appsettings.Development.json",
-              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\appsettings.Development.json",
-              "RelativeToolTip": "SistemaDeInventarioWebAPI\\appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-02T14:41:28.602Z",
+              "Title": "RolesController.cs",
+              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\Controllers\\RolesController.cs",
+              "RelativeDocumentMoniker": "SistemaDeInventarioWebAPI\\Controllers\\RolesController.cs",
+              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\Controllers\\RolesController.cs",
+              "RelativeToolTip": "SistemaDeInventarioWebAPI\\Controllers\\RolesController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAqwEwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T17:11:49.847Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
-              "Title": ".gitignore",
-              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\.gitignore",
-              "RelativeDocumentMoniker": ".gitignore",
-              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\.gitignore",
-              "RelativeToolTip": ".gitignore",
-              "ViewState": "AgIAACkAAAAAAAAAAKBrwAAAAAAAAAAAAAAAAA==",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF8SURBVDhPjVNLTgJBEG1lwpoFB3GNK9fieA48hD8iwT/ihwgSDAIHgAGXXsEV18CNzL/LquqZdsYM6kteXqcy3fWqpmpNRBgOhyABBEgpAFVKPIMUcYzUyOU\u002BXM/b2qtU3vkSfRjjZTCAMAw1A2LwzdFoBPP5HNqdzuL27n4juibWI\u002BUshBA1DIkhEx9iEorFotgslQqGYbxxAGFEqt1MxmPWJLbLZdZ\u002Bv89q5PMFPiTR6z2zdaxR0fXA0XTBcVywkb4fwHXjRteecIDNQ7UmExVYAdPcxYaqclN46na5WenMKjtlVnTYwcXlVYaDqImW9beD5N/TeGy32QHXm6hZ03ZgiSQHp2fnWQ4oBmJqWSqwAqZpZjt4aLXAD4J0VqyZsmoubfB8H2r1eoaD6NXZ9HcHO\u002BSA3f4AjifXl8rItOETM8ckB9WTWpYD9RdeZ1PWVWAHWXPQaDb59f/w8LiqHeh1pvGkCaP6qB8yXusoxmuNZ7XmII4O9vGuEF86osuDYRkpYQAAAABJRU5ErkJggg==",
-              "WhenOpened": "2025-12-02T14:40:51.295Z",
+              "DocumentIndex": 4,
+              "Title": "UsuariosController.cs",
+              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\Controllers\\UsuariosController.cs",
+              "RelativeDocumentMoniker": "SistemaDeInventarioWebAPI\\Controllers\\UsuariosController.cs",
+              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\Controllers\\UsuariosController.cs",
+              "RelativeToolTip": "SistemaDeInventarioWebAPI\\Controllers\\UsuariosController.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAowCIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T17:11:34.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "SistemaDeInventarioWebAPI\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "SistemaDeInventarioWebAPI\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T17:11:02.238Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ProveedoresController.cs",
+              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\Controllers\\ProveedoresController.cs",
+              "RelativeDocumentMoniker": "SistemaDeInventarioWebAPI\\Controllers\\ProveedoresController.cs",
+              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\Controllers\\ProveedoresController.cs",
+              "RelativeToolTip": "SistemaDeInventarioWebAPI\\Controllers\\ProveedoresController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowG0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T13:42:30.73Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MovimientosController.cs",
+              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\Controllers\\MovimientosController.cs",
+              "RelativeDocumentMoniker": "SistemaDeInventarioWebAPI\\Controllers\\MovimientosController.cs",
+              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\Controllers\\MovimientosController.cs",
+              "RelativeToolTip": "SistemaDeInventarioWebAPI\\Controllers\\MovimientosController.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAwwI0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T13:43:12.39Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ExistenciaService.cs",
+              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\Services\\ExistenciaService.cs",
+              "RelativeDocumentMoniker": "SistemaDeInventario.Application\\Services\\ExistenciaService.cs",
+              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\Services\\ExistenciaService.cs",
+              "RelativeToolTip": "SistemaDeInventario.Application\\Services\\ExistenciaService.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAswDEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T13:58:49.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Microsoft.Common.CurrentVersion.targets",
+              "DocumentMoniker": "D:\\Programas\\Visual producto\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\Programas\\Visual producto\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ToolTip": "D:\\Programas\\Visual producto\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeToolTip": "..\\..\\..\\Programas\\Visual producto\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ViewState": "AgIAAMITAAAAAAAAAAArwNcTAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-12-03T17:31:50.658Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 91,
+              "Title": "CategoriasController.cs",
+              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\Controllers\\CategoriasController.cs",
+              "RelativeDocumentMoniker": "SistemaDeInventarioWebAPI\\Controllers\\CategoriasController.cs",
+              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\Controllers\\CategoriasController.cs",
+              "RelativeToolTip": "SistemaDeInventarioWebAPI\\Controllers\\CategoriasController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T17:12:08.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\Program.cs",
+              "RelativeDocumentMoniker": "SistemaDeInventarioWebAPI\\Program.cs",
+              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\Program.cs",
+              "RelativeToolTip": "SistemaDeInventarioWebAPI\\Program.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAADEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T12:53:21.092Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DbContext.cs",
+              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\Persistence\\DbContext.cs",
+              "RelativeDocumentMoniker": "SistemaDeInventario.Infrastructure\\Persistence\\DbContext.cs",
+              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\Persistence\\DbContext.cs",
+              "RelativeToolTip": "SistemaDeInventario.Infrastructure\\Persistence\\DbContext.cs",
+              "ViewState": "AgIAAMgAAAAAAAAAAAAwwMgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T13:28:31.027Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 92,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Emmanuel\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\869611129\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Emmanuel\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\869611129\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T17:12:23.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SistemaDeInventarioWebAPI.csproj",
+              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj",
+              "RelativeDocumentMoniker": "SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj",
+              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj",
+              "RelativeToolTip": "SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-02T13:28:44.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "SistemaDeInventario.Infrastructure\\DependencyInjection.cs",
+              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\DependencyInjection.cs",
+              "RelativeToolTip": "SistemaDeInventario.Infrastructure\\DependencyInjection.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T12:49:10.36Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\appsettings.json",
               "RelativeDocumentMoniker": "SistemaDeInventarioWebAPI\\appsettings.json",
               "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\appsettings.json",
               "RelativeToolTip": "SistemaDeInventarioWebAPI\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAC0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-12-02T14:37:09.854Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 13,
+              "Title": "TestController.cs",
+              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\Controllers\\TestController.cs",
+              "RelativeDocumentMoniker": "SistemaDeInventarioWebAPI\\Controllers\\TestController.cs",
+              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\Controllers\\TestController.cs",
+              "RelativeToolTip": "SistemaDeInventarioWebAPI\\Controllers\\TestController.cs",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAqwKwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T12:52:48.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ProductosController.cs",
+              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\Controllers\\ProductosController.cs",
+              "RelativeDocumentMoniker": "SistemaDeInventarioWebAPI\\Controllers\\ProductosController.cs",
+              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\Controllers\\ProductosController.cs",
+              "RelativeToolTip": "SistemaDeInventarioWebAPI\\Controllers\\ProductosController.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAiwJYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T13:42:09.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "SistemaDeInventarioWebAPI\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\Properties\\launchSettings.json",
+              "RelativeToolTip": "SistemaDeInventarioWebAPI\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-03T13:52:08.541Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "SistemaDeInventarioWebAPI.http",
+              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.http",
+              "RelativeDocumentMoniker": "SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.http",
+              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.http",
+              "RelativeToolTip": "SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.http",
+              "ViewState": "AgIAAMkBAAAAAAAAAAAvwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-12-03T12:55:13.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 89,
+              "Title": "AlmacenesController.cs",
+              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\Controllers\\AlmacenesController.cs",
+              "RelativeDocumentMoniker": "SistemaDeInventarioWebAPI\\Controllers\\AlmacenesController.cs",
+              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\Controllers\\AlmacenesController.cs",
+              "RelativeToolTip": "SistemaDeInventarioWebAPI\\Controllers\\AlmacenesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T13:42:47.959Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 90,
+              "Title": "ExistenciasController.cs",
+              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\Controllers\\ExistenciasController.cs",
+              "RelativeDocumentMoniker": "SistemaDeInventarioWebAPI\\Controllers\\ExistenciasController.cs",
+              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\Controllers\\ExistenciasController.cs",
+              "RelativeToolTip": "SistemaDeInventarioWebAPI\\Controllers\\ExistenciasController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T13:43:37.992Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ProveedorRepository.cs",
+              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\Repositories\\ProveedorRepository.cs",
+              "RelativeDocumentMoniker": "SistemaDeInventario.Infrastructure\\Repositories\\ProveedorRepository.cs",
+              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\Repositories\\ProveedorRepository.cs",
+              "RelativeToolTip": "SistemaDeInventario.Infrastructure\\Repositories\\ProveedorRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T12:47:52.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "AlmacenRepository.cs",
+              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\Repositories\\AlmacenRepository.cs",
+              "RelativeDocumentMoniker": "SistemaDeInventario.Infrastructure\\Repositories\\AlmacenRepository.cs",
+              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\Repositories\\AlmacenRepository.cs",
+              "RelativeToolTip": "SistemaDeInventario.Infrastructure\\Repositories\\AlmacenRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T12:48:03.489Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "RolRepository.cs",
+              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\Repositories\\RolRepository.cs",
+              "RelativeDocumentMoniker": "SistemaDeInventario.Infrastructure\\Repositories\\RolRepository.cs",
+              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\Repositories\\RolRepository.cs",
+              "RelativeToolTip": "SistemaDeInventario.Infrastructure\\Repositories\\RolRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T12:47:26.013Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\Repositories\\Repository.cs",
+              "RelativeDocumentMoniker": "SistemaDeInventario.Infrastructure\\Repositories\\Repository.cs",
+              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\Repositories\\Repository.cs",
+              "RelativeToolTip": "SistemaDeInventario.Infrastructure\\Repositories\\Repository.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAABBwEYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T12:47:17.708Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ProductoRepository.cs",
+              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\Repositories\\ProductoRepository.cs",
+              "RelativeDocumentMoniker": "SistemaDeInventario.Infrastructure\\Repositories\\ProductoRepository.cs",
+              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\Repositories\\ProductoRepository.cs",
+              "RelativeToolTip": "SistemaDeInventario.Infrastructure\\Repositories\\ProductoRepository.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAADoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T12:48:14.166Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ExistenciaRepository.cs",
+              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\Repositories\\ExistenciaRepository.cs",
+              "RelativeDocumentMoniker": "SistemaDeInventario.Infrastructure\\Repositories\\ExistenciaRepository.cs",
+              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\Repositories\\ExistenciaRepository.cs",
+              "RelativeToolTip": "SistemaDeInventario.Infrastructure\\Repositories\\ExistenciaRepository.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAEBVwEYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T12:48:25.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CategoriaRepository.cs",
+              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\Repositories\\CategoriaRepository.cs",
+              "RelativeDocumentMoniker": "SistemaDeInventario.Infrastructure\\Repositories\\CategoriaRepository.cs",
+              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\Repositories\\CategoriaRepository.cs",
+              "RelativeToolTip": "SistemaDeInventario.Infrastructure\\Repositories\\CategoriaRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T12:47:44.127Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "UsuarioRepository.cs",
+              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\Repositories\\UsuarioRepository.cs",
+              "RelativeDocumentMoniker": "SistemaDeInventario.Infrastructure\\Repositories\\UsuarioRepository.cs",
+              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\Repositories\\UsuarioRepository.cs",
+              "RelativeToolTip": "SistemaDeInventario.Infrastructure\\Repositories\\UsuarioRepository.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAowCQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T12:47:33.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 87,
+              "Title": "MovimientoRepository.cs",
+              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\Repositories\\MovimientoRepository.cs",
+              "RelativeDocumentMoniker": "SistemaDeInventario.Infrastructure\\Repositories\\MovimientoRepository.cs",
+              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\Repositories\\MovimientoRepository.cs",
+              "RelativeToolTip": "SistemaDeInventario.Infrastructure\\Repositories\\MovimientoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T12:48:41.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 88,
+              "Title": "DetalleMovimientoRepository.cs",
+              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\Repositories\\DetalleMovimientoRepository.cs",
+              "RelativeDocumentMoniker": "SistemaDeInventario.Infrastructure\\Repositories\\DetalleMovimientoRepository.cs",
+              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\Repositories\\DetalleMovimientoRepository.cs",
+              "RelativeToolTip": "SistemaDeInventario.Infrastructure\\Repositories\\DetalleMovimientoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T12:48:52.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
               "Title": "AuthService.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\Services\\AuthService.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\Services\\AuthService.cs",
@@ -342,7 +789,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 27,
               "Title": "IUsuarioService.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\Services\\Interfaces\\IUsuarioService.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\Services\\Interfaces\\IUsuarioService.cs",
@@ -355,7 +802,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 26,
               "Title": "IAuthService.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\Services\\Interfaces\\IAuthService.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\Services\\Interfaces\\IAuthService.cs",
@@ -368,7 +815,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 28,
               "Title": "UsuarioDto.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\DTOs\\Response\\UsuarioDto.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\DTOs\\Response\\UsuarioDto.cs",
@@ -381,7 +828,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 29,
               "Title": "RolDto.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\DTOs\\Response\\RolDto.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\DTOs\\Response\\RolDto.cs",
@@ -394,7 +841,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 30,
               "Title": "CreateAlmacenDto.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\DTOs\\Request\\CreateAlmacenDto.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\DTOs\\Request\\CreateAlmacenDto.cs",
@@ -407,7 +854,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 31,
               "Title": "IRolService.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\Services\\Interfaces\\IRolService.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\Services\\Interfaces\\IRolService.cs",
@@ -420,7 +867,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 86,
+              "Title": ".gitignore",
+              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAACkAAAAAAAAAAKBrwAAAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF8SURBVDhPjVNLTgJBEG1lwpoFB3GNK9fieA48hD8iwT/ihwgSDAIHgAGXXsEV18CNzL/LquqZdsYM6kteXqcy3fWqpmpNRBgOhyABBEgpAFVKPIMUcYzUyOU\u002BXM/b2qtU3vkSfRjjZTCAMAw1A2LwzdFoBPP5HNqdzuL27n4juibWI\u002BUshBA1DIkhEx9iEorFotgslQqGYbxxAGFEqt1MxmPWJLbLZdZ\u002Bv89q5PMFPiTR6z2zdaxR0fXA0XTBcVywkb4fwHXjRteecIDNQ7UmExVYAdPcxYaqclN46na5WenMKjtlVnTYwcXlVYaDqImW9beD5N/TeGy32QHXm6hZ03ZgiSQHp2fnWQ4oBmJqWSqwAqZpZjt4aLXAD4J0VqyZsmoubfB8H2r1eoaD6NXZ9HcHO\u002BSA3f4AjifXl8rItOETM8ckB9WTWpYD9RdeZ1PWVWAHWXPQaDb59f/w8LiqHeh1pvGkCaP6qB8yXusoxmuNZ7XmII4O9vGuEF86osuDYRkpYQAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-12-02T14:40:51.295Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "SistemaDeInventarioWebAPI\\appsettings.Development.json",
+              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\appsettings.Development.json",
+              "RelativeToolTip": "SistemaDeInventarioWebAPI\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-02T14:41:28.602Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
               "Title": "ProductoService.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\Services\\ProductoService.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\Services\\ProductoService.cs",
@@ -433,7 +906,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 33,
               "Title": "ProveedorService.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\Services\\ProveedorService.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\Services\\ProveedorService.cs",
@@ -446,7 +919,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 34,
               "Title": "RolService.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\Services\\RolService.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\Services\\RolService.cs",
@@ -459,7 +932,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 35,
               "Title": "UsuarioService.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\Services\\UsuarioService.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\Services\\UsuarioService.cs",
@@ -472,7 +945,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 36,
               "Title": "CategoriaService.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\Services\\CategoriaService.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\Services\\CategoriaService.cs",
@@ -485,8 +958,8 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
-              "Title": "SistemaDeInventario.Application",
+              "DocumentIndex": 85,
+              "Title": "SistemaDeInventario.Application.csproj",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\SistemaDeInventario.Application.csproj",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\SistemaDeInventario.Application.csproj",
               "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\SistemaDeInventario.Application.csproj",
@@ -498,7 +971,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 38,
               "Title": "IAlmacenService.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\Services\\Interfaces\\IAlmacenService.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\Services\\Interfaces\\IAlmacenService.cs",
@@ -511,7 +984,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 37,
               "Title": "MovimientoService.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\Services\\MovimientoService.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\Services\\MovimientoService.cs",
@@ -524,7 +997,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 39,
               "Title": "IProveedorService.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\Services\\Interfaces\\IProveedorService.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\Services\\Interfaces\\IProveedorService.cs",
@@ -537,7 +1010,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 40,
               "Title": "IProductoService.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\Services\\Interfaces\\IProductoService.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\Services\\Interfaces\\IProductoService.cs",
@@ -550,7 +1023,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 41,
               "Title": "IMovimientoService.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\Services\\Interfaces\\IMovimientoService.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\Services\\Interfaces\\IMovimientoService.cs",
@@ -563,7 +1036,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 42,
               "Title": "IExistenciaService.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\Services\\Interfaces\\IExistenciaService.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\Services\\Interfaces\\IExistenciaService.cs",
@@ -576,7 +1049,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 43,
               "Title": "ICategoriaService.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\Services\\Interfaces\\ICategoriaService.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\Services\\Interfaces\\ICategoriaService.cs",
@@ -589,20 +1062,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "ExistenciaService.cs",
-              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\Services\\ExistenciaService.cs",
-              "RelativeDocumentMoniker": "SistemaDeInventario.Application\\Services\\ExistenciaService.cs",
-              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\Services\\ExistenciaService.cs",
-              "RelativeToolTip": "SistemaDeInventario.Application\\Services\\ExistenciaService.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAuwEIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T13:58:49.729Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 44,
               "Title": "CreateUsuarioDto.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\DTOs\\Request\\CreateUsuarioDto.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\DTOs\\Request\\CreateUsuarioDto.cs",
@@ -615,7 +1075,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 45,
               "Title": "AlmacenService.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\Services\\AlmacenService.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\Services\\AlmacenService.cs",
@@ -628,7 +1088,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 46,
               "Title": "ProveedorDto.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\DTOs\\Response\\ProveedorDto.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\DTOs\\Response\\ProveedorDto.cs",
@@ -641,7 +1101,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 47,
               "Title": "ProductoDto.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\DTOs\\Response\\ProductoDto.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\DTOs\\Response\\ProductoDto.cs",
@@ -654,7 +1114,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 48,
               "Title": "MovimientoDto.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\DTOs\\Response\\MovimientoDto.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\DTOs\\Response\\MovimientoDto.cs",
@@ -667,7 +1127,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 50,
               "Title": "ExistenciaDto.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\DTOs\\Response\\ExistenciaDto.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\DTOs\\Response\\ExistenciaDto.cs",
@@ -680,7 +1140,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 51,
               "Title": "DetalleMovimientoDto.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\DTOs\\Response\\DetalleMovimientoDto.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\DTOs\\Response\\DetalleMovimientoDto.cs",
@@ -693,7 +1153,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 52,
               "Title": "CategoriaDto.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\DTOs\\Response\\CategoriaDto.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\DTOs\\Response\\CategoriaDto.cs",
@@ -706,7 +1166,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 49,
               "Title": "LoginResponseDto.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\DTOs\\Response\\LoginResponseDto.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\DTOs\\Response\\LoginResponseDto.cs",
@@ -719,7 +1179,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 54,
               "Title": "UpdateUsuarioDto.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\DTOs\\Request\\UpdateUsuarioDto.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\DTOs\\Request\\UpdateUsuarioDto.cs",
@@ -732,7 +1192,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 55,
               "Title": "UpdateProveedorDto.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\DTOs\\Request\\UpdateProveedorDto.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\DTOs\\Request\\UpdateProveedorDto.cs",
@@ -745,7 +1205,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 53,
               "Title": "AlmacenDto.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\DTOs\\Response\\AlmacenDto.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\DTOs\\Response\\AlmacenDto.cs",
@@ -758,7 +1218,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 57,
               "Title": "UpdateCategoriaDto.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\DTOs\\Request\\UpdateCategoriaDto.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\DTOs\\Request\\UpdateCategoriaDto.cs",
@@ -771,7 +1231,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 58,
               "Title": "UpdateAlmacenDto.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\DTOs\\Request\\UpdateAlmacenDto.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\DTOs\\Request\\UpdateAlmacenDto.cs",
@@ -784,7 +1244,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 56,
               "Title": "UpdateProductoDto.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\DTOs\\Request\\UpdateProductoDto.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\DTOs\\Request\\UpdateProductoDto.cs",
@@ -797,7 +1257,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 59,
               "Title": "LoginDto.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\DTOs\\Request\\LoginDto.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\DTOs\\Request\\LoginDto.cs",
@@ -810,7 +1270,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 60,
               "Title": "CreateRolDto.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\DTOs\\Request\\CreateRolDto.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\DTOs\\Request\\CreateRolDto.cs",
@@ -823,7 +1283,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 61,
               "Title": "CreateProveedorDto.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\DTOs\\Request\\CreateProveedorDto.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\DTOs\\Request\\CreateProveedorDto.cs",
@@ -836,7 +1296,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 62,
               "Title": "CreateProductoDto.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\DTOs\\Request\\CreateProductoDto.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\DTOs\\Request\\CreateProductoDto.cs",
@@ -849,7 +1309,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 63,
               "Title": "CreateMovimientoDto.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\DTOs\\Request\\CreateMovimientoDto.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\DTOs\\Request\\CreateMovimientoDto.cs",
@@ -862,7 +1322,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 64,
               "Title": "CreateDetalleMovimientoDto.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\DTOs\\Request\\CreateDetalleMovimientoDto.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\DTOs\\Request\\CreateDetalleMovimientoDto.cs",
@@ -875,7 +1335,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 65,
               "Title": "CreateCategoriaDto.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\DTOs\\Request\\CreateCategoriaDto.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Application\\DTOs\\Request\\CreateCategoriaDto.cs",
@@ -888,32 +1348,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "SistemaDeInventarioWebAPI.csproj",
-              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj",
-              "RelativeDocumentMoniker": "SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj",
-              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj",
-              "RelativeToolTip": "SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-02T13:28:44.129Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "DbContext.cs",
-              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\Persistence\\DbContext.cs",
-              "RelativeDocumentMoniker": "SistemaDeInventario.Infrastructure\\Persistence\\DbContext.cs",
-              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\Persistence\\DbContext.cs",
-              "RelativeToolTip": "SistemaDeInventario.Infrastructure\\Persistence\\DbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T13:28:31.027Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 67,
               "Title": "IRolRepository.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Domain\\Interfaces\\IRolRepository.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Domain\\Interfaces\\IRolRepository.cs",
@@ -921,11 +1356,12 @@
               "RelativeToolTip": "SistemaDeInventario.Domain\\Interfaces\\IRolRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T13:37:09.357Z"
+              "WhenOpened": "2025-12-02T13:37:09.357Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 66,
               "Title": "IUsuarioRepository.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Domain\\Interfaces\\IUsuarioRepository.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Domain\\Interfaces\\IUsuarioRepository.cs",
@@ -933,11 +1369,12 @@
               "RelativeToolTip": "SistemaDeInventario.Domain\\Interfaces\\IUsuarioRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T13:37:13.441Z"
+              "WhenOpened": "2025-12-02T13:37:13.441Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 68,
               "Title": "IRepository.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Domain\\Interfaces\\IRepository.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Domain\\Interfaces\\IRepository.cs",
@@ -945,11 +1382,12 @@
               "RelativeToolTip": "SistemaDeInventario.Domain\\Interfaces\\IRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T13:37:04.639Z"
+              "WhenOpened": "2025-12-02T13:37:04.639Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 69,
               "Title": "IProductoRepository.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Domain\\Interfaces\\IProductoRepository.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Domain\\Interfaces\\IProductoRepository.cs",
@@ -957,11 +1395,12 @@
               "RelativeToolTip": "SistemaDeInventario.Domain\\Interfaces\\IProductoRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T13:37:49.758Z"
+              "WhenOpened": "2025-12-02T13:37:49.758Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 70,
               "Title": "IProveedorRepository.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Domain\\Interfaces\\IProveedorRepository.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Domain\\Interfaces\\IProveedorRepository.cs",
@@ -969,11 +1408,12 @@
               "RelativeToolTip": "SistemaDeInventario.Domain\\Interfaces\\IProveedorRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T13:37:25.063Z"
+              "WhenOpened": "2025-12-02T13:37:25.063Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 71,
               "Title": "IMovimientoRepository.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Domain\\Interfaces\\IMovimientoRepository.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Domain\\Interfaces\\IMovimientoRepository.cs",
@@ -981,11 +1421,12 @@
               "RelativeToolTip": "SistemaDeInventario.Domain\\Interfaces\\IMovimientoRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T13:38:02.004Z"
+              "WhenOpened": "2025-12-02T13:38:02.004Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 72,
               "Title": "IExistenciaRepository.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Domain\\Interfaces\\IExistenciaRepository.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Domain\\Interfaces\\IExistenciaRepository.cs",
@@ -993,11 +1434,12 @@
               "RelativeToolTip": "SistemaDeInventario.Domain\\Interfaces\\IExistenciaRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T13:37:55.756Z"
+              "WhenOpened": "2025-12-02T13:37:55.756Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 73,
               "Title": "IDetalleMovimientoRepository.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Domain\\Interfaces\\IDetalleMovimientoRepository.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Domain\\Interfaces\\IDetalleMovimientoRepository.cs",
@@ -1005,11 +1447,12 @@
               "RelativeToolTip": "SistemaDeInventario.Domain\\Interfaces\\IDetalleMovimientoRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T13:38:11.105Z"
+              "WhenOpened": "2025-12-02T13:38:11.105Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 74,
               "Title": "ICategoriaRepository.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Domain\\Interfaces\\ICategoriaRepository.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Domain\\Interfaces\\ICategoriaRepository.cs",
@@ -1017,11 +1460,12 @@
               "RelativeToolTip": "SistemaDeInventario.Domain\\Interfaces\\ICategoriaRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T13:37:17.738Z"
+              "WhenOpened": "2025-12-02T13:37:17.738Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 75,
               "Title": "IAlmacenRepository.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Domain\\Interfaces\\IAlmacenRepository.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Domain\\Interfaces\\IAlmacenRepository.cs",
@@ -1029,11 +1473,12 @@
               "RelativeToolTip": "SistemaDeInventario.Domain\\Interfaces\\IAlmacenRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T13:37:32.792Z"
+              "WhenOpened": "2025-12-02T13:37:32.792Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 76,
               "Title": "Usuario.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Domain\\Entities\\Usuario.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Domain\\Entities\\Usuario.cs",
@@ -1041,11 +1486,12 @@
               "RelativeToolTip": "SistemaDeInventario.Domain\\Entities\\Usuario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T13:35:59.662Z"
+              "WhenOpened": "2025-12-02T13:35:59.662Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 77,
               "Title": "Rol.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Domain\\Entities\\Rol.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Domain\\Entities\\Rol.cs",
@@ -1053,11 +1499,12 @@
               "RelativeToolTip": "SistemaDeInventario.Domain\\Entities\\Rol.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T13:35:52.262Z"
+              "WhenOpened": "2025-12-02T13:35:52.262Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 78,
               "Title": "Proveedor.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Domain\\Entities\\Proveedor.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Domain\\Entities\\Proveedor.cs",
@@ -1065,11 +1512,12 @@
               "RelativeToolTip": "SistemaDeInventario.Domain\\Entities\\Proveedor.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T13:36:13.841Z"
+              "WhenOpened": "2025-12-02T13:36:13.841Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 79,
               "Title": "Producto.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Domain\\Entities\\Producto.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Domain\\Entities\\Producto.cs",
@@ -1077,11 +1525,12 @@
               "RelativeToolTip": "SistemaDeInventario.Domain\\Entities\\Producto.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T13:36:34.218Z"
+              "WhenOpened": "2025-12-02T13:36:34.218Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 80,
               "Title": "Movimiento.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Domain\\Entities\\Movimiento.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Domain\\Entities\\Movimiento.cs",
@@ -1089,11 +1538,12 @@
               "RelativeToolTip": "SistemaDeInventario.Domain\\Entities\\Movimiento.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T13:36:50.341Z"
+              "WhenOpened": "2025-12-02T13:36:50.341Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 81,
               "Title": "Existencia.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Domain\\Entities\\Existencia.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Domain\\Entities\\Existencia.cs",
@@ -1101,11 +1551,12 @@
               "RelativeToolTip": "SistemaDeInventario.Domain\\Entities\\Existencia.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T13:36:41.766Z"
+              "WhenOpened": "2025-12-02T13:36:41.766Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 82,
               "Title": "DetalleMovimiento.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Domain\\Entities\\DetalleMovimiento.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Domain\\Entities\\DetalleMovimiento.cs",
@@ -1113,11 +1564,12 @@
               "RelativeToolTip": "SistemaDeInventario.Domain\\Entities\\DetalleMovimiento.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T13:36:56.396Z"
+              "WhenOpened": "2025-12-02T13:36:56.396Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 83,
               "Title": "Almacen.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Domain\\Entities\\Almacen.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Domain\\Entities\\Almacen.cs",
@@ -1125,11 +1577,12 @@
               "RelativeToolTip": "SistemaDeInventario.Domain\\Entities\\Almacen.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T13:36:22.995Z"
+              "WhenOpened": "2025-12-02T13:36:22.995Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 84,
               "Title": "Categoria.cs",
               "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Domain\\Entities\\Categoria.cs",
               "RelativeDocumentMoniker": "SistemaDeInventario.Domain\\Entities\\Categoria.cs",
@@ -1137,19 +1590,8 @@
               "RelativeToolTip": "SistemaDeInventario.Domain\\Entities\\Categoria.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T13:36:08.141Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 65,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "SistemaDeInventarioWebAPI\\Controllers\\HomeController.cs",
-              "ToolTip": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "SistemaDeInventarioWebAPI\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T13:28:57.115Z"
+              "WhenOpened": "2025-12-02T13:36:08.141Z",
+              "EditorCaption": ""
             }
           ]
         }

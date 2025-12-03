@@ -1,5 +1,9 @@
+<<<<<<< Updated upstream
 using Microsoft.AspNetCore.Http.HttpResults;
 using System.Text.Json.Serialization;
+=======
+﻿using SistemaDeInventario.Infrastructure;
+>>>>>>> Stashed changes
 
 namespace SistemaDeInventarioWebAPI
 {
@@ -9,6 +13,7 @@ namespace SistemaDeInventarioWebAPI
         {
             var builder = WebApplication.CreateSlimBuilder(args);
 
+<<<<<<< Updated upstream
             builder.Services.ConfigureHttpJsonOptions(options =>
             {
                 options.SerializerOptions.TypeInfoResolverChain.Insert(0, AppJsonSerializerContext.Default);
@@ -16,14 +21,35 @@ namespace SistemaDeInventarioWebAPI
 
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
+=======
+            // Agregar Infrastructure (DbContext + Repositorios + Servicios)
+            builder.Services.AddInfrastructure(builder.Configuration);
+
+            // Agregar controladores con configuración JSON
+            builder.Services.AddControllers()
+                .AddJsonOptions(options =>
+                {
+                    options.JsonSerializerOptions.PropertyNamingPolicy = null;
+                    options.JsonSerializerOptions.WriteIndented = true;
+                    options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+                });
+
+            // Configurar Swagger
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
+>>>>>>> Stashed changes
 
             var app = builder.Build();
 
-            if (app.Environment.IsDevelopment())
+            // Habilitar Swagger
+            app.UseSwagger();
+            app.UseSwaggerUI(options =>
             {
-                app.MapOpenApi();
-            }
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "Sistema Inventario API v1");
+                options.RoutePrefix = string.Empty;
+            });
 
+<<<<<<< Updated upstream
             Todo[] sampleTodos =
     
             [
@@ -43,16 +69,19 @@ namespace SistemaDeInventarioWebAPI
                     ? TypedResults.Ok(todo)
                     : TypedResults.NotFound())
                 .WithName("GetTodoById");
+=======
+            app.UseHttpsRedirection();
+            
+            // CORS (opcional)
+            app.UseCors(policy => policy
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
+
+            app.MapControllers();
+>>>>>>> Stashed changes
 
             app.Run();
         }
-    }
-
-    public record Todo(int Id, string? Title, DateOnly? DueBy = null, bool IsComplete = false);
-
-    [JsonSerializable(typeof(Todo[]))]
-    internal partial class AppJsonSerializerContext : JsonSerializerContext
-    {
-
     }
 }

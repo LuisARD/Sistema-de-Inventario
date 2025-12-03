@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< Updated upstream
   "dgSpecHash": "iqP0Q7X5P1s=",
+=======
+  "dgSpecHash": "HIUPyEUVoDA=",
+>>>>>>> Stashed changes
   "success": true,
   "projectFilePath": "D:\\Repositorios\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\SistemaDeInventario.Application.csproj",
   "expectedPackageFiles": [

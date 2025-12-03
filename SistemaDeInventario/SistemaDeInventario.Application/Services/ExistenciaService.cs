@@ -46,7 +46,7 @@ public class ExistenciaService : IExistenciaService
 
     private ExistenciaDto MapToDto(Existencia existencia)
     {
-        var stockBajo = existencia.CantidadActual <= existencia.Producto.StockMinimo;
+        var stockBajo = existencia.CantidadActual <= (existencia.Producto?.StockMinimo ?? 0);
 
         return new ExistenciaDto
         {
