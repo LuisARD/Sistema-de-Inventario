@@ -1,0 +1,115 @@
+using Microsoft.AspNetCore.Mvc;
+using SistemaDeInventario.Application.DTOs.Request;
+using SistemaDeInventario.Application.Services.Interfaces;
+
+namespace SistemaDeInventarioWebAPI.Controllers;
+
+[ApiController]
+[Route("api/[controller]")]
+[Produces("application/json")]
+public class AlmacenesController : ControllerBase
+{
+    private readonly IAlmacenService _almacenService;
+
+    public AlmacenesController(IAlmacenService almacenService)
+    {
+        _almacenService = almacenService;
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetAll()
+    {
+        try
+        {
+            var almacenes = await _almacenService.GetAllAlmacenesAsync();
+            return Ok(almacenes);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Error al obtener almacenes", error = ex.Message });
+        }
+    }
+
+    [HttpGet("activos")]
+    public async Task<IActionResult> GetActivos()
+    {
+        try
+        {
+            var almacenes = await _almacenService.GetAlmacenesActivosAsync();
+            return Ok(almacenes);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Error al obtener almacenes activos", error = ex.Message });
+        }
+    }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetById(int id)
+    {
+        try
+        {
+            var almacen = await _almacenService.GetAlmacenByIdAsync(id);
+            if (almacen == null)
+                return NotFound(new { message = $"Almacén con ID {id} no encontrado" });
+
+            return Ok(almacen);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Error al obtener almacén", error = ex.Message });
+        }
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Create([FromBody] CreateAlmacenDto dto)
+    {
+        try
+        {
+            var almacen = await _almacenService.CreateAlmacenAsync(dto);
+            return CreatedAtAction(nameof(GetById), new { id = almacen.AlmacenId }, almacen);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Error al crear almacén", error = ex.Message });
+        }
+    }
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(int id, [FromBody] UpdateAlmacenDto dto)
+    {
+        try
+        {
+            if (id != dto.AlmacenId)
+                return BadRequest(new { message = "El ID del almacén no coincide" });
+
+            var almacen = await _almacenService.UpdateAlmacenAsync(dto);
+            return Ok(almacen);
+        }
+        catch (InvalidOperationException ex)
+        {
+            return NotFound(new { message = ex.Message });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Error al actualizar almacén", error = ex.Message });
+        }
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        try
+        {
+            var result = await _almacenService.DeleteAlmacenAsync(id);
+            if (!result)
+                return NotFound(new { message = $"Almacén con ID {id} no encontrado" });
+
+            return Ok(new { message = "Almacén eliminado correctamente (soft delete)" });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Error al eliminar almacén", error = ex.Message });
+        }
+    }
+}
