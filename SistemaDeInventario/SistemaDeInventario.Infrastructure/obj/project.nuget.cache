@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "dgSpecHash": "Mkb3eNJcdgw=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\luisa\\PROG-Proyectos\\Sis-DGA\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\luisa\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
+    "C:\\Users\\luisa\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\10.0.0\\microsoft.extensions.configuration.abstractions.10.0.0.nupkg.sha512",
+    "C:\\Users\\luisa\\.nuget\\packages\\microsoft.extensions.primitives\\10.0.0\\microsoft.extensions.primitives.10.0.0.nupkg.sha512",
+    "C:\\Users\\luisa\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.2.1\\microsoft.identitymodel.abstractions.8.2.1.nupkg.sha512",
+    "C:\\Users\\luisa\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\8.2.1\\microsoft.identitymodel.jsonwebtokens.8.2.1.nupkg.sha512",
+    "C:\\Users\\luisa\\.nuget\\packages\\microsoft.identitymodel.logging\\8.2.1\\microsoft.identitymodel.logging.8.2.1.nupkg.sha512",
+    "C:\\Users\\luisa\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.2.1\\microsoft.identitymodel.tokens.8.2.1.nupkg.sha512",
+    "C:\\Users\\luisa\\.nuget\\packages\\system.identitymodel.tokens.jwt\\8.2.1\\system.identitymodel.tokens.jwt.8.2.1.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "message": "Problema al leer el archivo de caché C:\\Users\\luisa\\PROG-Proyectos\\Sis-DGA\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\obj\\project.nuget.cache : '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0.",
+      "projectPath": "C:\\Users\\luisa\\PROG-Proyectos\\Sis-DGA\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\luisa\\PROG-Proyectos\\Sis-DGA\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj",
+      "targetGraphs": []
+    }
+  ]
+}
