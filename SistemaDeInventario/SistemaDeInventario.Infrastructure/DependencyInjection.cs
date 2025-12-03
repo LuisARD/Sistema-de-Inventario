@@ -36,7 +36,7 @@ public static class DependencyInjection
         services.AddScoped<IMovimientoRepository, MovimientoRepository>();
         services.AddScoped<IDetalleMovimientoRepository, DetalleMovimientoRepository>();
 
-        // Registrar Servicios de Aplicación
+        // Registrar Servicios de AplicaciÃ³n
         services.AddScoped<IAuthService, AuthService>();
         services.AddScoped<IRolService, RolService>();
         services.AddScoped<IUsuarioService, UsuarioService>();
