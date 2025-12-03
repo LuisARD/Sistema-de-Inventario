@@ -1,11 +1,477 @@
-@SistemaDeInventarioWebAPI_HostAddress = http://localhost:5196
+@SistemaDeInventarioWebAPI_HostAddress = https://localhost:7001
+@SistemaDeInventarioWebAPI_HostAddress_Http = http://localhost:5000
 
-GET {{SistemaDeInventarioWebAPI_HostAddress}}/todos/
+# ============================================
+# ?? AUTENTICACIÓN
+# ============================================
+
+### Auth - Login (obtener token JWT)
+POST {{SistemaDeInventarioWebAPI_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@sistema.com",
+  "password": "Admin123!"
+}
+
+###
+
+### Auth - Validar credenciales
+POST {{SistemaDeInventarioWebAPI_HostAddress}}/api/auth/validate
+Content-Type: application/json
+
+{
+  "email": "admin@sistema.com",
+  "password": "Admin123!"
+}
+
+###
+
+# ============================================
+# ?? ROLES
+# ============================================
+
+### Roles - Obtener todos los roles
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/roles
 Accept: application/json
 
 ###
 
-GET {{SistemaDeInventarioWebAPI_HostAddress}}/todos/1
+### Roles - Obtener rol por ID
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/roles/1
+Accept: application/json
+
+###
+
+### Roles - Crear nuevo rol
+POST {{SistemaDeInventarioWebAPI_HostAddress}}/api/roles
+Content-Type: application/json
+
+{
+  "nombre": "Supervisor",
+  "descripcion": "Supervisor de almacén"
+}
+
+###
+
+# ============================================
+# ?? USUARIOS
+# ============================================
+
+### Usuarios - Obtener todos
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/usuarios
+Accept: application/json
+
+###
+
+### Usuarios - Obtener activos
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/usuarios/activos
+Accept: application/json
+
+###
+
+### Usuarios - Obtener por ID
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/usuarios/1
+Accept: application/json
+
+###
+
+### Usuarios - Obtener por email
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/usuarios/email/admin@sistema.com
+Accept: application/json
+
+###
+
+### Usuarios - Crear nuevo usuario
+POST {{SistemaDeInventarioWebAPI_HostAddress}}/api/usuarios
+Content-Type: application/json
+
+{
+  "nombreCompleto": "Juan Pérez",
+  "email": "juan.perez@sistema.com",
+  "password": "Juan123!",
+  "rolId": 1
+}
+
+###
+
+### Usuarios - Actualizar usuario
+PUT {{SistemaDeInventarioWebAPI_HostAddress}}/api/usuarios/1
+Content-Type: application/json
+
+{
+  "usuarioId": 1,
+  "nombreCompleto": "Juan Pérez Actualizado",
+  "email": "juan.perez@sistema.com",
+  "rolId": 1,
+  "activo": true
+}
+
+###
+
+### Usuarios - Eliminar usuario (soft delete)
+DELETE {{SistemaDeInventarioWebAPI_HostAddress}}/api/usuarios/1
+
+###
+
+# ============================================
+# ?? CATEGORÍAS
+# ============================================
+
+### Categorías - Obtener todas
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/categorias
+Accept: application/json
+
+###
+
+### Categorías - Obtener por ID
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/categorias/1
+Accept: application/json
+
+###
+
+### Categorías - Crear nueva
+POST {{SistemaDeInventarioWebAPI_HostAddress}}/api/categorias
+Content-Type: application/json
+
+{
+  "nombre": "Tecnología",
+  "descripcion": "Productos tecnológicos"
+}
+
+###
+
+### Categorías - Actualizar
+PUT {{SistemaDeInventarioWebAPI_HostAddress}}/api/categorias/1
+Content-Type: application/json
+
+{
+  "categoriaId": 1,
+  "nombre": "Tecnología Actualizada",
+  "descripcion": "Categoría de productos tecnológicos"
+}
+
+###
+
+### Categorías - Eliminar
+DELETE {{SistemaDeInventarioWebAPI_HostAddress}}/api/categorias/1
+
+###
+
+# ============================================
+# ?? PROVEEDORES
+# ============================================
+
+### Proveedores - Obtener todos
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/proveedores
+Accept: application/json
+
+###
+
+### Proveedores - Obtener por ID
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/proveedores/1
+Accept: application/json
+
+###
+
+### Proveedores - Crear nuevo
+POST {{SistemaDeInventarioWebAPI_HostAddress}}/api/proveedores
+Content-Type: application/json
+
+{
+  "nombreEmpresa": "Tech Solutions S.A.",
+  "nombreContacto": "María González",
+  "telefono": "+1234567890",
+  "email": "contacto@techsolutions.com",
+  "direccion": "Av. Principal 123, Ciudad"
+}
+
+###
+
+### Proveedores - Actualizar
+PUT {{SistemaDeInventarioWebAPI_HostAddress}}/api/proveedores/1
+Content-Type: application/json
+
+{
+  "proveedorId": 1,
+  "nombreEmpresa": "Tech Solutions S.A. Actualizada",
+  "nombreContacto": "María González",
+  "telefono": "+1234567890",
+  "email": "contacto@techsolutions.com",
+  "direccion": "Av. Principal 123, Ciudad"
+}
+
+###
+
+### Proveedores - Eliminar
+DELETE {{SistemaDeInventarioWebAPI_HostAddress}}/api/proveedores/1
+
+###
+
+# ============================================
+# ?? ALMACENES
+# ============================================
+
+### Almacenes - Obtener todos
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/almacenes
+Accept: application/json
+
+###
+
+### Almacenes - Obtener activos
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/almacenes/activos
+Accept: application/json
+
+###
+
+### Almacenes - Obtener por ID
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/almacenes/1
+Accept: application/json
+
+###
+
+### Almacenes - Crear nuevo
+POST {{SistemaDeInventarioWebAPI_HostAddress}}/api/almacenes
+Content-Type: application/json
+
+{
+  "nombre": "Almacén Norte",
+  "ubicacion": "Zona Industrial Norte - Nave 5"
+}
+
+###
+
+### Almacenes - Actualizar
+PUT {{SistemaDeInventarioWebAPI_HostAddress}}/api/almacenes/1
+Content-Type: application/json
+
+{
+  "almacenId": 1,
+  "nombre": "Almacén Norte Actualizado",
+  "ubicacion": "Zona Industrial Norte - Nave 5",
+  "activo": true
+}
+
+###
+
+### Almacenes - Eliminar (soft delete)
+DELETE {{SistemaDeInventarioWebAPI_HostAddress}}/api/almacenes/1
+
+###
+
+# ============================================
+# ?? PRODUCTOS
+# ============================================
+
+### Productos - Obtener todos
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/productos
+Accept: application/json
+
+###
+
+### Productos - Obtener por ID
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/productos/1
+Accept: application/json
+
+###
+
+### Productos - Obtener por SKU
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/productos/sku/LAPTOP-001
+Accept: application/json
+
+###
+
+### Productos - Obtener por categoría
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/productos/categoria/1
+Accept: application/json
+
+###
+
+### Productos - Obtener por proveedor
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/productos/proveedor/1
+Accept: application/json
+
+###
+
+### Productos - Crear nuevo
+POST {{SistemaDeInventarioWebAPI_HostAddress}}/api/productos
+Content-Type: application/json
+
+{
+  "codigoSku": "LAPTOP-001",
+  "nombre": "Laptop HP Pavilion",
+  "descripcion": "Laptop HP Pavilion 15.6 pulgadas, Intel i5, 8GB RAM",
+  "categoriaId": 1,
+  "proveedorId": 1,
+  "precioCompra": 450.00,
+  "precioVenta": 650.00,
+  "unidadMedida": "Unidad",
+  "stockMinimo": 5
+}
+
+###
+
+### Productos - Actualizar
+PUT {{SistemaDeInventarioWebAPI_HostAddress}}/api/productos/1
+Content-Type: application/json
+
+{
+  "productoId": 1,
+  "nombre": "Laptop HP Pavilion Actualizada",
+  "descripcion": "Laptop HP Pavilion 15.6 pulgadas, Intel i5, 16GB RAM",
+  "categoriaId": 1,
+  "proveedorId": 1,
+  "precioCompra": 500.00,
+  "precioVenta": 700.00,
+  "unidadMedida": "Unidad",
+  "stockMinimo": 10,
+  "activo": true
+}
+
+###
+
+### Productos - Eliminar (soft delete)
+DELETE {{SistemaDeInventarioWebAPI_HostAddress}}/api/productos/1
+
+###
+
+# ============================================
+# ?? EXISTENCIAS
+# ============================================
+
+### Existencias - Obtener todas
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/existencias
+Accept: application/json
+
+###
+
+### Existencias - Obtener por producto
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/existencias/producto/1
+Accept: application/json
+
+###
+
+### Existencias - Obtener por almacén
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/existencias/almacen/1
+Accept: application/json
+
+###
+
+### Existencias - Obtener específica (producto + almacén)
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/existencias/producto/1/almacen/1
+Accept: application/json
+
+###
+
+### Existencias - Productos con stock bajo ??
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/existencias/stock-bajo
+Accept: application/json
+
+###
+
+# ============================================
+# ?? MOVIMIENTOS
+# ============================================
+
+### Movimientos - Obtener todos
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/movimientos
+Accept: application/json
+
+###
+
+### Movimientos - Obtener por ID
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/movimientos/1
+Accept: application/json
+
+###
+
+### Movimientos - Obtener por tipo
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/movimientos/tipo/ENTRADA
+Accept: application/json
+
+###
+
+### Movimientos - Obtener por usuario
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/movimientos/usuario/1
+Accept: application/json
+
+###
+
+### Movimientos - Obtener por almacén
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/movimientos/almacen/1
+Accept: application/json
+
+###
+
+### Movimientos - Obtener por rango de fechas
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/movimientos/fecha?fechaInicio=2024-01-01&fechaFin=2024-12-31
+Accept: application/json
+
+###
+
+### Movimientos - Registrar ENTRADA ?
+POST {{SistemaDeInventarioWebAPI_HostAddress}}/api/movimientos/entrada
+Content-Type: application/json
+
+{
+  "motivo": "Compra de mercancía",
+  "referenciaDocumento": "FACT-2024-001",
+  "usuarioId": 1,
+  "almacenOrigenId": 1,
+  "detalles": [
+    {
+      "productoId": 1,
+      "cantidad": 50,
+      "costoUnitarioHistorico": 450.00
+    },
+    {
+      "productoId": 2,
+      "cantidad": 30,
+      "costoUnitarioHistorico": 250.00
+    }
+  ]
+}
+
+###
+
+### Movimientos - Registrar SALIDA ?
+POST {{SistemaDeInventarioWebAPI_HostAddress}}/api/movimientos/salida
+Content-Type: application/json
+
+{
+  "motivo": "Venta de productos",
+  "referenciaDocumento": "VENTA-2024-001",
+  "usuarioId": 1,
+  "almacenOrigenId": 1,
+  "detalles": [
+    {
+      "productoId": 1,
+      "cantidad": 5,
+      "costoUnitarioHistorico": 450.00
+    }
+  ]
+}
+
+###
+
+# ============================================
+# ?? PRUEBAS (SOLO DESARROLLO)
+# ============================================
+
+### Test - Verificar conexión a PostgreSQL
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/test/connection
+Accept: application/json
+
+###
+
+### Test - Verificar tablas
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/test/tables
+Accept: application/json
+
+###
+
+### Test - Datos de muestra
+GET {{SistemaDeInventarioWebAPI_HostAddress}}/api/test/sample-data
 Accept: application/json
 
 ###

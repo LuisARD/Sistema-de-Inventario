@@ -1,0 +1,54 @@
+
+SistemaDeInventarioWebAPI/obj/
+SistemaDeInventarioWebAPI/bin/
+SistemaDeInventario.Application/obj/
+SistemaDeInventario.Application/bin/
+SistemaDeInventario.Domain/obj/
+SistemaDeInventario.Domain/bin/
+SistemaDeInventario.Infrastructure/obj/
+SistemaDeInventario.Infrastructure/bin/
+SistemaDeInventario/.vs/*
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+!.history/README.md
+*.code-workspace
+.vs/*
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.pidb
+*.svclog
+*.pdb
+*.cache
+*.log
+
+# Build results
+bin/
+obj/
+Debug/
+Release/
+x64/
+x86/
+build/
+[Bb]uild/
+[Dd]ebug*/
+[Rr]elease*/
+x64*/
+x86*/
+
+# NuGet Packages
+*.nupkg
+
+# ?? PROTEGER SECRETOS
+**/appsettings.Development.json
+**/appsettings.Production.json
+**/appsettings.Staging.json
+
+SistemaDeInventario/SistemaDeInventario.Application/obj/Debug/net10.0/SistemaDeInventario.Application.AssemblyInfo.cs

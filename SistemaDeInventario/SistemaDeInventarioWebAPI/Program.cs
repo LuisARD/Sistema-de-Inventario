@@ -1,9 +1,4 @@
-using Microsoft.AspNetCore.Http.HttpResults;
-using System.Text.Json.Serialization;
-using SistemaDeInventario.Infrastructure;
-using SistemaDeInventario.Infrastructure.Persistence;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Mvc;
+
 
 namespace SistemaDeInventarioWebAPI
 {
@@ -13,7 +8,6 @@ namespace SistemaDeInventarioWebAPI
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Configurar JSON options SIN Source Generator
             builder.Services.ConfigureHttpJsonOptions(options =>
             {
                 options.SerializerOptions.PropertyNamingPolicy = null; // Mantener PascalCase
@@ -26,14 +20,35 @@ namespace SistemaDeInventarioWebAPI
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
 
+            // Agregar Infrastructure (DbContext + Repositorios + Servicios)
+            builder.Services.AddInfrastructure(builder.Configuration);
+
+            // Agregar controladores con configuraciÃ³n JSON
+            builder.Services.AddControllers()
+                .AddJsonOptions(options =>
+                {
+                    options.JsonSerializerOptions.PropertyNamingPolicy = null;
+                    options.JsonSerializerOptions.WriteIndented = true;
+                    options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+                });
+
+            // Configurar Swagger
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
+
+
+
             var app = builder.Build();
 
-            if (app.Environment.IsDevelopment())
+            // Habilitar Swagger
+            app.UseSwagger();
+            app.UseSwaggerUI(options =>
             {
-                app.MapOpenApi();
-            }
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "Sistema Inventario API v1");
+                options.RoutePrefix = string.Empty;
+            });
 
-            // ========== ENDPOINT DE PRUEBA DE CONEXIÓN A BD ==========
+            // ========== ENDPOINT DE PRUEBA DE CONEXIï¿½N A BD ==========
             app.MapGet("/api/test-connection", async (AppDbContext dbContext) =>
             {
                 var diagnosticInfo = new List<string>();
@@ -60,18 +75,18 @@ namespace SistemaDeInventarioWebAPI
 
                     if (!canConnect)
                     {
-                        diagnosticInfo.Add("? No se pudo establecer conexión con la base de datos");
+                        diagnosticInfo.Add("? No se pudo establecer conexiï¿½n con la base de datos");
                         var errorResponse = new
                         {
                             success = false,
-                            error = "No se pudo establecer conexión con la base de datos",
+                            error = "No se pudo establecer conexiï¿½n con la base de datos",
                             diagnosticLog = diagnosticInfo
                         };
                         return Results.Json(errorResponse, statusCode: 500);
                     }
 
-                    diagnosticInfo.Add("? Conexión exitosa!");
-                    diagnosticInfo.Add("?? Paso 3: Obteniendo estadísticas de tablas...");
+                    diagnosticInfo.Add("? Conexiï¿½n exitosa!");
+                    diagnosticInfo.Add("?? Paso 3: Obteniendo estadï¿½sticas de tablas...");
                     
                     // Intentar obtener conteos de cada tabla individualmente
                     var stats = new Dictionary<string, object>();
@@ -175,7 +190,7 @@ namespace SistemaDeInventarioWebAPI
                     var successResponse = new
                     {
                         success = true,
-                        message = "? Conexión exitosa a PostgreSQL",
+                        message = "? Conexiï¿½n exitosa a PostgreSQL",
                         database = "sistemainventariodb",
                         server = "dpg-d4mta6u3jp1c73a76lpg-a.oregon-postgres.render.com",
                         statistics = stats,
@@ -186,13 +201,13 @@ namespace SistemaDeInventarioWebAPI
                 }
                 catch (Exception ex)
                 {
-                    diagnosticInfo.Add($"? Error crítico: {ex.Message}");
+                    diagnosticInfo.Add($"? Error crï¿½tico: {ex.Message}");
                     if (ex.InnerException != null)
                     {
                         diagnosticInfo.Add($"   Inner Exception: {ex.InnerException.Message}");
                     }
 
-                    // Imprimir diagnóstico en consola
+                    // Imprimir diagnï¿½stico en consola
                     foreach (var info in diagnosticInfo)
                     {
                         Console.WriteLine(info);
@@ -211,7 +226,7 @@ namespace SistemaDeInventarioWebAPI
             })
             .WithName("TestDatabaseConnection")
             .WithTags("Database")
-            .WithDescription("Prueba detallada de la conexión a PostgreSQL con diagnóstico completo");
+            .WithDescription("Prueba detallada de la conexiï¿½n a PostgreSQL con diagnï¿½stico completo");
 
             // ========== ENDPOINTS DE EJEMPLO (TODO) ==========
             Todo[] sampleTodos =
@@ -234,9 +249,17 @@ namespace SistemaDeInventarioWebAPI
                     : TypedResults.NotFound())
                 .WithName("GetTodoById");
 
+            app.UseHttpsRedirection();
+            
+            // CORS (opcional)
+            app.UseCors(policy => policy
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
+
+            app.MapControllers();
+
             app.Run();
         }
     }
-
-    public record Todo(int Id, string? Title, DateOnly? DueBy = null, bool IsComplete = false);
 }

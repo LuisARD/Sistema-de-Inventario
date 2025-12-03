@@ -1,7 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SistemaDeInventario.Domain.Interfaces;
 using SistemaDeInventario.Infrastructure.Persistence;
+using SistemaDeInventario.Infrastructure.Repositories;
+using SistemaDeInventario.Application.Services;
+using SistemaDeInventario.Application.Services.Interfaces;
 
 namespace SistemaDeInventario.Infrastructure;
 
@@ -20,6 +24,28 @@ public static class DependencyInjection
                         errorCodesToAdd: null)
             )
         );
+
+        // Registrar Repositorios
+        services.AddScoped<IRolRepository, RolRepository>();
+        services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+        services.AddScoped<ICategoriaRepository, CategoriaRepository>();
+        services.AddScoped<IProveedorRepository, ProveedorRepository>();
+        services.AddScoped<IAlmacenRepository, AlmacenRepository>();
+        services.AddScoped<IProductoRepository, ProductoRepository>();
+        services.AddScoped<IExistenciaRepository, ExistenciaRepository>();
+        services.AddScoped<IMovimientoRepository, MovimientoRepository>();
+        services.AddScoped<IDetalleMovimientoRepository, DetalleMovimientoRepository>();
+
+        // Registrar Servicios de Aplicación
+        services.AddScoped<IAuthService, AuthService>();
+        services.AddScoped<IRolService, RolService>();
+        services.AddScoped<IUsuarioService, UsuarioService>();
+        services.AddScoped<ICategoriaService, CategoriaService>();
+        services.AddScoped<IProveedorService, ProveedorService>();
+        services.AddScoped<IAlmacenService, AlmacenService>();
+        services.AddScoped<IProductoService, ProductoService>();
+        services.AddScoped<IExistenciaService, ExistenciaService>();
+        services.AddScoped<IMovimientoService, MovimientoService>();
 
         return services;
     }
