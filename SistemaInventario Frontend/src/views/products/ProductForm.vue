@@ -199,19 +199,19 @@ export default {
 }
 
 .product-management {
-  background-color: #f5f5f5;
+  background-color: hsl(0, 0%, 100%);
   min-height: 100vh;
   padding: 20px;
 }
 
 .header {
-  background-color: white;
+  
   padding: 20px;
   margin-bottom: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+ 
   border-radius: 8px;
 }
 
@@ -276,12 +276,12 @@ export default {
 }
 
 .container {
-  background-color: white;
+ 
   border-radius: 12px;
   padding: 40px;
   max-width: 800px;
   margin: 0 auto;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  
 }
 
 .form-grid {
