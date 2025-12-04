@@ -5,14 +5,13 @@ import MovementsForm from '../views/movements/MovementsForm.vue'
 import CategoriesList from '../views/categories/CategoriesList.vue'
 import CategoriesForm from '../views/categories/CategoriesForm.vue'
 import SuppliersList from '../views/suppliers/SuppliersList.vue'
+import SupplierForm from '../views/suppliers/SupplierForm.vue'
 import ReportsView from '../views/reports/ReportsView.vue'
 import LoginView from '../views/LoginView.vue'
-import ProductForm from '../views/products/ProductForm.vue'  
+import ProductForm from '../views/products/ProductForm.vue'
 import Home from '../views/Home.vue'
 import MainLayout from '../layouts/MainLayout.vue'
-import SupplierForm from '../views/suppliers/SupplierForm.vue'
-
-
+import UserForm from '../views/users/UserForm.vue'
 
 const routes = [
   {
@@ -21,37 +20,33 @@ const routes = [
     name: "Login",
   },
 
-   // CATEGORÍAS
-  { 
-    path: '/categories/create',
-    name: 'CategoryCreate',
-    component: CategoriesForm
-  },
-
   {
     path: "/",
     component: MainLayout,
-    // meta: { requiresAuth: true },
     children: [
       { path: "", component: Home, name: "Home" },
 
-
+      // PRODUCTOS
       { path: "products", component: ProductsList, name: "Products" },
       { path: "products/create", component: ProductForm, name: "ProductCreate" },
 
-
+      // MOVIMIENTOS
       { path: "movements", component: MovementsList, name: "Movements" },
       { path: "movements/create", component: MovementsForm, name: "MovementCreate" },
 
-     
+      // CATEGORÍAS
       { path: "categories", component: CategoriesList, name: "Categories" },
+      { path: "categories/create", component: CategoriesForm, name: "CategoryCreate" },
 
-     
+      // PROVEEDORES
       { path: "suppliers", component: SuppliersList, name: "Suppliers" },
+      { path: "suppliers/create", component: SupplierForm, name: "SupplierCreate" },
 
-      
+      // USUARIOS
+      { path: "users/create", component: UserForm, name: "UserCreate" },
+
+      // REPORTES
       { path: "reports", component: ReportsView, name: "Reports" },
-
     ],
   },
 ];
