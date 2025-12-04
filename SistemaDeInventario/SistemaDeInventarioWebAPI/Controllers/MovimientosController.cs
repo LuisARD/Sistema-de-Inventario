@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SistemaDeInventario.Application.DTOs.Request;
 using SistemaDeInventario.Application.Services.Interfaces;
@@ -7,6 +8,7 @@ namespace SistemaDeInventarioWebAPI.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 [Produces("application/json")]
+[Authorize]
 public class MovimientosController : ControllerBase
 {
     private readonly IMovimientoService _movimientoService;
@@ -16,6 +18,9 @@ public class MovimientosController : ControllerBase
         _movimientoService = movimientoService;
     }
 
+    /// <summary>
+    /// Obtener todos los movimientos (Auditoría)
+    /// </summary>
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
@@ -30,6 +35,9 @@ public class MovimientosController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Obtener movimiento por ID (Auditoría)
+    /// </summary>
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
@@ -47,6 +55,9 @@ public class MovimientosController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Obtener movimientos por tipo (Auditoría)
+    /// </summary>
     [HttpGet("tipo/{tipo}")]
     public async Task<IActionResult> GetByTipo(string tipo)
     {
@@ -61,6 +72,9 @@ public class MovimientosController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Obtener movimientos por usuario (Auditoría)
+    /// </summary>
     [HttpGet("usuario/{usuarioId}")]
     public async Task<IActionResult> GetByUsuario(int usuarioId)
     {
@@ -75,6 +89,9 @@ public class MovimientosController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Obtener movimientos por almacén (Auditoría)
+    /// </summary>
     [HttpGet("almacen/{almacenId}")]
     public async Task<IActionResult> GetByAlmacen(int almacenId)
     {
@@ -89,6 +106,9 @@ public class MovimientosController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Obtener movimientos por rango de fechas (Auditoría)
+    /// </summary>
     [HttpGet("fecha")]
     public async Task<IActionResult> GetByFecha([FromQuery] DateTime fechaInicio, [FromQuery] DateTime fechaFin)
     {
@@ -103,6 +123,9 @@ public class MovimientosController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Registrar entrada de productos (Operarios de almacén)
+    /// </summary>
     [HttpPost("entrada")]
     public async Task<IActionResult> RegistrarEntrada([FromBody] CreateMovimientoDto dto)
     {
@@ -121,6 +144,9 @@ public class MovimientosController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Registrar salida de productos (Operarios de almacén)
+    /// </summary>
     [HttpPost("salida")]
     public async Task<IActionResult> RegistrarSalida([FromBody] CreateMovimientoDto dto)
     {

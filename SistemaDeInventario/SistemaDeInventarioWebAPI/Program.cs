@@ -1,6 +1,9 @@
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.IdentityModel.Tokens;
 using SistemaDeInventario.Infrastructure;
-using SistemaDeInventario.Infrastructure.Persistence;
+using System.Security.Claims;
+using System.Text;
 
 namespace SistemaDeInventarioWebAPI
 {
@@ -10,17 +13,45 @@ namespace SistemaDeInventarioWebAPI
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Configurar serialización JSON para endpoints mínimos
             builder.Services.ConfigureHttpJsonOptions(options =>
             {
                 options.SerializerOptions.PropertyNamingPolicy = null;
                 options.SerializerOptions.WriteIndented = true;
             });
 
-            // Agregar Infrastructure (DbContext + Repositorios + Servicios)
             builder.Services.AddInfrastructure(builder.Configuration);
 
-            // Agregar controladores con configuración JSON
+            var jwtSettings = builder.Configuration.GetSection("JwtSettings");
+            var secretKey = jwtSettings["SecretKey"];
+
+            builder.Services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = jwtSettings["Issuer"],
+                    ValidAudience = jwtSettings["Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey ?? string.Empty)),
+                    ClockSkew = TimeSpan.Zero,
+                    RoleClaimType = ClaimTypes.Role
+                };
+            });
+
+            builder.Services.AddAuthorization(options =>
+            {
+                options.AddPolicy("RequireAdmin", policy => policy.RequireRole("Admin"));
+                options.AddPolicy("RequireUsuario", policy => policy.RequireRole("Usuario"));
+                options.AddPolicy("RequireAdminOrUsuario", policy => policy.RequireRole("Admin", "Usuario"));
+            });
+
             builder.Services.AddControllers()
                 .AddJsonOptions(options =>
                 {
@@ -29,27 +60,42 @@ namespace SistemaDeInventarioWebAPI
                     options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
                 });
 
-            // Configurar Swagger
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
-            builder.Services.AddOpenApi();
+            // NSwag: documento OpenAPI y seguridad JWT
+            builder.Services.AddOpenApiDocument(config =>
+            {
+                config.Title = "Sistema de Inventario API";
+                config.Version = "v1";
+
+                config.AddSecurity("JWT", new NSwag.OpenApiSecurityScheme
+                {
+                    Type = NSwag.OpenApiSecuritySchemeType.ApiKey,
+                    Name = "Authorization",
+                    In = NSwag.OpenApiSecurityApiKeyLocation.Header,
+                    Description = "Introduce: Bearer {token}"
+                });
+
+                config.OperationProcessors.Add(new NSwag.Generation.Processors.Security.AspNetCoreOperationSecurityScopeProcessor("JWT"));
+            });
 
             var app = builder.Build();
 
-            // Habilitar Swagger
-            app.UseSwagger();
-            app.UseSwaggerUI(options =>
+            // NSwag middlewares
+            app.UseOpenApi(); // /swagger/v1/swagger.json
+            app.UseSwaggerUi(settings =>
             {
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "Sistema Inventario API v1");
-                options.RoutePrefix = string.Empty;
+                settings.DocumentPath = "/swagger/v1/swagger.json";
+                settings.Path = ""; // UI en raíz
             });
 
             app.UseHttpsRedirection();
-            
+
             app.UseCors(policy => policy
                 .AllowAnyOrigin()
                 .AllowAnyMethod()
                 .AllowAnyHeader());
+
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.MapControllers();
 

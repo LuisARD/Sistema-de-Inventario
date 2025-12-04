@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SistemaDeInventario.Application.DTOs.Request;
 using SistemaDeInventario.Application.Services.Interfaces;
@@ -7,6 +8,7 @@ namespace SistemaDeInventarioWebAPI.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 [Produces("application/json")]
+[Authorize]
 public class UsuariosController : ControllerBase
 {
     private readonly IUsuarioService _usuarioService;
@@ -16,7 +18,9 @@ public class UsuariosController : ControllerBase
         _usuarioService = usuarioService;
     }
 
-    /// Obtener todos los usuarios
+    /// <summary>
+    /// Obtener todos los usuarios (Solo Admin)
+    /// </summary>
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
@@ -31,7 +35,9 @@ public class UsuariosController : ControllerBase
         }
     }
 
-    /// Obtener solo usuarios activos
+    /// <summary>
+    /// Obtener solo usuarios activos (Admin o RRHH)
+    /// </summary>
     [HttpGet("activos")]
     public async Task<IActionResult> GetActivos()
     {
@@ -47,7 +53,7 @@ public class UsuariosController : ControllerBase
     }
 
     /// <summary>
-    /// Obtener usuario por ID
+    /// Obtener usuario por ID (Admin o el propio usuario)
     /// </summary>
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
@@ -67,7 +73,7 @@ public class UsuariosController : ControllerBase
     }
 
     /// <summary>
-    /// Obtener usuario por email
+    /// Obtener usuario por email (Solo Admin)
     /// </summary>
     [HttpGet("email/{email}")]
     public async Task<IActionResult> GetByEmail(string email)
@@ -86,7 +92,9 @@ public class UsuariosController : ControllerBase
         }
     }
 
-    /// Crear nuevo usuario
+    /// <summary>
+    /// Crear nuevo usuario (Solo Admin)
+    /// </summary>
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateUsuarioDto dto)
     {
@@ -105,7 +113,9 @@ public class UsuariosController : ControllerBase
         }
     }
 
-    /// Actualizar usuario existente
+    /// <summary>
+    /// Actualizar usuario existente (Admin o el propio usuario)
+    /// </summary>
     [HttpPut("{id}")]
     public async Task<IActionResult> Update(int id, [FromBody] UpdateUsuarioDto dto)
     {
@@ -128,7 +138,7 @@ public class UsuariosController : ControllerBase
     }
 
     /// <summary>
-    /// Eliminar usuario (soft delete)
+    /// Eliminar usuario (Solo Admin - soft delete)
     /// </summary>
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)

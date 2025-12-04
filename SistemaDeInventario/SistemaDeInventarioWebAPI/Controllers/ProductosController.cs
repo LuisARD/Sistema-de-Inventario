@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SistemaDeInventario.Application.DTOs.Request;
 using SistemaDeInventario.Application.Services.Interfaces;
@@ -7,6 +8,7 @@ namespace SistemaDeInventarioWebAPI.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 [Produces("application/json")]
+[Authorize]
 public class ProductosController : ControllerBase
 {
     private readonly IProductoService _productoService;
@@ -16,6 +18,9 @@ public class ProductosController : ControllerBase
         _productoService = productoService;
     }
 
+    /// <summary>
+    /// Obtener todos los productos
+    /// </summary>
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
@@ -30,6 +35,9 @@ public class ProductosController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Obtener producto por ID
+    /// </summary>
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
@@ -47,6 +55,9 @@ public class ProductosController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Obtener producto por SKU
+    /// </summary>
     [HttpGet("sku/{sku}")]
     public async Task<IActionResult> GetBySku(string sku)
     {
@@ -64,6 +75,9 @@ public class ProductosController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Obtener productos por categoría
+    /// </summary>
     [HttpGet("categoria/{categoriaId}")]
     public async Task<IActionResult> GetByCategoria(int categoriaId)
     {
@@ -78,6 +92,9 @@ public class ProductosController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Obtener productos por proveedor (Uso interno)
+    /// </summary>
     [HttpGet("proveedor/{proveedorId}")]
     public async Task<IActionResult> GetByProveedor(int proveedorId)
     {
@@ -92,6 +109,9 @@ public class ProductosController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Crear nuevo producto (Almacén/Compras)
+    /// </summary>
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateProductoDto dto)
     {
@@ -110,6 +130,9 @@ public class ProductosController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Actualizar producto (Almacén/Compras)
+    /// </summary>
     [HttpPut("{id}")]
     public async Task<IActionResult> Update(int id, [FromBody] UpdateProductoDto dto)
     {
@@ -131,6 +154,9 @@ public class ProductosController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Eliminar producto (Almacén/Compras)
+    /// </summary>
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {

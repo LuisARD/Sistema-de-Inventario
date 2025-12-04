@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SistemaDeInventario.Application.DTOs.Request;
 using SistemaDeInventario.Application.Services.Interfaces;
@@ -7,6 +8,7 @@ namespace SistemaDeInventarioWebAPI.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 [Produces("application/json")]
+[Authorize]
 public class CategoriasController : ControllerBase
 {
     private readonly ICategoriaService _categoriaService;
@@ -16,6 +18,9 @@ public class CategoriasController : ControllerBase
         _categoriaService = categoriaService;
     }
 
+    /// <summary>
+    /// Obtener todas las categorías
+    /// </summary>
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
@@ -30,6 +35,9 @@ public class CategoriasController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Obtener categoría por ID
+    /// </summary>
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
@@ -47,6 +55,9 @@ public class CategoriasController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Crear nueva categoría (Gestores de inventario)
+    /// </summary>
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateCategoriaDto dto)
     {
@@ -65,6 +76,9 @@ public class CategoriasController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Actualizar categoría (Gestores de inventario)
+    /// </summary>
     [HttpPut("{id}")]
     public async Task<IActionResult> Update(int id, [FromBody] UpdateCategoriaDto dto)
     {
@@ -86,6 +100,9 @@ public class CategoriasController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Eliminar categoría (Gestores de inventario)
+    /// </summary>
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
