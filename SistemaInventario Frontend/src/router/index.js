@@ -3,12 +3,14 @@ import ProductsList from '../views/products/ProductsList.vue'
 import MovementsList from '../views/movements/MovementsList.vue'
 import MovementsForm from '../views/movements/MovementsForm.vue'
 import CategoriesList from '../views/categories/CategoriesList.vue'
+import CategoriesForm from '../views/categories/CategoriesForm.vue'
 import SuppliersList from '../views/suppliers/SuppliersList.vue'
 import ReportsView from '../views/reports/ReportsView.vue'
 import LoginView from '../views/LoginView.vue'
 import ProductForm from '../views/products/ProductForm.vue'  
 import Home from '../views/Home.vue'
 import MainLayout from '../layouts/MainLayout.vue'
+import SupplierForm from '../views/suppliers/SupplierForm.vue'
 
 
 
@@ -17,6 +19,13 @@ const routes = [
     path: "/login",
     component: LoginView,
     name: "Login",
+  },
+
+   // CATEGORÍAS
+  { 
+    path: '/categories/create',
+    name: 'CategoryCreate',
+    component: CategoriesForm
   },
 
   {
