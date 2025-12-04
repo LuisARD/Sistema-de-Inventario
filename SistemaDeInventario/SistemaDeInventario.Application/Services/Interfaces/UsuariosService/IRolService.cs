@@ -1,7 +1,7 @@
 using SistemaDeInventario.Application.DTOs.Request;
-using SistemaDeInventario.Application.DTOs.Response;
+using SistemaDeInventario.Application.DTOs.Response.UsuariosDto;
 
-namespace SistemaDeInventario.Application.Services.Interfaces;
+namespace SistemaDeInventario.Application.Services.Interfaces.UsuariosService;
 
 public interface IRolService
 {

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using SistemaDeInventario.Application.DTOs.Request;
+using SistemaDeInventario.Application.DTOs.Request.CreateDto;
+using SistemaDeInventario.Application.DTOs.Request.UpdateDto;
 using SistemaDeInventario.Application.Services.Interfaces;
 
 namespace SistemaDeInventarioWebAPI.Controllers;

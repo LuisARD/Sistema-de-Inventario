@@ -1,4 +1,4 @@
-namespace SistemaDeInventario.Application.DTOs.Request;
+namespace SistemaDeInventario.Application.DTOs.Request.CreateDto;
 
 public class CreateDetalleMovimientoDto
 {
