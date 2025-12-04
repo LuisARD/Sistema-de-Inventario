@@ -1,4 +1,18 @@
-<script setup></script>
+<script setup>
+import BtnAsistencia from '../components/btnAsistencia.vue';
+
+import { useAuthStore } from "../store/auth";
+const auth = useAuthStore();
+console.log(auth.user);
+
+
+
+
+const handleLogout = () => {
+  auth.logout();
+};
+
+</script>
 
 
 <template>
@@ -9,7 +23,7 @@
         <router-link to="/" class="btn btn-ghost text-xl md:text-2xl">Inventario</router-link>
       </div>
       <div class="flex  items-center">
-        <h3 class="mr-4 ">Hola, user  </h3>
+        <h3 class="mr-4 ">Hola, {{ auth.user?.NombreCompleto  }} </h3>
         <img
           src="/iconUser.svg"
           alt="Avatar"
@@ -27,19 +41,6 @@
  <footer
     class="footer sm:footer-horizontal items-center p-4 flex justify-end"
   >
-    <div class="tooltip mt-10  ">
-    <div
-      class="tooltip-content flex items-center justify-center space-x-2 flex-row-reverse mt-10"
-    >
-      <div class="animate-bounce text-base-100 font-black">
-        Fuera de servicio!!!
-      </div>
-    </div>
-
-    <figcaption class="font-bold flex items-center justify-center space-x-2 text-xl">
-      ¿Necesita asistencia?
-      <img class="w-14 p-2" src="/Group.png" />
-    </figcaption>
-  </div>
+    <BtnAsistencia />
   </footer>
 </template>
