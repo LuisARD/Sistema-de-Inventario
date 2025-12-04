@@ -8,7 +8,7 @@ namespace SistemaDeInventarioWebAPI.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 [Produces("application/json")]
-[Authorize]
+[Authorize(Policy = "AlmacenesAccess")]
 public class AlmacenesController : ControllerBase
 {
     private readonly IAlmacenService _almacenService;

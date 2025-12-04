@@ -18,10 +18,5 @@
     <ProjectReference Include="..\SistemaDeInventario.Application\SistemaDeInventario.Application.csproj" />
     <ProjectReference Include="..\SistemaDeInventario.Infrastructure\SistemaDeInventario.Infrastructure.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Authorization\Requirements\" />
-    <Folder Include="Configuration\" />
-  </ItemGroup>
   
 </Project>

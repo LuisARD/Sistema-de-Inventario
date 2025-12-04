@@ -48,8 +48,18 @@ namespace SistemaDeInventarioWebAPI
             builder.Services.AddAuthorization(options =>
             {
                 options.AddPolicy("RequireAdmin", policy => policy.RequireRole("Admin"));
-                options.AddPolicy("RequireUsuario", policy => policy.RequireRole("Usuario"));
-                options.AddPolicy("RequireAdminOrUsuario", policy => policy.RequireRole("Admin", "Usuario"));
+                options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
+                options.AddPolicy("AdminOrSupervisor", policy => policy.RequireRole("Admin", "Supervisor"));
+                options.AddPolicy("UsuariosRead", policy => policy.RequireRole("Admin", "Supervisor"));
+                options.AddPolicy("CategoriasRead", policy => policy.RequireRole("Admin", "Usuario", "Supervisor"));
+                options.AddPolicy("CategoriasWrite", policy => policy.RequireRole("Admin", "Supervisor"));
+                options.AddPolicy("MovimientosRead", policy => policy.RequireRole("Admin", "Usuario", "Supervisor"));
+                options.AddPolicy("MovimientosWrite", policy => policy.RequireRole("Admin", "Supervisor"));
+                options.AddPolicy("ProductosRead", policy => policy.RequireRole("Admin", "Usuario", "Supervisor"));
+                options.AddPolicy("ProductosWrite", policy => policy.RequireRole("Admin", "Usuario", "Supervisor"));
+                options.AddPolicy("AlmacenesAccess", policy => policy.RequireRole("Admin", "Supervisor"));
+                options.AddPolicy("ProveedoresAccess", policy => policy.RequireRole("Admin", "Supervisor"));
+                options.AddPolicy("ExistenciasAccess", policy => policy.RequireRole("Admin", "Supervisor"));
             });
 
             builder.Services.AddControllers()
@@ -71,7 +81,7 @@ namespace SistemaDeInventarioWebAPI
                     Type = NSwag.OpenApiSecuritySchemeType.ApiKey,
                     Name = "Authorization",
                     In = NSwag.OpenApiSecurityApiKeyLocation.Header,
-                    Description = "Introduce: Bearer {token}"
+                    Description = "Introduce: Bearer tu_token"
                 });
 
                 config.OperationProcessors.Add(new NSwag.Generation.Processors.Security.AspNetCoreOperationSecurityScopeProcessor("JWT"));

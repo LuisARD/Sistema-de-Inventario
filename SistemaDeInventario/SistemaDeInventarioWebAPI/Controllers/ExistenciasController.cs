@@ -7,7 +7,7 @@ namespace SistemaDeInventarioWebAPI.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 [Produces("application/json")]
-[Authorize]
+[Authorize(Policy = "ExistenciasAccess")]
 public class ExistenciasController : ControllerBase
 {
     private readonly IExistenciaService _existenciaService;

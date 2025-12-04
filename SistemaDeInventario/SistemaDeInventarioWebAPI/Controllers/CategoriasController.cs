@@ -19,9 +19,10 @@ public class CategoriasController : ControllerBase
     }
 
     /// <summary>
-    /// Obtener todas las categorías
+    /// Obtener todas las categorías (Admin, Supervisor y Usuario)
     /// </summary>
     [HttpGet]
+    [Authorize(Policy = "CategoriasRead")]
     public async Task<IActionResult> GetAll()
     {
         try
@@ -36,9 +37,10 @@ public class CategoriasController : ControllerBase
     }
 
     /// <summary>
-    /// Obtener categoría por ID
+    /// Obtener categoría por ID (Admin, Supervisor y Usuario)
     /// </summary>
     [HttpGet("{id}")]
+    [Authorize(Policy = "CategoriasRead")]
     public async Task<IActionResult> GetById(int id)
     {
         try
@@ -56,9 +58,10 @@ public class CategoriasController : ControllerBase
     }
 
     /// <summary>
-    /// Crear nueva categoría (Gestores de inventario)
+    /// Crear nueva categoría (Admin y Supervisor)
     /// </summary>
     [HttpPost]
+    [Authorize(Policy = "CategoriasWrite")]
     public async Task<IActionResult> Create([FromBody] CreateCategoriaDto dto)
     {
         try
@@ -77,9 +80,10 @@ public class CategoriasController : ControllerBase
     }
 
     /// <summary>
-    /// Actualizar categoría (Gestores de inventario)
+    /// Actualizar categoría (Admin y Supervisor)
     /// </summary>
     [HttpPut("{id}")]
+    [Authorize(Policy = "CategoriasWrite")]
     public async Task<IActionResult> Update(int id, [FromBody] UpdateCategoriaDto dto)
     {
         try
@@ -101,9 +105,10 @@ public class CategoriasController : ControllerBase
     }
 
     /// <summary>
-    /// Eliminar categoría (Gestores de inventario)
+    /// Eliminar categoría (Admin y Supervisor)
     /// </summary>
     [HttpDelete("{id}")]
+    [Authorize(Policy = "CategoriasWrite")]
     public async Task<IActionResult> Delete(int id)
     {
         try

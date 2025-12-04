@@ -19,9 +19,10 @@ public class UsuariosController : ControllerBase
     }
 
     /// <summary>
-    /// Obtener todos los usuarios (Solo Admin)
+    /// Obtener todos los usuarios (Admin y Supervisor)
     /// </summary>
     [HttpGet]
+    [Authorize(Policy = "UsuariosRead")]
     public async Task<IActionResult> GetAll()
     {
         try
@@ -36,9 +37,10 @@ public class UsuariosController : ControllerBase
     }
 
     /// <summary>
-    /// Obtener solo usuarios activos (Admin o RRHH)
+    /// Obtener solo usuarios activos (Admin y Supervisor)
     /// </summary>
     [HttpGet("activos")]
+    [Authorize(Policy = "UsuariosRead")]
     public async Task<IActionResult> GetActivos()
     {
         try
@@ -53,9 +55,10 @@ public class UsuariosController : ControllerBase
     }
 
     /// <summary>
-    /// Obtener usuario por ID (Admin o el propio usuario)
+    /// Obtener usuario por ID (Admin y Supervisor)
     /// </summary>
     [HttpGet("{id}")]
+    [Authorize(Policy = "UsuariosRead")]
     public async Task<IActionResult> GetById(int id)
     {
         try
@@ -73,9 +76,10 @@ public class UsuariosController : ControllerBase
     }
 
     /// <summary>
-    /// Obtener usuario por email (Solo Admin)
+    /// Obtener usuario por email (Admin y Supervisor)
     /// </summary>
     [HttpGet("email/{email}")]
+    [Authorize(Policy = "UsuariosRead")]
     public async Task<IActionResult> GetByEmail(string email)
     {
         try
@@ -96,6 +100,7 @@ public class UsuariosController : ControllerBase
     /// Crear nuevo usuario (Solo Admin)
     /// </summary>
     [HttpPost]
+    [Authorize(Policy = "AdminOnly")]
     public async Task<IActionResult> Create([FromBody] CreateUsuarioDto dto)
     {
         try
@@ -114,9 +119,10 @@ public class UsuariosController : ControllerBase
     }
 
     /// <summary>
-    /// Actualizar usuario existente (Admin o el propio usuario)
+    /// Actualizar usuario existente (Solo Admin)
     /// </summary>
     [HttpPut("{id}")]
+    [Authorize(Policy = "AdminOnly")]
     public async Task<IActionResult> Update(int id, [FromBody] UpdateUsuarioDto dto)
     {
         try
@@ -138,9 +144,10 @@ public class UsuariosController : ControllerBase
     }
 
     /// <summary>
-    /// Eliminar usuario (Solo Admin - soft delete)
+    /// Eliminar usuario (Solo Admin)
     /// </summary>
     [HttpDelete("{id}")]
+    [Authorize(Policy = "AdminOnly")]
     public async Task<IActionResult> Delete(int id)
     {
         try

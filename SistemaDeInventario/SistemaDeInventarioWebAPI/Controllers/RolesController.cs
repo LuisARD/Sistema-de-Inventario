@@ -8,7 +8,7 @@ namespace SistemaDeInventarioWebAPI.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 [Produces("application/json")]
-[Authorize]
+[Authorize(Policy = "AdminOnly")]
 public class RolesController : ControllerBase
 {
     private readonly IRolService _rolService;

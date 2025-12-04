@@ -19,9 +19,10 @@ public class ProductosController : ControllerBase
     }
 
     /// <summary>
-    /// Obtener todos los productos
+    /// Obtener todos los productos (Admin y Usuario)
     /// </summary>
     [HttpGet]
+    [Authorize(Policy = "ProductosRead")]
     public async Task<IActionResult> GetAll()
     {
         try
@@ -36,9 +37,10 @@ public class ProductosController : ControllerBase
     }
 
     /// <summary>
-    /// Obtener producto por ID
+    /// Obtener producto por ID (Admin y Usuario)
     /// </summary>
     [HttpGet("{id}")]
+    [Authorize(Policy = "ProductosRead")]
     public async Task<IActionResult> GetById(int id)
     {
         try
@@ -56,9 +58,10 @@ public class ProductosController : ControllerBase
     }
 
     /// <summary>
-    /// Obtener producto por SKU
+    /// Obtener producto por SKU (Admin y Usuario)
     /// </summary>
     [HttpGet("sku/{sku}")]
+    [Authorize(Policy = "ProductosRead")]
     public async Task<IActionResult> GetBySku(string sku)
     {
         try
@@ -76,9 +79,10 @@ public class ProductosController : ControllerBase
     }
 
     /// <summary>
-    /// Obtener productos por categoría
+    /// Obtener productos por categoría (Admin y Usuario)
     /// </summary>
     [HttpGet("categoria/{categoriaId}")]
+    [Authorize(Policy = "ProductosRead")]
     public async Task<IActionResult> GetByCategoria(int categoriaId)
     {
         try
@@ -93,9 +97,10 @@ public class ProductosController : ControllerBase
     }
 
     /// <summary>
-    /// Obtener productos por proveedor (Uso interno)
+    /// Obtener productos por proveedor (Admin y Usuario)
     /// </summary>
     [HttpGet("proveedor/{proveedorId}")]
+    [Authorize(Policy = "ProductosRead")]
     public async Task<IActionResult> GetByProveedor(int proveedorId)
     {
         try
@@ -110,9 +115,10 @@ public class ProductosController : ControllerBase
     }
 
     /// <summary>
-    /// Crear nuevo producto (Almacén/Compras)
+    /// Crear nuevo producto (Admin y Supervisor)
     /// </summary>
     [HttpPost]
+    [Authorize(Policy = "AdminOrSupervisor")]
     public async Task<IActionResult> Create([FromBody] CreateProductoDto dto)
     {
         try
@@ -131,9 +137,10 @@ public class ProductosController : ControllerBase
     }
 
     /// <summary>
-    /// Actualizar producto (Almacén/Compras)
+    /// Actualizar producto (Admin, Supervisor y Usuario)
     /// </summary>
     [HttpPut("{id}")]
+    [Authorize(Policy = "ProductosWrite")]
     public async Task<IActionResult> Update(int id, [FromBody] UpdateProductoDto dto)
     {
         try
@@ -155,9 +162,10 @@ public class ProductosController : ControllerBase
     }
 
     /// <summary>
-    /// Eliminar producto (Almacén/Compras)
+    /// Eliminar producto (Admin y Supervisor)
     /// </summary>
     [HttpDelete("{id}")]
+    [Authorize(Policy = "AdminOrSupervisor")]
     public async Task<IActionResult> Delete(int id)
     {
         try

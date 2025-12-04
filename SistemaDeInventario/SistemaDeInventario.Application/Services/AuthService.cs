@@ -101,6 +101,12 @@ public class AuthService : IAuthService
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
         };
 
+        // Incluir el rol de Supervisor si RolId es 3
+        if (usuario.RolId == 3)
+        {
+            claims = claims.Append(new Claim(ClaimTypes.Role, "Supervisor")).ToArray();
+        }
+
         var token = new JwtSecurityToken(
             issuer: issuer,
             audience: audience,

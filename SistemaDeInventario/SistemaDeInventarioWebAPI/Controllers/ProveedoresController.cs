@@ -8,7 +8,7 @@ namespace SistemaDeInventarioWebAPI.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 [Produces("application/json")]
-[Authorize]
+[Authorize(Policy = "ProveedoresAccess")]
 public class ProveedoresController : ControllerBase
 {
     private readonly IProveedorService _proveedorService;
