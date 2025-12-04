@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SistemaDeInventario.Application.DTOs.Request;
 using SistemaDeInventario.Application.Services.Interfaces.UsuariosService;
@@ -7,6 +8,7 @@ namespace SistemaDeInventarioWebAPI.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 [Produces("application/json")]
+[Authorize(Policy = "AdminOnly")]
 public class RolesController : ControllerBase
 {
     private readonly IRolService _rolService;
@@ -17,7 +19,7 @@ public class RolesController : ControllerBase
     }
 
     /// <summary>
-    /// Obtener todos los roles
+    /// Obtener todos los roles (Solo Admin)
     /// </summary>
     [HttpGet]
     public async Task<IActionResult> GetAll()
@@ -34,7 +36,7 @@ public class RolesController : ControllerBase
     }
 
     /// <summary>
-    /// Obtener rol por ID
+    /// Obtener rol por ID (Solo Admin)
     /// </summary>
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
@@ -54,7 +56,7 @@ public class RolesController : ControllerBase
     }
 
     /// <summary>
-    /// Crear nuevo rol
+    /// Crear nuevo rol (Solo Admin)
     /// </summary>
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateRolDto dto)

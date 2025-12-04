@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SistemaDeInventario.Application.DTOs.Request;
 using SistemaDeInventario.Application.Services.Interfaces.UsuariosService;
@@ -20,6 +21,7 @@ public class AuthController : ControllerBase
     /// Login de usuario - Genera token JWT
     /// </summary>
     [HttpPost("login")]
+    [AllowAnonymous]
     public async Task<IActionResult> Login([FromBody] LoginDto dto)
     {
         try
@@ -41,6 +43,7 @@ public class AuthController : ControllerBase
     /// Validar credenciales de usuario
     /// </summary>
     [HttpPost("validate")]
+    [AllowAnonymous]
     public async Task<IActionResult> ValidateCredentials([FromBody] LoginDto dto)
     {
         try

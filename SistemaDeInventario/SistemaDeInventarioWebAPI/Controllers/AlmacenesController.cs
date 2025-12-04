@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SistemaDeInventario.Application.DTOs.Request.CreateDto;
 using SistemaDeInventario.Application.DTOs.Request.UpdateDto;
@@ -8,6 +9,7 @@ namespace SistemaDeInventarioWebAPI.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 [Produces("application/json")]
+[Authorize(Policy = "AlmacenesAccess")]
 public class AlmacenesController : ControllerBase
 {
     private readonly IAlmacenService _almacenService;
@@ -17,6 +19,9 @@ public class AlmacenesController : ControllerBase
         _almacenService = almacenService;
     }
 
+    /// <summary>
+    /// Obtener todos los almacenes (Logística)
+    /// </summary>
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
@@ -31,6 +36,9 @@ public class AlmacenesController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Obtener almacenes activos (Logística)
+    /// </summary>
     [HttpGet("activos")]
     public async Task<IActionResult> GetActivos()
     {
@@ -45,6 +53,9 @@ public class AlmacenesController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Obtener almacén por ID (Logística)
+    /// </summary>
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
@@ -62,6 +73,9 @@ public class AlmacenesController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Crear nuevo almacén (Admin/Logística)
+    /// </summary>
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateAlmacenDto dto)
     {
@@ -76,6 +90,9 @@ public class AlmacenesController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Actualizar almacén (Admin/Logística)
+    /// </summary>
     [HttpPut("{id}")]
     public async Task<IActionResult> Update(int id, [FromBody] UpdateAlmacenDto dto)
     {
@@ -97,6 +114,9 @@ public class AlmacenesController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Eliminar almacén (Admin/Logística - soft delete)
+    /// </summary>
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {

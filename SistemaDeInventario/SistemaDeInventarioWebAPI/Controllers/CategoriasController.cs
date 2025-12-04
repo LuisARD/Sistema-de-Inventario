@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SistemaDeInventario.Application.DTOs.Request.CreateDto;
 using SistemaDeInventario.Application.DTOs.Request.UpdateDto;
@@ -8,6 +9,7 @@ namespace SistemaDeInventarioWebAPI.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 [Produces("application/json")]
+[Authorize]
 public class CategoriasController : ControllerBase
 {
     private readonly ICategoriaService _categoriaService;
@@ -17,7 +19,11 @@ public class CategoriasController : ControllerBase
         _categoriaService = categoriaService;
     }
 
+    /// <summary>
+    /// Obtener todas las categorías (Admin, Supervisor y Usuario)
+    /// </summary>
     [HttpGet]
+    [Authorize(Policy = "CategoriasRead")]
     public async Task<IActionResult> GetAll()
     {
         try
@@ -31,7 +37,11 @@ public class CategoriasController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Obtener categoría por ID (Admin, Supervisor y Usuario)
+    /// </summary>
     [HttpGet("{id}")]
+    [Authorize(Policy = "CategoriasRead")]
     public async Task<IActionResult> GetById(int id)
     {
         try
@@ -48,7 +58,11 @@ public class CategoriasController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Crear nueva categoría (Admin y Supervisor)
+    /// </summary>
     [HttpPost]
+    [Authorize(Policy = "CategoriasWrite")]
     public async Task<IActionResult> Create([FromBody] CreateCategoriaDto dto)
     {
         try
@@ -66,7 +80,11 @@ public class CategoriasController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Actualizar categoría (Admin y Supervisor)
+    /// </summary>
     [HttpPut("{id}")]
+    [Authorize(Policy = "CategoriasWrite")]
     public async Task<IActionResult> Update(int id, [FromBody] UpdateCategoriaDto dto)
     {
         try
@@ -87,7 +105,11 @@ public class CategoriasController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Eliminar categoría (Admin y Supervisor)
+    /// </summary>
     [HttpDelete("{id}")]
+    [Authorize(Policy = "CategoriasWrite")]
     public async Task<IActionResult> Delete(int id)
     {
         try

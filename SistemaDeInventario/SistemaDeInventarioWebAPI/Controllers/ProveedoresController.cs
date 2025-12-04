@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SistemaDeInventario.Application.DTOs.Request.CreateDto;
 using SistemaDeInventario.Application.DTOs.Request.UpdateDto;
@@ -8,6 +9,7 @@ namespace SistemaDeInventarioWebAPI.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 [Produces("application/json")]
+[Authorize(Policy = "ProveedoresAccess")]
 public class ProveedoresController : ControllerBase
 {
     private readonly IProveedorService _proveedorService;
@@ -17,6 +19,9 @@ public class ProveedoresController : ControllerBase
         _proveedorService = proveedorService;
     }
 
+    /// <summary>
+    /// Obtener todos los proveedores (Compras/Inventario)
+    /// </summary>
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
@@ -31,6 +36,9 @@ public class ProveedoresController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Obtener proveedor por ID (Compras/Inventario)
+    /// </summary>
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
@@ -48,6 +56,9 @@ public class ProveedoresController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Crear nuevo proveedor (Compras/Inventario)
+    /// </summary>
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateProveedorDto dto)
     {
@@ -66,6 +77,9 @@ public class ProveedoresController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Actualizar proveedor (Compras/Inventario)
+    /// </summary>
     [HttpPut("{id}")]
     public async Task<IActionResult> Update(int id, [FromBody] UpdateProveedorDto dto)
     {
@@ -87,6 +101,9 @@ public class ProveedoresController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Eliminar proveedor (Compras/Inventario)
+    /// </summary>
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {

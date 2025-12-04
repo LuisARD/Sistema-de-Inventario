@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SistemaDeInventario.Application.DTOs.Request.CreateDto;
 using SistemaDeInventario.Application.Services.Interfaces;
@@ -7,6 +8,7 @@ namespace SistemaDeInventarioWebAPI.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 [Produces("application/json")]
+[Authorize]
 public class MovimientosController : ControllerBase
 {
     private readonly IMovimientoService _movimientoService;
@@ -16,7 +18,11 @@ public class MovimientosController : ControllerBase
         _movimientoService = movimientoService;
     }
 
+    /// <summary>
+    /// Obtener todos los movimientos (Admin y Usuario)
+    /// </summary>
     [HttpGet]
+    [Authorize(Policy = "MovimientosRead")]
     public async Task<IActionResult> GetAll()
     {
         try
@@ -30,7 +36,11 @@ public class MovimientosController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Obtener movimiento por ID (Admin y Usuario)
+    /// </summary>
     [HttpGet("{id}")]
+    [Authorize(Policy = "MovimientosRead")]
     public async Task<IActionResult> GetById(int id)
     {
         try
@@ -47,7 +57,11 @@ public class MovimientosController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Obtener movimientos por tipo (Admin y Usuario)
+    /// </summary>
     [HttpGet("tipo/{tipo}")]
+    [Authorize(Policy = "MovimientosRead")]
     public async Task<IActionResult> GetByTipo(string tipo)
     {
         try
@@ -61,7 +75,11 @@ public class MovimientosController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Obtener movimientos por usuario (Admin y Usuario)
+    /// </summary>
     [HttpGet("usuario/{usuarioId}")]
+    [Authorize(Policy = "MovimientosRead")]
     public async Task<IActionResult> GetByUsuario(int usuarioId)
     {
         try
@@ -75,7 +93,11 @@ public class MovimientosController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Obtener movimientos por almacén (Admin y Usuario)
+    /// </summary>
     [HttpGet("almacen/{almacenId}")]
+    [Authorize(Policy = "MovimientosRead")]
     public async Task<IActionResult> GetByAlmacen(int almacenId)
     {
         try
@@ -89,7 +111,11 @@ public class MovimientosController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Obtener movimientos por rango de fechas (Admin y Usuario)
+    /// </summary>
     [HttpGet("fecha")]
+    [Authorize(Policy = "MovimientosRead")]
     public async Task<IActionResult> GetByFecha([FromQuery] DateTime fechaInicio, [FromQuery] DateTime fechaFin)
     {
         try
@@ -103,7 +129,11 @@ public class MovimientosController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Registrar entrada de productos (Admin y Supervisor)
+    /// </summary>
     [HttpPost("entrada")]
+    [Authorize(Policy = "MovimientosWrite")]
     public async Task<IActionResult> RegistrarEntrada([FromBody] CreateMovimientoDto dto)
     {
         try
@@ -121,7 +151,11 @@ public class MovimientosController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Registrar salida de productos (Admin y Supervisor)
+    /// </summary>
     [HttpPost("salida")]
+    [Authorize(Policy = "MovimientosWrite")]
     public async Task<IActionResult> RegistrarSalida([FromBody] CreateMovimientoDto dto)
     {
         try

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SistemaDeInventario.Application.Services.Interfaces;
 
@@ -6,6 +7,7 @@ namespace SistemaDeInventarioWebAPI.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 [Produces("application/json")]
+[Authorize(Policy = "ExistenciasAccess")]
 public class ExistenciasController : ControllerBase
 {
     private readonly IExistenciaService _existenciaService;
@@ -15,6 +17,9 @@ public class ExistenciasController : ControllerBase
         _existenciaService = existenciaService;
     }
 
+    /// <summary>
+    /// Obtener todas las existencias (Información sensible)
+    /// </summary>
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
@@ -29,6 +34,9 @@ public class ExistenciasController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Obtener existencias por producto (Información sensible)
+    /// </summary>
     [HttpGet("producto/{productoId}")]
     public async Task<IActionResult> GetByProducto(int productoId)
     {
@@ -43,6 +51,9 @@ public class ExistenciasController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Obtener existencias por almacén (Información sensible)
+    /// </summary>
     [HttpGet("almacen/{almacenId}")]
     public async Task<IActionResult> GetByAlmacen(int almacenId)
     {
@@ -57,6 +68,9 @@ public class ExistenciasController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Obtener productos con stock bajo (Alertas operativas)
+    /// </summary>
     [HttpGet("stock-bajo")]
     public async Task<IActionResult> GetStockBajo()
     {
@@ -71,6 +85,9 @@ public class ExistenciasController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Obtener existencia por producto y almacén (Información sensible)
+    /// </summary>
     [HttpGet("producto/{productoId}/almacen/{almacenId}")]
     public async Task<IActionResult> GetByProductoYAlmacen(int productoId, int almacenId)
     {

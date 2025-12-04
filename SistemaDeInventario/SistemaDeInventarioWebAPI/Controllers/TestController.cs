@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SistemaDeInventario.Infrastructure.Persistence;
@@ -6,6 +7,7 @@ namespace SistemaDeInventarioWebAPI.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class TestController : ControllerBase
 {
     private readonly AppDbContext _context;
@@ -15,6 +17,9 @@ public class TestController : ControllerBase
         _context = context;
     }
 
+    /// <summary>
+    /// Probar conexión a la base de datos (ELIMINAR EN PRODUCCIÓN)
+    /// </summary>
     [HttpGet("connection")]
     public async Task<IActionResult> TestConnection()
     {
@@ -54,6 +59,9 @@ public class TestController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Verificar tablas de la base de datos (ELIMINAR EN PRODUCCIÓN)
+    /// </summary>
     [HttpGet("tables")]
     public async Task<IActionResult> TestTables()
     {
@@ -97,6 +105,9 @@ public class TestController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Obtener datos de muestra (ELIMINAR EN PRODUCCIÓN)
+    /// </summary>
     [HttpGet("sample-data")]
     public async Task<IActionResult> GetSampleData()
     {

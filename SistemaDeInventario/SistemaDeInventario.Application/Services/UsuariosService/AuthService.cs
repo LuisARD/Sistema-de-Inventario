@@ -6,11 +6,10 @@ using System.Security.Cryptography;
 using System.Text;
 using SistemaDeInventario.Application.DTOs.Request;
 using SistemaDeInventario.Application.DTOs.Response;
-using SistemaDeInventario.Application.DTOs.Response.UsuariosDto;
+using SistemaDeInventario.Application.Services.Interfaces;
 using SistemaDeInventario.Domain.Interfaces;
-using SistemaDeInventario.Application.Services.Interfaces.UsuariosService;
 
-namespace SistemaDeInventario.Application.Services.UsuariosService;
+namespace SistemaDeInventario.Application.Services;
 
 public class AuthService : IAuthService
 {
@@ -101,6 +100,12 @@ public class AuthService : IAuthService
             new Claim("RolId", usuario.RolId.ToString()),
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
         };
+
+        // Incluir el rol de Supervisor si RolId es 3
+        if (usuario.RolId == 3)
+        {
+            claims = claims.Append(new Claim(ClaimTypes.Role, "Supervisor")).ToArray();
+        }
 
         var token = new JwtSecurityToken(
             issuer: issuer,
