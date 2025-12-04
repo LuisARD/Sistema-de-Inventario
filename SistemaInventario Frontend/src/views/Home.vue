@@ -6,12 +6,12 @@ const auth = useAuthStore();
 
 
 const buttones = [
-  { to: "", label: "Gestión de Productos", icon: "/camion.svg" },
-  { to: "", label: "Gestión de Proveedores", icon: "/btn1.svg" },
-  { to: "", label: "Control de Inventario", icon: "/btn1.svg" },
-  { to: "", label: "Movimientos de Inventario", icon: "/camion.svg" },
-  { to: "", label: "Gestión de Categorías", icon: "/btn1.svg" },
-  { to: "", label: "Reportes", icon: "/iconReporte.svg" },
+  { to: "/products", label: "Gestión de Productos", icon: "/camion.svg" },
+  { to: "/suppliers", label: "Gestión de Proveedores", icon: "/btn1.svg" },
+  { to: "/products", label: "Control de Inventario", icon: "/btn1.svg" },
+  { to: "/movements", label: "Movimientos de Inventario", icon: "/camion.svg" },
+  { to: "/categories", label: "Gestión de Categorías", icon: "/btn1.svg" },
+  { to: "/reports", label: "Reportes", icon: "/iconReporte.svg" },
 ];
 </script>
 
@@ -40,7 +40,6 @@ const buttones = [
         </router-link>
        
         <router-link
-          v-if="['Admin', 'Supervisor'].includes(auth.user?.RolNombre)"
           to="usuario"
           class="w-full md:w-[280px] rounded-xl py-6 shadow-lg hover:opacity-90 transition flex justify-center items-center border-2 border-transparent hover:border-primary  hover:border-2 duration-300 delay-75 lg:gap-x-4"
         >

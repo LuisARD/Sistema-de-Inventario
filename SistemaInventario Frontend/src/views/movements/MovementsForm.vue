@@ -97,7 +97,7 @@ export default {
 </script>
 
 <style scoped>
-/* ESTILO EXACTO DEL DISEÑO QUE ENVIASTE */
+
 .movement-form {
   background: white;
   min-height: 100vh;
