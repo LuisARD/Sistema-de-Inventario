@@ -6,7 +6,8 @@ using System.Security.Cryptography;
 using System.Text;
 using SistemaDeInventario.Application.DTOs.Request;
 using SistemaDeInventario.Application.DTOs.Response;
-using SistemaDeInventario.Application.Services.Interfaces;
+using SistemaDeInventario.Application.DTOs.Response.UsuariosDto;
+using SistemaDeInventario.Application.Services.Interfaces.UsuariosService;
 using SistemaDeInventario.Domain.Interfaces;
 
 namespace SistemaDeInventario.Application.Services;
