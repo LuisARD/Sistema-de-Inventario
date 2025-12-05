@@ -34,11 +34,14 @@ const handleLogin = async (data) => {
 
 
 <template class="">
-  <div class="absolute inset-0 bg-neutral"></div>
+   <div class="absolute inset-0 bg-black/30"></div>
+  <div class="bg-login"> 
+     
+
   <BtnAsistencia />
 
   <section
-    class="bg-neutral flex flex-col justify-center items-center relative z-10 h-full"
+    class=" flex flex-col justify-center items-center relative z-10 "
   >
     <fieldset
       class="fieldset bg-base-200 border border-base-300 rounded-xl w-full max-w-md p-6 shadow text-neutral py-8"
@@ -95,6 +98,7 @@ const handleLogin = async (data) => {
     </fieldset>
     <a to="/"></a>
   </section>
+</div>
 </template>
 
 <!-- <script>
