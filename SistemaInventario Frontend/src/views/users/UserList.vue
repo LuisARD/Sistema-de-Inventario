@@ -50,7 +50,7 @@ const editarUsuario = (u) => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-white p-5">
+  <div class="min-h-screen  p-5">
 
     <!-- HEADER -->
     <div class="flex items-center justify-between mb-8 p-5 bg-base-100 shadow rounded-xl">
@@ -84,7 +84,7 @@ const editarUsuario = (u) => {
 
         <!-- BUTTON -->
         <button 
-          class="btn btn-primary rounded-full px-8"
+          class="btn btn-info rounded-full px-8"
           @click="crearUsuario"
         >
           Crear Usuario

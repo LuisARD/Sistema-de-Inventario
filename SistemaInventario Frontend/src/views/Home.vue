@@ -22,40 +22,88 @@ const buttones = [
 
 <template>
   <section
-    class="flex flex-col md:flex-row md:items-center md:justify-between md:w-[90%] md:mx-auto lg:justify-center lg:items-center md:gap-x-20 md:mt-20"
+    class="flex flex-col items-center w-full px-4 sm:px-6 md:px-8 md:mt-20"
   >
    
-    <article class="w-full h-full md:w-[50%] lg:w-[70%] lg:max-w-[900px] mt-6 md:mt-0">
+    <article class="w-full max-w-6xl mt-6 md:mt-0">
       <div
-        class="grid grid-cols-1 gap-4 md:grid-cols-1 md:gap-6 md:place-items-center lg:grid-cols-3"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 place-items-center"
       >
+        <!-- BOTONES DINÁMICOS -->
         <router-link
           v-for="btn in buttones"
           :key="btn.to"
           :to="btn.to"
-          
-          class="w-full md:w-[280px] h-[100px] rounded-xl py-6 shadow-lg hover:opacity-90 transition flex justify-center items-center border-2 border-transparent hover:border-primary hover:border-2 duration-300 delay-75 lg:gap-x-4"
+          class="
+            w-full
+            max-w-xs
+            sm:max-w-none
+            h-[90px]
+            sm:h-[100px]
+            rounded-xl
+            py-4
+            px-4
+            shadow-lg
+            transition
+            flex
+            justify-center
+            items-center
+            border-2
+            border-transparent
+            hover:border-primary
+            hover:opacity-90
+            duration-300
+          "
         >
-          <div
-            class="flex items-center gap-x-4 text-center"
-          >
-            <img :src="btn.icon" class="w-10 h-10 object-contain brightness-0 saturate-100" style="filter: invert(27%) sepia(51%) saturate(999%) hue-rotate(200deg) brightness(104%) contrast(10%);" />
-            <span class="text-xl font-semibold">{{ btn.label }}</span>
+          <div class="flex items-center gap-3 sm:gap-4 text-center">
+            <img
+              :src="btn.icon"
+              class="w-8 h-8 sm:w-10 sm:h-10 object-contain brightness-0 saturate-100"
+              style="filter: invert(27%) sepia(51%) saturate(999%) hue-rotate(200deg) brightness(104%) contrast(10%);"
+            />
+            <span class="text-sm sm:text-base md:text-lg font-semibold">
+              {{ btn.label }}
+            </span>
           </div>
         </router-link>
        
+        <!-- BOTÓN CONTROL DE USUARIO -->
         <router-link
-         v-if="['Admin', 'Supervisor'].includes(auth.user?.RolNombre)"
+          v-if="['Admin', 'Supervisor'].includes(auth.user?.RolNombre)"
           to="usuario"
-          class="w-full md:w-[280px] h-[100px] rounded-xl py-6 shadow-lg hover:opacity-90 transition flex justify-center items-center border-2 border-transparent hover:border-primary  hover:border-2 duration-300 delay-75 lg:gap-x-4"
+          class="
+            w-full
+            max-w-xs
+            sm:max-w-none
+            h-[90px]
+            sm:h-[100px]
+            rounded-xl
+            py-4
+            px-4
+            shadow-lg
+            transition
+            flex
+            justify-center
+            items-center
+            border-2
+            border-transparent
+            hover:border-primary
+            hover:opacity-90
+            duration-300
+          "
         >
-          <div
-            class="flex items-center gap-x-4 text-center"
-          >
-            <img src="/iconControl.png" class="w-10 h-10 object-contain brightness-0 saturate-100" style="filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(200deg) brightness(104%) contrast(97%);" />
-            <span class="text-xl font-semibold">Control de usuario</span>
+          <div class="flex items-center gap-3 sm:gap-4 text-center">
+            <img
+              src="/iconControl.png"
+              class="w-8 h-8 sm:w-10 sm:h-10 object-contain brightness-0 saturate-100"
+              style="filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(200deg) brightness(104%) contrast(97%);"
+            />
+            <span class="text-sm sm:text-base md:text-lg font-semibold">
+              Control de usuario
+            </span>
           </div>
         </router-link>
+
       </div>
     </article>
   </section>

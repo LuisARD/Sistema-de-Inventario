@@ -138,7 +138,7 @@ const schema = productoSchema;
       <h1
         class="text-2xl flex justify-center font-medium text-neutral gap-x-2 mb-8"
       >
-        <img class="size-10" src="/btn1.svg" alt="" />
+        <img class="size-10" src="/iconTitle.svg" alt="" />
         Gestión de Productos
       </h1>
 
@@ -158,7 +158,7 @@ const schema = productoSchema;
         <FormKit
           type="submit"
           :label="editId ? 'Editar' : 'Guardar'"
-          input-class="btn btn-primary rounded-full px-10 mt-5"
+          input-class="btn btn-info rounded-full px-10 mt-5"
         />
       </FormKit>
     </div>

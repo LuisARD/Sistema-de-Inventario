@@ -69,86 +69,107 @@ const editarMovimiento = (m) => {
   router.push("/movements/create");
 };
 </script>
-
 <template>
-  <div class="p-6">
-    <div class="flex justify-between items-center mb-6">
-      <h1 class="text-3xl font-bold">Movimientos de Inventario</h1>
+  <main class="p-4 sm:p-6">
 
-      <button class="btn btn-primary" @click="crearMovimiento">
+    <header class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-6">
+      <h1 class="text-2xl sm:text-3xl font-bold">
+        Movimientos de Inventario
+      </h1>
+
+      <button class="btn btn-info w-full sm:w-auto" @click="crearMovimiento">
         Crear movimiento
       </button>
-    </div>
+    </header>
 
-    <!-- FILTROS -->
-    <div class="flex gap-4 mb-4">
-      <input
-        v-model="buscar"
-        type="text"
-        placeholder="Buscar movimiento…"
-        class="input input-bordered w-full max-w-xs"
-      />
+    <section class="flex flex-col sm:flex-row gap-4 mb-4">
+      <form role="search" class="w-full sm:max-w-xs">
+        <input
+          v-model="buscar"
+          type="search"
+          placeholder="Buscar movimiento…"
+          class="input input-bordered w-full"
+          aria-label="Buscar movimientos"
+        />
+      </form>
 
-      <select v-model="filtroTipo" class="select select-bordered">
-        <option value="TODOS">Todos</option>
-        <option value="ENTRADA">Entrada</option>
-        <option value="SALIDA">Salida</option>
-      </select>
-    </div>
+      <div class="w-full sm:w-auto">
+        <select
+          v-model="filtroTipo"
+          class="select select-bordered w-full sm:w-auto"
+          aria-label="Filtrar por tipo"
+        >
+          <option value="TODOS">Todos</option>
+          <option value="ENTRADA">Entrada</option>
+          <option value="SALIDA">Salida</option>
+        </select>
+      </div>
+    </section>
 
-    <!-- TABLA -->
-    <table class="table w-full">
-      <thead class="bg-base-200">
-        <tr>
-          <th>Fecha</th>
-          <th>Tipo</th>
-          <th>Motivo</th>
-          <th>Referencia</th>
-          <th>Usuario</th>
-          <th>Origen</th>
-          <th>Destino</th>
-          <th class="text-center">Acciones</th>
-        </tr>
-      </thead>
+    <section class="overflow-x-auto rounded-lg border border-base-300">
+      <table class="table w-full" aria-label="Listado de movimientos">
+        <thead class="bg-base-200">
+          <tr>
+            <th scope="col">Fecha</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Motivo</th>
+            <th scope="col">Referencia</th>
+            <th scope="col">Usuario</th>
+            <th scope="col">Origen</th>
+            <th scope="col">Destino</th>
+            <th scope="col" class="text-center">Acciones</th>
+          </tr>
+        </thead>
 
-      <tbody>
-        <tr v-for="m in movimientosFiltrados" :key="m.MovimientoId">
-          <td>{{ m.FechaMovimiento }}</td>
-          <td>
-            <span
-              :class="{
-                'badge badge-success': m.TipoMovimiento === 'ENTRADA',
-                'badge badge-error': m.TipoMovimiento === 'SALIDA'
-              }"
-            >
-              {{ m.TipoMovimiento }}
-            </span>
-          </td>
+        <tbody>
+          <tr v-for="m in movimientosFiltrados" :key="m.MovimientoId">
+            <td>{{ m.FechaMovimiento }}</td>
+            <td>
+              <span
+                :class="{
+                  'badge badge-success': m.TipoMovimiento === 'ENTRADA',
+                  'badge badge-error': m.TipoMovimiento === 'SALIDA'
+                }"
+              >
+                {{ m.TipoMovimiento }}
+              </span>
+            </td>
+            <td>{{ m.Motivo }}</td>
+            <td>{{ m.ReferenciaDocumento }}</td>
+            <td>{{ m.UsuarioNombre }}</td>
+            <td>{{ m.AlmacenOrigenNombre }}</td>
+            <td>{{ m.AlmacenDestinoNombre }}</td>
+            <td class="flex flex-col sm:flex-row gap-2 justify-center">
+              <button
+                class="btn btn-sm btn-info"
+                @click="verDetalles(m)"
+              >
+                Ver detalles
+              </button>
+            </td>
+          </tr>
 
-          <td>{{ m.Motivo }}</td>
-          <td>{{ m.ReferenciaDocumento }}</td>
-          <td>{{ m.UsuarioNombre }}</td>
-          <td>{{ m.AlmacenOrigenNombre }}</td>
-          <td>{{ m.AlmacenDestinoNombre }}</td>
+          <tr v-if="movimientosFiltrados.length === 0">
+            <td colspan="8" class="text-center py-6 text-gray-500">
+              No hay movimientos registrados
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-          <td class="flex gap-2 justify-center">
-            <button class="btn btn-sm btn-info" @click="verDetalles(m)">
-              Ver detalles
-            </button>
+  </main>
 
-          
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- =================== MODAL =================== -->
   <dialog class="modal" :open="modalVisible">
-    <div class="modal-box w-11/12 max-w-3xl">
-      <h3 class="font-bold text-2xl mb-4">Detalles del Movimiento</h3>
+    <article class="modal-box w-11/12 max-w-3xl">
 
-      <div v-if="movimientoSeleccionado">
+      <header class="mb-4">
+        <h2 class="font-bold text-xl sm:text-2xl">
+          Detalles del Movimiento
+        </h2>
+      </header>
+
+      <section v-if="movimientoSeleccionado" class="space-y-1 text-sm sm:text-base">
         <p><strong>Fecha:</strong> {{ movimientoSeleccionado.FechaMovimiento }}</p>
         <p><strong>Tipo:</strong> {{ movimientoSeleccionado.TipoMovimiento }}</p>
         <p><strong>Motivo:</strong> {{ movimientoSeleccionado.Motivo }}</p>
@@ -157,36 +178,43 @@ const editarMovimiento = (m) => {
         <p><strong>Origen:</strong> {{ movimientoSeleccionado.AlmacenOrigenNombre }}</p>
         <p><strong>Destino:</strong> {{ movimientoSeleccionado.AlmacenDestinoNombre }}</p>
 
-        <h3 class="font-bold text-xl mt-4 mb-2">Productos del movimiento</h3>
+        <h3 class="font-bold text-lg sm:text-xl mt-4 mb-2">
+          Productos del movimiento
+        </h3>
 
-        <table class="table table-zebra w-full">
-          <thead>
-            <tr>
-              <th>Producto</th>
-              <th>SKU</th>
-              <th>Cantidad</th>
-              <th>Costo Unitario</th>
-              <th>Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr
-              v-for="d in movimientoSeleccionado.Detalles"
-              :key="d.DetalleId"
-            >
-              <td>{{ d.ProductoNombre }}</td>
-              <td>{{ d.CodigoSku }}</td>
-              <td>{{ d.Cantidad }}</td>
-              <td>{{ d.CostoUnitarioHistorico }}</td>
-              <td>{{ d.CostoTotal }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+        <section class="overflow-x-auto">
+          <table class="table table-zebra w-full">
+            <thead>
+              <tr>
+                <th scope="col">Producto</th>
+                <th scope="col">SKU</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Costo Unitario</th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                v-for="d in movimientoSeleccionado.Detalles"
+                :key="d.DetalleId"
+              >
+                <td>{{ d.ProductoNombre }}</td>
+                <td>{{ d.CodigoSku }}</td>
+                <td>{{ d.Cantidad }}</td>
+                <td>{{ d.CostoUnitarioHistorico }}</td>
+                <td>{{ d.CostoTotal }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
 
-      <div class="modal-action">
-        <button class="btn" @click="modalVisible = false">Cerrar</button>
-      </div>
-    </div>
+      <footer class="modal-action">
+        <button class="btn w-full sm:w-auto" @click="modalVisible = false">
+          Cerrar
+        </button>
+      </footer>
+
+    </article>
   </dialog>
 </template>

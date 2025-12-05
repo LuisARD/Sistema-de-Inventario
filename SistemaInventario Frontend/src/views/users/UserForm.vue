@@ -95,7 +95,7 @@ const onSubmit = (data) => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-white p-5">
+  <div class="min-h-screen  p-5">
     <!-- HEADER -->
     <div class="flex items-center justify-between mb-8 p-5 bg-base-100 shadow rounded-xl">
       <div class="flex items-center gap-4">
@@ -113,7 +113,7 @@ const onSubmit = (data) => {
     </div>
 
     <!-- CONTAINER -->
-    <div class="max-w-4xl mx-auto bg-base-100 p-8 rounded-xl shadow">
+    <div class="max-w-4xl mx-auto  p-8 rounded-xl shadow">
       
       <FormKit ref="formRef" type="form" :actions="false" @submit="onSubmit">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -131,7 +131,7 @@ const onSubmit = (data) => {
           <FormKit
             type="submit"
             :label="editId ? 'Actualizar Usuario' : 'Guardar Usuario'"
-            input-class="btn btn-primary px-8"
+            input-class="btn btn-info px-8"
           />
         </div>
       </FormKit>

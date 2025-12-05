@@ -50,93 +50,110 @@ const getStockClass = (stock, stockMinimo) => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-white p-5">
+  <main class="min-h-screen p-4 sm:p-5">
 
     <!-- HEADER -->
-    <div class="flex items-center justify-between mb-8 p-5 bg-base-100 shadow rounded-xl">
+    <header class="flex items-center justify-between mb-6 sm:mb-8 p-4 sm:p-5 bg-base-100 shadow rounded-xl">
       <div class="flex items-center gap-4">
-        <div class="w-12 h-12 bg-primary text-white rounded-xl flex items-center justify-center">
-          <!-- ICON -->
+        <figure class="w-12 h-12 bg-primary text-white rounded-xl flex items-center justify-center">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
-               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+               aria-hidden="true">
             <path d="M20 7h-9"/>
             <path d="M14 17H5"/>
             <circle cx="17" cy="17" r="3"/>
             <circle cx="7" cy="7" r="3"/>
           </svg>
-        </div>
+        </figure>
 
-        <h1 class="text-3xl font-medium text-neutral">Gestión de Existencias</h1>
+        <h1 class="text-2xl sm:text-3xl font-medium text-neutral">
+          Gestión de Existencias
+        </h1>
       </div>
-    </div>
+    </header>
 
-    <!-- CONTAINER -->
-    <div class="max-w-7xl mx-auto bg-base-100 p-8 rounded-xl shadow">
+    <!-- CONTENIDO -->
+    <section class="max-w-7xl mx-auto bg-base-100 p-4 sm:p-8 rounded-xl shadow">
 
       <!-- TABS -->
-      <div class="tabs tabs-boxed mb-6">
-        <a 
-          :class="['tab', { 'tab-active': selectedTab === 'todas' }]"
+      <nav class="tabs tabs-boxed mb-6 flex flex-col sm:flex-row gap-2">
+        <button
+          type="button"
+          class="tab"
+          :class="{ 'tab-active': selectedTab === 'todas' }"
           @click="cargarTodas"
         >
           Todas las Existencias
-        </a>
-        <a 
-          :class="['tab', { 'tab-active': selectedTab === 'stock-bajo' }]"
+        </button>
+
+        <!-- <button
+          type="button"
+          class="tab"
+          :class="{ 'tab-active': selectedTab === 'stock-bajo' }"
           @click="cargarStockBajo"
         >
           Stock Bajo
-        </a>
-      </div>
+        </button> -->
+      </nav>
 
-      <!-- CONTROLS -->
-      <div class="flex items-center justify-between mb-6">
+      <!-- CONTROLES -->
+      <section class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
 
-        <!-- SEARCH -->
-        <div class="w-64">
+        <!-- BUSCADOR -->
+        <form class="w-full md:w-64" role="search">
           <input
-            type="text"
+            type="search"
             v-model="searchQuery"
             placeholder="🔍 Buscar por producto o almacén"
             class="input input-bordered w-full"
+            aria-label="Buscar existencias"
           >
-        </div>
+        </form>
 
-        <!-- INFO -->
-        <div class="stats shadow">
+        <!-- ESTADÍSTICA -->
+        <aside class="stats shadow w-full md:w-auto text-center">
           <div class="stat">
             <div class="stat-title">Total Productos</div>
-            <div class="stat-value text-primary">{{ filteredExistencias.length }}</div>
+            <div class="stat-value text-primary">
+              {{ filteredExistencias.length }}
+            </div>
           </div>
-        </div>
-      </div>
+        </aside>
 
-      <!-- TABLE -->
-      <div class="overflow-x-auto rounded-lg border border-base-300">
-        <table class="table table-zebra w-full">
+      </section>
+
+      <!-- TABLA RESPONSIVE -->
+      <section class="overflow-x-auto rounded-lg border border-base-300">
+        <table class="table table-zebra w-full" aria-label="Listado de existencias">
 
           <thead class="bg-base-200">
             <tr>
-              <th>Producto</th>
-              <th>SKU</th>
-              <th>Almacén</th>
-              <th>Stock Actual</th>
-              <th>Stock Mínimo</th>
-              <th>Ubicación</th>
-              <th>Estado</th>
+              <th scope="col">Producto</th>
+              <th scope="col">SKU</th>
+              <th scope="col">Almacén</th>
+              <th scope="col">Stock Actual</th>
+              <th scope="col">Stock Mínimo</th>
+              <th scope="col">Ubicación</th>
+              <th scope="col">Estado</th>
             </tr>
           </thead>
 
           <tbody>
-            <tr v-for="existencia in filteredExistencias" :key="existencia.ExistenciaId">
+            <tr 
+              v-for="existencia in filteredExistencias"
+              :key="existencia.ExistenciaId"
+            >
               <td>{{ existencia.ProductoNombre }}</td>
               <td>{{ existencia.CodigoSku || "-" }}</td>
               <td>{{ existencia.AlmacenNombre || "Principal" }}</td>
+
               <td :class="getStockClass(existencia.CantidadActual, existencia.StockMinimo)">
                 {{ existencia.CantidadActual || 0 }}
               </td>
+
               <td>{{ existencia.StockMinimo || 0 }}</td>
               <td>{{ existencia.UbicacionPasillo || "-" }}</td>
+
               <td>
                 <span 
                   v-if="existencia.CantidadActual === 0"
@@ -144,12 +161,14 @@ const getStockClass = (stock, stockMinimo) => {
                 >
                   Sin Stock
                 </span>
+
                 <span 
                   v-else-if="existencia.StockBajo"
                   class="badge badge-error"
                 >
                   Stock Bajo
                 </span>
+
                 <span 
                   v-else
                   class="badge badge-success"
@@ -158,15 +177,18 @@ const getStockClass = (stock, stockMinimo) => {
                 </span>
               </td>
             </tr>
+
+            <!-- ESTADO VACÍO -->
             <tr v-if="filteredExistencias.length === 0">
-              <td colspan="7" class="text-center py-4">
+              <td colspan="7" class="text-center py-6 text-gray-500">
                 {{ existenciasStore.loading ? "Cargando..." : "No hay existencias" }}
               </td>
             </tr>
+
           </tbody>
         </table>
-      </div>
+      </section>
 
-    </div>
-  </div>
+    </section>
+  </main>
 </template>

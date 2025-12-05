@@ -127,118 +127,152 @@ const exportarPDF = () => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-white p-5">
+  <main class="min-h-screen p-5">
+
     <!-- HEADER -->
-    <div class="flex items-center justify-between mb-8 p-5 bg-base-100 shadow rounded-xl">
+    <header class="flex items-center justify-between mb-8 p-5 bg-base-100 shadow rounded-xl">
       <div class="flex items-center gap-4">
-        <div class="w-12 h-12 bg-warning text-white rounded-xl flex items-center justify-center">
+        <figure
+          class="w-12 h-12 bg-warning text-white rounded-xl flex items-center justify-center"
+          aria-hidden="true"
+        >
           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" 
-                  d="M12 9v3m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+              d="M12 9v3m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+            />
           </svg>
-        </div>
-        <h1 class="text-3xl font-medium text-neutral">Reporte de Stock Crítico</h1>
-      </div>
-    </div>
+        </figure>
 
-    <!-- CONTAINER -->
-    <div class="max-w-7xl mx-auto bg-base-100 p-8 rounded-xl shadow">
-      
+        <h1 class="text-3xl font-medium text-neutral">
+          Reporte de Stock Crítico
+        </h1>
+      </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <section class="max-w-7xl mx-auto bg-base-100 p-8 rounded-xl shadow">
+
       <!-- ESTADÍSTICAS -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-        <div class="stat bg-base-200 rounded-lg">
-          <div class="stat-title">Total Productos</div>
-          <div class="stat-value text-warning">{{ cantidad }}</div>
-          <div class="stat-desc">Requieren atención</div>
-        </div>
-        <div class="stat bg-base-200 rounded-lg">
-          <div class="stat-title">Críticos/Agotados</div>
-          <div class="stat-value text-error">{{ totalCriticos }}</div>
-          <div class="stat-desc">Menos del 70% del mínimo</div>
-        </div>
-        <div class="stat bg-base-200 rounded-lg">
-          <div class="stat-title">Bajos</div>
-          <div class="stat-value text-info">{{ totalBajos }}</div>
-          <div class="stat-desc">Entre 70% y 100% del mínimo</div>
-        </div>
-      </div>
+      <section class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        
+        <article class="stat bg-info rounded-lg">
+          <h2 class="stat-title">Total Productos</h2>
+          <p class="stat-value">{{ cantidad }}</p>
+          <p class="stat-desc">Requieren atención</p>
+        </article>
 
-      <!-- BOTÓN EXPORTAR -->
-      <div class="mb-4">
+        <article class="stat bg-info rounded-lg">
+          <h2 class="stat-title">Críticos/Agotados</h2>
+          <p class="stat-value">{{ totalCriticos }}</p>
+          <p class="stat-desc">Menos del 70% del mínimo</p>
+        </article>
+
+        <article class="stat bg-info rounded-lg">
+          <h2 class="stat-title">Bajos</h2>
+          <p class="stat-value">{{ totalBajos }}</p>
+          <p class="stat-desc">Entre 70% y 100% del mínimo</p>
+        </article>
+
+      </section>
+
+      <!-- ACCIONES -->
+      <nav class="mb-4" aria-label="Acciones del reporte">
         <button @click="exportarPDF" class="btn btn-accent">
-          <img src="/IconExport.svg" class="w-5 mr-2" />
+          <img src="/IconExport.svg" class="w-5 mr-2" alt="Exportar PDF" />
           Exportar PDF
         </button>
-      </div>
+      </nav>
 
       <!-- TABLA -->
-      <div class="overflow-x-auto rounded-lg border border-base-300">
+      <section class="overflow-x-auto rounded-lg border border-base-300">
         <table class="table table-zebra w-full">
-        <thead class="bg-base-200">
-          <tr>
-            <th>Código/SKU</th>
-            <th>Nombre</th>
-            <th>Stock Actual</th>
-            <th>Stock Mínimo</th>
-            <th>Estado</th>
-            <th>Diferencia</th>
-            <th>Almacén</th>
-          </tr>
-        </thead>
+          <thead class="bg-base-200">
+            <tr>
+              <th scope="col">Código/SKU</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Stock Actual</th>
+              <th scope="col">Stock Mínimo</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Diferencia</th>
+              <th scope="col">Almacén</th>
+            </tr>
+          </thead>
 
-        <tbody>
-          <!-- Loading -->
-          <tr v-if="existenciasStore.loading">
-            <td colspan="7" class="text-center py-8">
-              <span class="loading loading-spinner loading-lg"></span>
-              <p class="mt-2">Cargando existencias...</p>
-            </td>
-          </tr>
+          <tbody>
+            <!-- LOADING -->
+            <tr v-if="existenciasStore.loading">
+              <td colspan="7" class="text-center py-8">
+                <span class="loading loading-spinner loading-lg"></span>
+                <p class="mt-2">Cargando existencias...</p>
+              </td>
+            </tr>
 
-          <!-- Sin productos críticos -->
-          <tr v-else-if="productosCriticos.length === 0">
-            <td colspan="7" class="text-center py-8">
-              <div class="flex flex-col items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <p class="text-lg font-semibold text-success">¡Excelente!</p>
-                <p class="text-gray-500">No hay productos con stock crítico</p>
-              </div>
-            </td>
-          </tr>
+            <!-- SIN PRODUCTOS CRÍTICOS -->
+            <tr v-else-if="productosCriticos.length === 0">
+              <td colspan="7" class="text-center py-8">
+                <div class="flex flex-col items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg"
+                    class="w-12 h-12 text-success"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  <p class="text-lg font-semibold text-success">¡Excelente!</p>
+                  <p class="text-gray-500">
+                    No hay productos con stock crítico
+                  </p>
+                </div>
+              </td>
+            </tr>
 
-          <!-- Productos críticos -->
-          <tr v-else v-for="e in productosCriticos" :key="e.ExistenciaId">
-            <td class="font-mono">{{ e.CodigoSku }}</td>
-            <td class="font-medium">{{ e.ProductoNombre }}</td>
-            <td>
-              <span class="font-bold" :class="{
-                'text-error': e.CantidadActual === 0,
-                'text-warning': e.CantidadActual > 0
-              }">
-                {{ e.CantidadActual }}
-              </span>
-            </td>
-            <td>{{ e.StockMinimo }}</td>
-            <td>
-              <span :class="getBadgeClass(e)">
-                {{ getEstado(e) }}
-              </span>
-            </td>
-            <td>
-              <span class="text-error font-semibold">
-                -{{ e.StockMinimo - e.CantidadActual }}
-              </span>
-            </td>
-            <td class="text-gray-600">{{ e.AlmacenNombre }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    </div>
-  </div>
+            <!-- FILAS -->
+            <tr
+              v-else
+              v-for="e in productosCriticos"
+              :key="e.ExistenciaId"
+            >
+              <td class="font-mono">{{ e.CodigoSku }}</td>
+              <td class="font-medium">{{ e.ProductoNombre }}</td>
+
+              <td>
+                <strong :class="{
+                  'text-error': e.CantidadActual === 0,
+                  'text-warning': e.CantidadActual > 0
+                }">
+                  {{ e.CantidadActual }}
+                </strong>
+              </td>
+
+              <td>{{ e.StockMinimo }}</td>
+
+              <td>
+                <span :class="getBadgeClass(e)">
+                  {{ getEstado(e) }}
+                </span>
+              </td>
+
+              <td>
+                <span class="text-error font-semibold">
+                  -{{ e.StockMinimo - e.CantidadActual }}
+                </span>
+              </td>
+
+              <td class="text-gray-600">
+                {{ e.AlmacenNombre }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </section>
+  </main>
 </template>
 
 <style scoped>

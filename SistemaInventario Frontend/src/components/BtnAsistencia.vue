@@ -10,9 +10,9 @@
       </div>
     </div>
 
-    <figcaption class="text-white flex items-center justify-center space-x-2">
+    <figcaption class=" flex items-center justify-center space-x-2 text-xl font-bold">
       ¿Necesita asistencia?
-      <img class="w-14 p-2" src="/Group.png" />
+      <img class="w-14 p-2" src="/Group.svg" />
     </figcaption>
   </div>
 </header>

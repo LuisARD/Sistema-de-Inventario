@@ -95,52 +95,63 @@ const totalNormales = computed(() => productos.value.filter(p => p.estado === "N
 </script>
 
 <template>
-  <div class="min-h-screen bg-white p-5">
+  <main class="min-h-screen">
+
     <!-- HEADER -->
-    <div class="flex items-center justify-between mb-8 p-5 bg-base-100 shadow rounded-xl">
+    <header class="flex items-center justify-between mb-8 p-5 bg-base-100 shadow rounded-xl">
       <div class="flex items-center gap-4">
-        <div class="w-12 h-12 bg-primary text-white rounded-xl flex items-center justify-center">
+        <figure
+          class="w-12 h-12 bg-primary text-white rounded-xl flex items-center justify-center"
+          aria-hidden="true"
+        >
           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" 
-                  d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"/>
+              d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"/>
           </svg>
-        </div>
-        <h1 class="text-3xl font-medium text-neutral">Reporte de Stock General</h1>
-      </div>
-    </div>
+        </figure>
 
-    <!-- CONTAINER -->
-    <div class="max-w-7xl mx-auto bg-base-100 p-8 rounded-xl shadow">
-      
-      <!-- ESTADÍSTICAS -->
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-        <div class="stat bg-base-200 rounded-lg">
-          <div class="stat-title">Total Productos</div>
-          <div class="stat-value text-primary">{{ totalProductos }}</div>
-          <div class="stat-desc">En inventario</div>
-        </div>
-        <div class="stat bg-base-200 rounded-lg">
-          <div class="stat-title">Normal</div>
-          <div class="stat-value text-success">{{ totalNormales }}</div>
-          <div class="stat-desc">Stock adecuado</div>
-        </div>
-        <div class="stat bg-base-200 rounded-lg">
-          <div class="stat-title">Bajos</div>
-          <div class="stat-value text-warning">{{ totalBajos }}</div>
-          <div class="stat-desc">Requieren atención</div>
-        </div>
-        <div class="stat bg-base-200 rounded-lg">
-          <div class="stat-title">Críticos</div>
-          <div class="stat-value text-error">{{ totalCriticos }}</div>
-          <div class="stat-desc">Urgente</div>
-        </div>
+        <h1 class="text-3xl font-medium text-neutral">
+          Reporte de Stock General
+        </h1>
       </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <section class="max-w-7xl mx-auto bg-base-100 p-8 rounded-xl shadow">
+
+      <!-- ESTADÍSTICAS -->
+      <section class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+        <article class="stat bg-info rounded-lg">
+          <h2 class="stat-title">Total Productos</h2>
+          <p class="stat-value text-primary">{{ totalProductos }}</p>
+          <p class="stat-desc">En inventario</p>
+        </article>
+
+        <article class="stat bg-info rounded-lg">
+          <h2 class="stat-title">Normal</h2>
+          <p class="stat-value text-primary">{{ totalNormales }}</p>
+          <p class="stat-desc">Stock adecuado</p>
+        </article>
+
+        <article class="stat bg-info rounded-lg">
+          <h2 class="stat-title">Bajos</h2>
+          <p class="stat-value text-primary">{{ totalBajos }}</p>
+          <p class="stat-desc">Requieren atención</p>
+        </article>
+
+        <article class="stat bg-info rounded-lg">
+          <h2 class="stat-title">Críticos</h2>
+          <p class="stat-value text-primary">{{ totalCriticos }}</p>
+          <p class="stat-desc">Urgente</p>
+        </article>
+      </section>
 
       <!-- CONTROLES -->
-      <div class="flex items-center justify-between mb-6">
+      <nav class="flex items-center justify-between mb-6" aria-label="Controles de búsqueda y exportación">
+        
         <!-- BÚSQUEDA -->
-        <div class="w-full max-w-md">
+        <section class="w-full max-w-md">
           <FormKit
             type="search"
             v-model="buscar"
@@ -150,26 +161,26 @@ const totalNormales = computed(() => productos.value.filter(p => p.estado === "N
               input: 'input input-bordered w-full',
             }"
           />
-        </div>
+        </section>
 
-        <!-- BOTÓN EXPORTAR -->
+        <!-- EXPORTAR -->
         <button @click="exportarPDF" class="btn btn-accent">
-          <img src="/IconExport.svg" class="w-5 mr-2" />
+          <img src="/IconExport.svg" class="w-5 mr-2" alt="Exportar" />
           Exportar PDF
         </button>
-      </div>
+      </nav>
 
       <!-- TABLA -->
-      <div ref="pdfContent" class="overflow-x-auto rounded-lg border border-base-300">
+      <section ref="pdfContent" class="overflow-x-auto rounded-lg border border-base-300">
         <table class="table table-zebra w-full">
           <thead class="bg-base-200">
             <tr>
-              <th>SKU</th>
-              <th>Nombre</th>
-              <th>Almacén</th>
-              <th>Stock Actual</th>
-              <th>Stock Mínimo</th>
-              <th>Estado</th>
+              <th scope="col">SKU</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Almacén</th>
+              <th scope="col">Stock Actual</th>
+              <th scope="col">Stock Mínimo</th>
+              <th scope="col">Estado</th>
             </tr>
           </thead>
 
@@ -195,13 +206,13 @@ const totalNormales = computed(() => productos.value.filter(p => p.estado === "N
               <td class="font-medium">{{ p.nombre }}</td>
               <td class="text-gray-600">{{ p.almacen }}</td>
               <td>
-                <span class="font-bold" :class="{
+                <strong :class="{
                   'text-error': p.estado === 'Crítico',
                   'text-warning': p.estado === 'Bajo',
                   'text-success': p.estado === 'Normal'
                 }">
                   {{ p.stock }}
-                </span>
+                </strong>
               </td>
               <td>{{ p.minimo }}</td>
               <td>
@@ -216,13 +227,9 @@ const totalNormales = computed(() => productos.value.filter(p => p.estado === "N
             </tr>
           </tbody>
         </table>
-      </div>
-    </div>
-  </div>
+      </section>
+
+    </section>
+  </main>
 </template>
 
-<style scoped>
-.stat {
-  padding: 1.5rem;
-}
-</style>

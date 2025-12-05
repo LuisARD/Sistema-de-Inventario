@@ -144,57 +144,46 @@ const cancelar = () => {
 </script>
 
 <template>
-  <div class="min-h-screen p-6 bg-white">
-    <div class="max-w-6xl mx-auto bg-base-100 p-8 rounded-xl shadow">
-      <h1 class="text-2xl font-semibold mb-6 flex items-center gap-3">
-        <img src="/camion.svg" class="w-8 h-8" />
-        Registrar Movimiento de Inventario
-      </h1>
+  <main class="min-h-screen p-4 sm:p-6">
+    <article class="max-w-6xl mx-auto bg-base-100 p-4 sm:p-6 lg:p-8 rounded-xl shadow">
+
+      <header class="mb-6 flex flex-col sm:flex-row sm:items-center gap-3">
+        <img src="/iconCamion.svg" class="w-7 h-7 sm:w-8 sm:h-8" />
+        <h1 class="text-xl sm:text-2xl font-semibold">
+          Registrar Movimiento de Inventario
+        </h1>
+      </header>
 
       <form @submit.prevent="onSubmit" class="space-y-6">
-        
-        <!-- SECCIÓN 1: INFORMACIÓN GENERAL -->
-        <div class="bg-base-200 p-4 rounded-lg">
-          <h2 class="text-lg font-semibold mb-4">Información General</h2>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            
-            <!-- Tipo de Movimiento -->
+
+        <!-- INFORMACIÓN GENERAL -->
+        <section class="bg-base-200 p-4 rounded-lg">
+          <h2 class="text-base sm:text-lg font-semibold mb-4">Información General</h2>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
             <div class="form-control">
-              <label class="label">
-                <span class="label-text">Tipo de Movimiento *</span>
-              </label>
-              <select 
-                v-model="formData.TipoMovimiento" 
-                class="select select-bordered w-full"
-                required
-              >
+              <label class="label">Tipo de Movimiento *</label>
+              <select v-model="formData.TipoMovimiento" class="select select-bordered w-full" required>
                 <option value="ENTRADA">Entrada</option>
                 <option value="SALIDA">Salida</option>
               </select>
             </div>
 
-            <!-- Referencia Documento -->
             <div class="form-control">
-              <label class="label">
-                <span class="label-text">Referencia Documento *</span>
-              </label>
-              <input 
-                v-model="formData.ReferenciaDocumento" 
-                type="text" 
+              <label class="label">Referencia Documento *</label>
+              <input
+                v-model="formData.ReferenciaDocumento"
+                type="text"
                 class="input input-bordered w-full"
-                placeholder="FAC-001, OC-123, etc."
+                placeholder="FAC-001"
                 required
               />
             </div>
 
-            <!-- Usuario (mostrar readonly) -->
             <div class="form-control">
-              <label class="label">
-                <span class="label-text">Usuario Responsable</span>
-              </label>
-              <input 
-                :value="authStore.user?.NombreCompleto" 
-                type="text" 
+              <label class="label">Usuario Responsable</label>
+              <input
+                :value="authStore.user?.NombreCompleto"
                 class="input input-bordered w-full"
                 readonly
                 disabled
@@ -202,146 +191,107 @@ const cancelar = () => {
             </div>
           </div>
 
-          <!-- Motivo (ancho completo) -->
           <div class="form-control mt-4">
-            <label class="label">
-              <span class="label-text">Motivo *</span>
-            </label>
-            <textarea 
-              v-model="formData.Motivo" 
+            <label class="label">Motivo *</label>
+            <textarea
+              v-model="formData.Motivo"
               class="textarea textarea-bordered w-full"
-              placeholder="Describa el motivo del movimiento..."
               rows="2"
               required
             ></textarea>
           </div>
-        </div>
+        </section>
 
-        <!-- SECCIÓN 2: ALMACENES -->
-        <div class="bg-base-200 p-4 rounded-lg">
-          <h2 class="text-lg font-semibold mb-4">Almacenes</h2>
+        <!-- ALMACENES -->
+        <section class="bg-base-200 p-4 rounded-lg">
+          <h2 class="text-base sm:text-lg font-semibold mb-4">Almacenes</h2>
+
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            
-            <!-- Almacén Origen -->
             <div class="form-control">
-              <label class="label">
-                <span class="label-text">Almacén Origen *</span>
-              </label>
-              <select 
-                v-model="formData.AlmacenOrigenId" 
-                class="select select-bordered w-full"
-                required
-              >
-                <option :value="null" disabled>Seleccione un almacén</option>
-                <option 
-                  v-for="almacen in almacenesOptions" 
-                  :key="almacen.value" 
-                  :value="almacen.value"
-                >
-                  {{ almacen.label }}
+              <label class="label">Almacén Origen *</label>
+              <select v-model="formData.AlmacenOrigenId" class="select select-bordered w-full" required>
+                <option :value="null" disabled>Seleccione</option>
+                <option v-for="a in almacenesOptions" :key="a.value" :value="a.value">
+                  {{ a.label }}
                 </option>
               </select>
             </div>
 
-            <!-- Almacén Destino -->
             <div class="form-control">
-              <label class="label">
-                <span class="label-text">Almacén Destino *</span>
-              </label>
-              <select 
-                v-model="formData.AlmacenDestinoId" 
-                class="select select-bordered w-full"
-                required
-              >
-                <option :value="null" disabled>Seleccione un almacén</option>
-                <option 
-                  v-for="almacen in almacenesOptions" 
-                  :key="almacen.value" 
-                  :value="almacen.value"
-                >
-                  {{ almacen.label }}
+              <label class="label">Almacén Destino *</label>
+              <select v-model="formData.AlmacenDestinoId" class="select select-bordered w-full" required>
+                <option :value="null" disabled>Seleccione</option>
+                <option v-for="a in almacenesOptions" :key="a.value" :value="a.value">
+                  {{ a.label }}
                 </option>
               </select>
             </div>
           </div>
-        </div>
+        </section>
 
-        <!-- SECCIÓN 3: DETALLES DE PRODUCTOS -->
-        <div class="bg-base-200 p-4 rounded-lg">
-          <div class="flex justify-between items-center mb-4">
-            <h2 class="text-lg font-semibold">Productos</h2>
-            <button 
-              type="button" 
-              @click="agregarProducto" 
-              class="btn btn-sm btn-primary"
-            >
+        <!-- PRODUCTOS -->
+        <section class="bg-base-200 p-4 rounded-lg">
+          <div class="flex flex-col sm:flex-row sm:justify-between gap-3 mb-4">
+            <h2 class="text-base sm:text-lg font-semibold">Productos</h2>
+            <button type="button" @click="agregarProducto" class="btn btn-sm btn-info w-full sm:w-auto">
               + Agregar Producto
             </button>
           </div>
 
           <div class="overflow-x-auto">
-            <table class="table w-full">
+            <table class="table w-full min-w-[750px]">
               <thead>
                 <tr>
-                  <th class="w-2/5">Producto</th>
+                  <th>Producto</th>
                   <th>Cantidad</th>
                   <th>Costo Unitario</th>
-                  <th>Costo Total</th>
-                  <th>Acción</th>
+                  <th>Total</th>
+                  <th></th>
                 </tr>
               </thead>
+
               <tbody>
                 <tr v-for="(detalle, index) in detalles" :key="index">
-                  <!-- Producto -->
                   <td>
-                    <select 
-                      v-model="detalle.ProductoId" 
+                    <select
+                      v-model="detalle.ProductoId"
                       @change="onProductoChange(index)"
                       class="select select-bordered select-sm w-full"
                       required
                     >
-                      <option :value="null" disabled>Seleccione un producto</option>
-                      <option 
-                        v-for="producto in productosOptions" 
-                        :key="producto.value" 
-                        :value="producto.value"
-                      >
-                        {{ producto.label }}
+                      <option :value="null" disabled>Seleccione</option>
+                      <option v-for="p in productosOptions" :key="p.value" :value="p.value">
+                        {{ p.label }}
                       </option>
                     </select>
                   </td>
 
-                  <!-- Cantidad -->
                   <td>
-                    <input 
-                      v-model.number="detalle.Cantidad" 
-                      type="number" 
+                    <input
+                      v-model.number="detalle.Cantidad"
+                      type="number"
                       min="1"
                       class="input input-bordered input-sm w-full"
                       required
                     />
                   </td>
 
-                  <!-- Costo Unitario (readonly) -->
                   <td>
-                    <input 
-                      v-model.number="detalle.CostoUnitarioHistorico" 
-                      type="number" 
-                      step="0.01"
+                    <input
+                      v-model.number="detalle.CostoUnitarioHistorico"
+                      type="number"
                       class="input input-bordered input-sm w-full bg-base-300"
                       readonly
                     />
                   </td>
 
-                  <!-- Costo Total (calculado) -->
                   <td class="font-semibold">
                     ${{ calcularCostoTotal(detalle).toFixed(2) }}
                   </td>
 
-                  <!-- Acción -->
                   <td>
-                    <button 
-                      type="button" 
+                    <button
+                      type="button"
                       @click="eliminarProducto(index)"
                       class="btn btn-sm btn-error btn-circle"
                       :disabled="detalles.length === 1"
@@ -351,34 +301,30 @@ const cancelar = () => {
                   </td>
                 </tr>
               </tbody>
+
               <tfoot>
                 <tr class="font-bold">
-                  <td colspan="3" class="text-right">TOTAL GENERAL:</td>
-                  <td class="text-lg text-primary">${{ totalGeneral.toFixed(2) }}</td>
+                  <td colspan="3" class="text-right">TOTAL:</td>
+                  <td class="text-primary text-lg">${{ totalGeneral.toFixed(2) }}</td>
                   <td></td>
                 </tr>
               </tfoot>
             </table>
           </div>
-        </div>
+        </section>
 
-        <!-- BOTONES -->
-        <div class="flex justify-end gap-3 pt-4">
-          <button 
-            type="button" 
-            @click="cancelar" 
-            class="btn btn-ghost rounded-full px-10"
-          >
+        <!-- ACCIONES -->
+        <footer class="flex flex-col sm:flex-row justify-end gap-3 pt-4">
+          <button type="button" @click="cancelar" class="btn btn-ghost w-full sm:w-auto">
             Cancelar
           </button>
-          <button 
-            type="submit" 
-            class="btn btn-primary rounded-full px-10"
-          >
+
+          <button type="submit" class="btn btn-info w-full sm:w-auto">
             Registrar Movimiento
           </button>
-        </div>
+        </footer>
+
       </form>
-    </div>
-  </div>
+    </article>
+  </main>
 </template>

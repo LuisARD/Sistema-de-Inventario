@@ -82,7 +82,7 @@ const onSubmit = (data) => {
     <div class="card w-full max-w-3xl bg-base-100 shadow p-8">
 
       <h1 class="text-2xl font-semibold mb-6 flex items-center gap-3">
-        <img src="/btn1.svg" class="w-7 h-7" />
+        <img src="/iconTitle.svg" class="w-7 h-7" />
         {{ editId ? 'Editar Proveedor' : 'Crear Proveedor' }}
       </h1>
 
@@ -105,7 +105,7 @@ const onSubmit = (data) => {
           </button>
           <button
             type="submit"
-            class="btn btn-primary rounded-full px-8"
+            class="btn btn-info rounded-full px-8"
           >
             {{ editId ? 'Actualizar Proveedor' : 'Crear Proveedor' }}
           </button>

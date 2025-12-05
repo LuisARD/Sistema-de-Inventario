@@ -21,6 +21,7 @@ onMounted(() => {
   productosStore.fetchProductos();
 });
 
+console.log(productosStore.productos);
 
 
 // Filtrado simple: busca en todos los campos convertidos a texto
@@ -48,73 +49,73 @@ const editarProducto = (product) => {
 
 </script>
 
-
 <template>
-  <div class="min-h-screen bg-white p-5">
+  <main class="min-h-screen p-5">
 
-    <!-- HEADER -->
-    <div class="flex items-center justify-between mb-8 p-5 bg-base-100 shadow rounded-xl">
+    <!-- HEADER SEMÁNTICO -->
+    <header class="flex items-center justify-between mb-8 p-5 bg-base-100 shadow rounded-xl">
       <div class="flex items-center gap-4">
-        <div class="w-12 h-12 bg-primary text-white rounded-xl flex items-center justify-center">
-          <!-- ICON -->
+
+        <figure class="w-12 h-12 bg-primary text-white rounded-xl flex items-center justify-center">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
-               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
             <polyline points="9 22 9 12 15 12 15 22"/>
           </svg>
-        </div>
+        </figure>
 
         <h1 class="text-3xl font-medium text-neutral">Gestión de Productos</h1>
       </div>
-    </div>
+    </header>
 
-    <!-- CONTAINER -->
-    <div class="max-w-6xl mx-auto bg-base-100 p-8 rounded-xl shadow">
+    <!-- CONTENIDO PRINCIPAL -->
+    <section class="max-w-6xl mx-auto bg-base-100 p-8 rounded-xl shadow">
 
-      <!-- CONTROLS -->
-      <div class="flex items-center justify-between mb-6">
-
-        <!-- SEARCH -->
-        <div class="w-40">
+      <!-- CONTROLES -->
+      <nav class="flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between mb-6">
+        
+        <!-- BUSCADOR -->
+        <form class="w-full sm:w-40" role="search">
           <input
-            type="text"
+            type="search"
             v-model="searchQuery"
             placeholder="🔍 Buscar"
             class="input input-bordered w-full"
+            aria-label="Buscar producto"
           >
-        </div>
+        </form>
 
-        <!-- BUTTON -->
+        <!-- BOTÓN -->
         <button 
-          class="btn btn-primary rounded-full px-8"
+          class="btn btn-info rounded-full px-8 w-full sm:w-auto"
           @click="btnCrearProducto"
         >
           Crear Productos
         </button>
-      </div>
+      </nav>
 
-      <!-- TABLE -->
-      <div class="overflow-x-auto rounded-lg border border-base-300">
-        <table class="table table-zebra w-full">
+      <!-- TABLA RESPONSIVE -->
+      <section class="overflow-x-auto rounded-lg border border-base-300">
+        <table class="table table-zebra w-full" aria-label="Listado de productos">
 
           <thead class="bg-base-200">
             <tr>
-            <th>Código SKU</th>
-              <th>Nombre</th>
-              <th>Descripción</th>
-              <th>Categoría</th>
-              <th>Proveedor</th>
-              <th>Precio compra</th>
-              <th>Precio venta</th>
-              <th>Unidad</th>
-              <th>Stock mínimo</th>
-              <th>Acción</th>
+              <th scope="col">Código SKU</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Descripción</th>
+              <th scope="col">Categoría</th>
+              <th scope="col">Proveedor</th>
+              <th scope="col">Precio compra</th>
+              <th scope="col">Precio venta</th>
+              <th scope="col">Unidad</th>
+              <th scope="col">Stock mínimo</th>
+              <th scope="col">Acción</th>
             </tr>
           </thead>
 
           <tbody>
             <tr v-for="product in filteredProducts" :key="product.codigo">
-                <td>{{ product.CodigoSku }}</td>
+              <td>{{ product.CodigoSku }}</td>
               <td>{{ product.Nombre }}</td>
               <td>{{ product.Descripcion ?? "-" }}</td>
               <td>{{ product.CategoriaNombre ?? "-" }}</td>
@@ -124,50 +125,47 @@ const editarProducto = (product) => {
               <td>{{ product.UnidadMedida }}</td>
               <td>{{ product.StockMinimo }}</td>
 
-              <!-- ACTIONS -->
+              <!-- ACCIONES -->
               <td class="flex gap-2">
-
-                <!-- EDIT BUTTON -->
                 <button 
                   class="btn btn-sm btn-ghost"
                   @click="editarProducto(product)"
-                  title="Editar"
+                  aria-label="Editar producto"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5"
-                       fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                       stroke-width="2">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none"
+                       viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
                     <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
                   </svg>
                 </button>
 
-                <!-- DELETE BUTTON -->
                 <button 
                   class="btn btn-sm btn-error text-white"
                   @click="handleRemove(product.ProductoId)"
-                  title="Eliminar"
+                  aria-label="Eliminar producto"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5"
-                       fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                       stroke-width="2">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none"
+                       viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <polyline points="3 6 5 6 21 6"/>
                     <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
                   </svg>
                 </button>
-
               </td>
             </tr>
-              <tr v-if="(filteredProducts.length === 0)">
-              <td colspan="10" class="text-center py-4">No hay productos</td>
+
+            <tr v-if="filteredProducts.length === 0">
+              <td colspan="10" class="text-center py-4">
+                No hay productos
+              </td>
             </tr>
           </tbody>
+
         </table>
-      </div>
+      </section>
 
-     
-
-    </div>
-  </div>
+    </section>
+  </main>
 </template>
+
 
 
