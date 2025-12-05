@@ -56,23 +56,32 @@ const onSubmit = (data) => {
   const payload = {
     NombreCompleto: data.nombre,
     Email: data.email,
-    Password: data.password,
     RolId: rolId,
     Activo: Boolean(data.activo),
   };
 
-  // Log para debugging (puedes quitarlo después)
-  console.log('Payload enviado:', payload);
-
   if (editId.value) {
-    delete payload.Password;
-      const payloadEdit = {
-    UsuarioId: editId.value,   // 👈 NECESARIO
-    ...payload
-  };
-
-  saveEdit(payloadEdit);
+    // Modo edición: incluir Password solo si se proporcionó una nueva
+    const payloadEdit = {
+      UsuarioId: editId.value,
+      ...payload
+    };
+    
+    // Solo agregar Password si el usuario escribió algo
+    if (data.password && data.password.trim() !== '') {
+      payloadEdit.Password = data.password;
+    }
+    
+    console.log('Payload edición enviado:', payloadEdit);
+    saveEdit(payloadEdit);
   } else {
+    // Modo creación: Password es obligatorio
+    if (!data.password || data.password.trim() === '') {
+      alert('La contraseña es obligatoria para crear un usuario');
+      return;
+    }
+    payload.Password = data.password;
+    console.log('Payload creación enviado:', payload);
     handleSubmit(payload);
   }
 

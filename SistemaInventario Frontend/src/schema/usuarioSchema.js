@@ -27,11 +27,11 @@ export const usuarioSchema = [
     $formkit: "password",
     name: "password",
     label: "Contraseña",
-    validation: "required|length:6",
+    validation: "length:6",
     inputClass: "input input-bordered w-full",
     outerClass: "mb-4 flex flex-col gap-1",
+    help: "Dejar en blanco para mantener la contraseña actual (solo en edición)",
     validationMessages: {
-      required: "La contraseña es obligatoria",
       length: "Debe tener al menos 6 caracteres",
     },
   },
