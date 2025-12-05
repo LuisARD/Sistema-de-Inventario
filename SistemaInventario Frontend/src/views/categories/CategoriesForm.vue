@@ -3,63 +3,61 @@ import { ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
 import { useCategoríasStore } from "../../store/categorias";
 import { categoriaSchema } from "../../schema/categoriaSchema";
+import { useCrudForm } from "../../composable/useCrudForm";
 
 const router = useRouter();
 const categoriasStore = useCategoríasStore();
-
 const formRef = ref(null);
 
-// Base para limpiar el formulario
 const categoriaBase = {
   nombre: "",
   descripcion: "",
 };
 
-// Modelo reactivo (solo para inspección si quieres)
-const categoria = ref({ ...categoriaBase });
+const { formData, editId, saveEdit, handleSubmit } = useCrudForm(
+  categoriasStore,
+  categoriaBase,
+  formRef
+);
 
-// Si viene de editar, solo PRELLENA, pero siempre crea
 onMounted(() => {
-  const c = categoriasStore.categoriaActual;
+  if (categoriasStore.categoriaActual) {
+    const c = categoriasStore.categoriaActual;
 
-  if (c) {
-    const values = {
-      nombre: c.CategoriaNombre ?? c.nombre ?? "",
-      descripcion: c.Descripcion ?? c.descripcion ?? "",
-    };
-
-    Object.assign(categoria.value, values);
+    Object.assign(formData.value, {
+      nombre: c.Nombre ?? "",
+      descripcion: c.Descripcion ?? "",
+    });
 
     if (formRef.value?.node?.input) {
-      formRef.value.node.input({ ...values });
+      formRef.value.node.input({ ...formData.value });
     }
+
+    editId.value = c.CategoriaId;
   }
 });
 
-// Crear categoría (NO EDITA)
-const crearCategoria = async () => {
-  try {
-    const data = formRef.value?.node?.value ?? categoria.value;
+const onSubmit = (data) => {
+  const payload = {
+    CategoriaId: editId.value,
+    Nombre: data.nombre || "",
+    Descripcion: data.descripcion || ""
+  };
 
-    const payload = {
-      Nombre: data.nombre,
-      Descripcion: data.descripcion,
-    };
+  console.log('Editando categoría:', editId.value, 'Payload:', payload);
 
-    await categoriasStore.addItem(payload);
-
-    categoriasStore.categoriaActual = null;
-
-    // Reset visual y reactivo
-    if (formRef.value?.node?.input) {
-      formRef.value.node.input({ ...categoriaBase });
-    }
-    Object.assign(categoria.value, categoriaBase);
-
-    
-  } catch (e) {
-    console.error("Error al crear categoría:", e);
+  if (editId.value) {
+    saveEdit(payload);
+  } else {
+    handleSubmit({
+      Nombre: data.nombre || "",
+      Descripcion: data.descripcion || ""
+    });
   }
+
+  categoriasStore.categoriaActual = null;
+  formRef.value?.node?.reset();
+  router.push('/categories');
 };
 </script>
 
@@ -68,24 +66,31 @@ const crearCategoria = async () => {
     <div class="card w-full max-w-3xl bg-base-100 shadow p-8">
       <h1 class="text-2xl font-semibold mb-6 flex items-center gap-3">
         <img src="/btn1.svg" class="w-7 h-7" />
-        Crear Categoría
+        {{ editId ? 'Editar Categoría' : 'Crear Categoría' }}
       </h1>
 
       <FormKit
         ref="formRef"
         type="form"
         :actions="false"
-        @submit="crearCategoria"
+        @submit="onSubmit"
         class="space-y-6"
       >
         <FormKitSchema :schema="categoriaSchema" />
 
-        <div class="flex justify-end pt-4">
+        <div class="flex justify-end gap-3 pt-4">
+          <button
+            type="button"
+            class="btn btn-ghost rounded-full px-10"
+            @click="router.push('/categories')"
+          >
+            Cancelar
+          </button>
           <button
             type="submit"
             class="btn btn-primary rounded-full px-10"
           >
-            Crear Categoría
+            {{ editId ? 'Actualizar Categoría' : 'Crear Categoría' }}
           </button>
         </div>
       </FormKit>
