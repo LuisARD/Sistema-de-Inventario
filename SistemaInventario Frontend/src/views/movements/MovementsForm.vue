@@ -93,19 +93,33 @@ const totalGeneral = computed(() => {
 // Enviar formulario
 const onSubmit = async () => {
   try {
+    // Construir payload base
     const payload = {
       TipoMovimiento: formData.value.TipoMovimiento,
       Motivo: formData.value.Motivo,
       ReferenciaDocumento: formData.value.ReferenciaDocumento,
       UsuarioId: authStore.user.UsuarioId,
-      AlmacenOrigenId: formData.value.AlmacenOrigenId,
-      AlmacenDestinoId: formData.value.AlmacenDestinoId,
       Detalles: detalles.value.map((d) => ({
         ProductoId: d.ProductoId,
         Cantidad: d.Cantidad,
         CostoUnitarioHistorico: d.CostoUnitarioHistorico,
       })),
     };
+
+    // Agregar almacenes según el tipo de movimiento
+    if (formData.value.TipoMovimiento === "ENTRADA") {
+      // Para ENTRADA: solo AlmacenDestinoId es requerido
+      payload.AlmacenDestinoId = formData.value.AlmacenDestinoId;
+      if (formData.value.AlmacenOrigenId) {
+        payload.AlmacenOrigenId = formData.value.AlmacenOrigenId;
+      }
+    } else {
+      // Para SALIDA: solo AlmacenOrigenId es requerido
+      payload.AlmacenOrigenId = formData.value.AlmacenOrigenId;
+      if (formData.value.AlmacenDestinoId) {
+        payload.AlmacenDestinoId = formData.value.AlmacenDestinoId;
+      }
+    }
 
     // Determinar endpoint según tipo de movimiento
     const endpoint = formData.value.TipoMovimiento === "ENTRADA" 
