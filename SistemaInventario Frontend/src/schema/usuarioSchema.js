@@ -40,9 +40,9 @@ export const usuarioSchema = [
     name: "rol",
     label: "Rol del usuario",
     options: [
-      { value: "1", label: "Usuario" },
-      { value: "2", label: "Administrador" },
-      { value: "3", label: "Supervisor" },
+      { value: 1, label: "Administrador" },
+      { value: 2, label: "Usuario" },
+      { value: 3, label: "Supervisor" },
     ],
     validation: "required",
     inputClass: "select select-bordered w-full",
@@ -51,5 +51,13 @@ export const usuarioSchema = [
     validationMessages: {
       required: "El rol es obligatorio",
     },
+  },
+  {
+    $formkit: "checkbox",
+    name: "activo",
+    label: "Usuario activo",
+    inputClass: "checkbox checkbox-primary",
+    outerClass: "mb-4 flex flex-row items-center gap-3",
+    help: "Marque esta opción si el usuario está activo",
   },
   ];

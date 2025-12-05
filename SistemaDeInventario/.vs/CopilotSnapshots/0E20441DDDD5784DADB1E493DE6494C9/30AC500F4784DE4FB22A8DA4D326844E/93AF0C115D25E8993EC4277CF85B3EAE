@@ -1,0 +1,130 @@
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using SistemaDeInventario.Application.DTOs.Request;
+using SistemaDeInventario.Application.Services.Interfaces;
+using SistemaDeInventarioWebAPI.Authorization;
+
+namespace SistemaDeInventarioWebAPI.Controllers;
+
+[ApiController]
+[Route("api/[controller]")]
+[Produces("application/json")]
+[Authorize]
+public class ProveedoresController : ControllerBase
+{
+    private readonly IProveedorService _proveedorService;
+
+    public ProveedoresController(IProveedorService proveedorService)
+    {
+        _proveedorService = proveedorService;
+    }
+
+    /// <summary>
+    /// Obtener todos los proveedores (Compras/Inventario)
+    /// </summary>
+    [HttpGet]
+    public async Task<IActionResult> GetAll()
+    {
+        try
+        {
+            var proveedores = await _proveedorService.GetAllProveedoresAsync();
+            return Ok(proveedores);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Error al obtener proveedores", error = ex.Message });
+        }
+    }
+
+    /// <summary>
+    /// Obtener proveedor por ID (Compras/Inventario)
+    /// </summary>
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetById(int id)
+    {
+        try
+        {
+            var proveedor = await _proveedorService.GetProveedorByIdAsync(id);
+            if (proveedor == null)
+                return NotFound(new { message = $"Proveedor con ID {id} no encontrado" });
+
+            return Ok(proveedor);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Error al obtener proveedor", error = ex.Message });
+        }
+    }
+
+    /// <summary>
+    /// Crear nuevo proveedor (Compras/Inventario)
+    /// </summary>
+    [HttpPost]
+    [Authorize(Policy = Policies.AlmacenOCompras)]
+    public async Task<IActionResult> Create([FromBody] CreateProveedorDto dto)
+    {
+        try
+        {
+            var proveedor = await _proveedorService.CreateProveedorAsync(dto);
+            return CreatedAtAction(nameof(GetById), new { id = proveedor.ProveedorId }, proveedor);
+        }
+        catch (InvalidOperationException ex)
+        {
+            return BadRequest(new { message = ex.Message });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Error al crear proveedor", error = ex.Message });
+        }
+    }
+
+    /// <summary>
+    /// Actualizar proveedor (Compras/Inventario)
+    /// </summary>
+    [HttpPut("{id}")]
+    [Authorize(Policy = Policies.AlmacenOCompras)]
+    public async Task<IActionResult> Update(int id, [FromBody] UpdateProveedorDto dto)
+    {
+        try
+        {
+            if (id != dto.ProveedorId)
+                return BadRequest(new { message = "El ID del proveedor no coincide" });
+
+            var proveedor = await _proveedorService.UpdateProveedorAsync(dto);
+            return Ok(proveedor);
+        }
+        catch (InvalidOperationException ex)
+        {
+            return NotFound(new { message = ex.Message });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Error al actualizar proveedor", error = ex.Message });
+        }
+    }
+
+    /// <summary>
+    /// Eliminar proveedor (Compras/Inventario)
+    /// </summary>
+    [HttpDelete("{id}")]
+    [Authorize(Policy = Policies.AlmacenOCompras)]
+    public async Task<IActionResult> Delete(int id)
+    {
+        try
+        {
+            var result = await _proveedorService.DeleteProveedorAsync(id);
+            if (!result)
+                return NotFound(new { message = $"Proveedor con ID {id} no encontrado" });
+
+            return Ok(new { message = "Proveedor eliminado correctamente" });
+        }
+        catch (InvalidOperationException ex)
+        {
+            return BadRequest(new { message = ex.Message });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Error al eliminar proveedor", error = ex.Message });
+        }
+    }
+}

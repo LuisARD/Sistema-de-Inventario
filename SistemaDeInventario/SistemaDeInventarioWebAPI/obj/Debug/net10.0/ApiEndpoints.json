@@ -1,0 +1,785 @@
+[
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.AlmacenesController",
+    "Method": "GetAll",
+    "RelativePath": "api/Almacenes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.AlmacenesController",
+    "Method": "Create",
+    "RelativePath": "api/Almacenes",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SistemaDeInventario.Application.DTOs.Request.CreateDto.CreateAlmacenDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.AlmacenesController",
+    "Method": "GetById",
+    "RelativePath": "api/Almacenes/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.AlmacenesController",
+    "Method": "Update",
+    "RelativePath": "api/Almacenes/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "SistemaDeInventario.Application.DTOs.Request.UpdateDto.UpdateAlmacenDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.AlmacenesController",
+    "Method": "Delete",
+    "RelativePath": "api/Almacenes/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.AlmacenesController",
+    "Method": "GetActivos",
+    "RelativePath": "api/Almacenes/activos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SistemaDeInventario.Application.DTOs.Request.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.AuthController",
+    "Method": "ValidateCredentials",
+    "RelativePath": "api/Auth/validate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SistemaDeInventario.Application.DTOs.Request.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.CategoriasController",
+    "Method": "GetAll",
+    "RelativePath": "api/Categorias",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.CategoriasController",
+    "Method": "Create",
+    "RelativePath": "api/Categorias",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SistemaDeInventario.Application.DTOs.Request.CreateDto.CreateCategoriaDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.CategoriasController",
+    "Method": "GetById",
+    "RelativePath": "api/Categorias/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.CategoriasController",
+    "Method": "Update",
+    "RelativePath": "api/Categorias/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "SistemaDeInventario.Application.DTOs.Request.UpdateDto.UpdateCategoriaDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.CategoriasController",
+    "Method": "Delete",
+    "RelativePath": "api/Categorias/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.ExistenciasController",
+    "Method": "GetAll",
+    "RelativePath": "api/Existencias",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.ExistenciasController",
+    "Method": "GetByAlmacen",
+    "RelativePath": "api/Existencias/almacen/{almacenId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "almacenId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.ExistenciasController",
+    "Method": "GetByProducto",
+    "RelativePath": "api/Existencias/producto/{productoId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.ExistenciasController",
+    "Method": "GetByProductoYAlmacen",
+    "RelativePath": "api/Existencias/producto/{productoId}/almacen/{almacenId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "almacenId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.ExistenciasController",
+    "Method": "GetStockBajo",
+    "RelativePath": "api/Existencias/stock-bajo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.MovimientosController",
+    "Method": "GetAll",
+    "RelativePath": "api/Movimientos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.MovimientosController",
+    "Method": "GetById",
+    "RelativePath": "api/Movimientos/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.MovimientosController",
+    "Method": "GetByAlmacen",
+    "RelativePath": "api/Movimientos/almacen/{almacenId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "almacenId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.MovimientosController",
+    "Method": "RegistrarEntrada",
+    "RelativePath": "api/Movimientos/entrada",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SistemaDeInventario.Application.DTOs.Request.CreateDto.CreateMovimientoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.MovimientosController",
+    "Method": "GetByFecha",
+    "RelativePath": "api/Movimientos/fecha",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fechaInicio",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "fechaFin",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.MovimientosController",
+    "Method": "RegistrarSalida",
+    "RelativePath": "api/Movimientos/salida",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SistemaDeInventario.Application.DTOs.Request.CreateDto.CreateMovimientoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.MovimientosController",
+    "Method": "GetByTipo",
+    "RelativePath": "api/Movimientos/tipo/{tipo}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tipo",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.MovimientosController",
+    "Method": "GetByUsuario",
+    "RelativePath": "api/Movimientos/usuario/{usuarioId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuarioId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.ProductosController",
+    "Method": "GetAll",
+    "RelativePath": "api/Productos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.ProductosController",
+    "Method": "Create",
+    "RelativePath": "api/Productos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SistemaDeInventario.Application.DTOs.Request.CreateDto.CreateProductoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.ProductosController",
+    "Method": "GetById",
+    "RelativePath": "api/Productos/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.ProductosController",
+    "Method": "Update",
+    "RelativePath": "api/Productos/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "SistemaDeInventario.Application.DTOs.Request.UpdateDto.UpdateProductoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.ProductosController",
+    "Method": "Delete",
+    "RelativePath": "api/Productos/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.ProductosController",
+    "Method": "GetByCategoria",
+    "RelativePath": "api/Productos/categoria/{categoriaId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "categoriaId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.ProductosController",
+    "Method": "GetByProveedor",
+    "RelativePath": "api/Productos/proveedor/{proveedorId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "proveedorId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.ProductosController",
+    "Method": "GetBySku",
+    "RelativePath": "api/Productos/sku/{sku}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sku",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.ProveedoresController",
+    "Method": "GetAll",
+    "RelativePath": "api/Proveedores",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.ProveedoresController",
+    "Method": "Create",
+    "RelativePath": "api/Proveedores",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SistemaDeInventario.Application.DTOs.Request.CreateDto.CreateProveedorDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.ProveedoresController",
+    "Method": "GetById",
+    "RelativePath": "api/Proveedores/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.ProveedoresController",
+    "Method": "Update",
+    "RelativePath": "api/Proveedores/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "SistemaDeInventario.Application.DTOs.Request.UpdateDto.UpdateProveedorDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.ProveedoresController",
+    "Method": "Delete",
+    "RelativePath": "api/Proveedores/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.RolesController",
+    "Method": "GetAll",
+    "RelativePath": "api/Roles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.RolesController",
+    "Method": "Create",
+    "RelativePath": "api/Roles",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SistemaDeInventario.Application.DTOs.Request.CreateRolDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.RolesController",
+    "Method": "GetById",
+    "RelativePath": "api/Roles/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.TestController",
+    "Method": "TestConnection",
+    "RelativePath": "api/Test/connection",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.TestController",
+    "Method": "GetSampleData",
+    "RelativePath": "api/Test/sample-data",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.TestController",
+    "Method": "TestTables",
+    "RelativePath": "api/Test/tables",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.UsuariosController",
+    "Method": "GetAll",
+    "RelativePath": "api/Usuarios",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.UsuariosController",
+    "Method": "Create",
+    "RelativePath": "api/Usuarios",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SistemaDeInventario.Application.DTOs.Request.CreateUsuarioDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.UsuariosController",
+    "Method": "GetById",
+    "RelativePath": "api/Usuarios/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.UsuariosController",
+    "Method": "Update",
+    "RelativePath": "api/Usuarios/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "SistemaDeInventario.Application.DTOs.Request.UpdateUsuarioDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.UsuariosController",
+    "Method": "Delete",
+    "RelativePath": "api/Usuarios/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.UsuariosController",
+    "Method": "GetActivos",
+    "RelativePath": "api/Usuarios/activos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaDeInventarioWebAPI.Controllers.UsuariosController",
+    "Method": "GetByEmail",
+    "RelativePath": "api/Usuarios/email/{email}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

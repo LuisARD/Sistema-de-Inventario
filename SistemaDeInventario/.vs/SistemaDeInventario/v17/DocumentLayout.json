@@ -1,0 +1,109 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\luisa\\PROG-Proyectos\\Sis-DGA\\Sistema-de-Inventario\\SistemaDeInventario\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|c:\\users\\luisa\\prog-proyectos\\sis-dga\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventariowebapi\\sistemadeinventariowebapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9A1C698E-4C6F-48AA-8E45-F978E8905372}|SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj|solutionrelative:sistemadeinventariowebapi\\sistemadeinventariowebapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA1C9731-DB63-4318-AABC-3E29585865F4}|SistemaDeInventario.Application\\SistemaDeInventario.Application.csproj|c:\\users\\luisa\\prog-proyectos\\sis-dga\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventario.application\\services\\productoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA1C9731-DB63-4318-AABC-3E29585865F4}|SistemaDeInventario.Application\\SistemaDeInventario.Application.csproj|solutionrelative:sistemadeinventario.application\\services\\productoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA1C9731-DB63-4318-AABC-3E29585865F4}|SistemaDeInventario.Application\\SistemaDeInventario.Application.csproj|c:\\users\\luisa\\prog-proyectos\\sis-dga\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventario.application\\services\\proveedorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA1C9731-DB63-4318-AABC-3E29585865F4}|SistemaDeInventario.Application\\SistemaDeInventario.Application.csproj|solutionrelative:sistemadeinventario.application\\services\\proveedorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06C5848F-EF5C-41CE-9854-B6CD1444C856}|SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj|c:\\users\\luisa\\prog-proyectos\\sis-dga\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventario.infrastructure\\repositories\\productorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06C5848F-EF5C-41CE-9854-B6CD1444C856}|SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj|solutionrelative:sistemadeinventario.infrastructure\\repositories\\productorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06C5848F-EF5C-41CE-9854-B6CD1444C856}|SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj|c:\\users\\luisa\\prog-proyectos\\sis-dga\\sistema-de-inventario\\sistemadeinventario\\sistemadeinventario.infrastructure\\repositories\\movimientorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06C5848F-EF5C-41CE-9854-B6CD1444C856}|SistemaDeInventario.Infrastructure\\SistemaDeInventario.Infrastructure.csproj|solutionrelative:sistemadeinventario.infrastructure\\repositories\\movimientorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SistemaDeInventarioWebAPI",
+              "DocumentMoniker": "C:\\Users\\luisa\\PROG-Proyectos\\Sis-DGA\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj",
+              "RelativeDocumentMoniker": "SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj",
+              "ToolTip": "C:\\Users\\luisa\\PROG-Proyectos\\Sis-DGA\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj",
+              "RelativeToolTip": "SistemaDeInventarioWebAPI\\SistemaDeInventarioWebAPI.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-05T12:40:24.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MovimientoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\luisa\\PROG-Proyectos\\Sis-DGA\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\Repositories\\MovimientoRepository.cs",
+              "RelativeDocumentMoniker": "SistemaDeInventario.Infrastructure\\Repositories\\MovimientoRepository.cs",
+              "ToolTip": "C:\\Users\\luisa\\PROG-Proyectos\\Sis-DGA\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\Repositories\\MovimientoRepository.cs",
+              "RelativeToolTip": "SistemaDeInventario.Infrastructure\\Repositories\\MovimientoRepository.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T12:37:58.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\luisa\\PROG-Proyectos\\Sis-DGA\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\Repositories\\ProductoRepository.cs",
+              "RelativeDocumentMoniker": "SistemaDeInventario.Infrastructure\\Repositories\\ProductoRepository.cs",
+              "ToolTip": "C:\\Users\\luisa\\PROG-Proyectos\\Sis-DGA\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Infrastructure\\Repositories\\ProductoRepository.cs",
+              "RelativeToolTip": "SistemaDeInventario.Infrastructure\\Repositories\\ProductoRepository.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAIAwwEIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T11:50:56.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProveedorService.cs",
+              "DocumentMoniker": "C:\\Users\\luisa\\PROG-Proyectos\\Sis-DGA\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\Services\\ProveedorService.cs",
+              "RelativeDocumentMoniker": "SistemaDeInventario.Application\\Services\\ProveedorService.cs",
+              "ToolTip": "C:\\Users\\luisa\\PROG-Proyectos\\Sis-DGA\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\Services\\ProveedorService.cs",
+              "RelativeToolTip": "SistemaDeInventario.Application\\Services\\ProveedorService.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAowEsAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T11:44:55.172Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductoService.cs",
+              "DocumentMoniker": "C:\\Users\\luisa\\PROG-Proyectos\\Sis-DGA\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\Services\\ProductoService.cs",
+              "RelativeDocumentMoniker": "SistemaDeInventario.Application\\Services\\ProductoService.cs",
+              "ToolTip": "C:\\Users\\luisa\\PROG-Proyectos\\Sis-DGA\\Sistema-de-Inventario\\SistemaDeInventario\\SistemaDeInventario.Application\\Services\\ProductoService.cs",
+              "RelativeToolTip": "SistemaDeInventario.Application\\Services\\ProductoService.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAqwBkAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T11:44:27.217Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

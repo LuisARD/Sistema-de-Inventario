@@ -1,0 +1,113 @@
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using SistemaDeInventario.Application.Services.Interfaces;
+using SistemaDeInventarioWebAPI.Authorization;
+
+namespace SistemaDeInventarioWebAPI.Controllers;
+
+[ApiController]
+[Route("api/[controller]")]
+[Produces("application/json")]
+[Authorize]
+public class ExistenciasController : ControllerBase
+{
+    private readonly IExistenciaService _existenciaService;
+
+    public ExistenciasController(IExistenciaService existenciaService)
+    {
+        _existenciaService = existenciaService;
+    }
+
+    /// <summary>
+    /// Obtener todas las existencias (Información sensible)
+    /// </summary>
+    [HttpGet]
+    [Authorize(Policy = Policies.InventarioSensible)]
+    public async Task<IActionResult> GetAll()
+    {
+        try
+        {
+            var existencias = await _existenciaService.GetAllExistenciasAsync();
+            return Ok(existencias);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Error al obtener existencias", error = ex.Message });
+        }
+    }
+
+    /// <summary>
+    /// Obtener existencias por producto (Información sensible)
+    /// </summary>
+    [HttpGet("producto/{productoId}")]
+    [Authorize(Policy = Policies.InventarioSensible)]
+    public async Task<IActionResult> GetByProducto(int productoId)
+    {
+        try
+        {
+            var existencias = await _existenciaService.GetExistenciasByProductoAsync(productoId);
+            return Ok(existencias);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Error al obtener existencias por producto", error = ex.Message });
+        }
+    }
+
+    /// <summary>
+    /// Obtener existencias por almacén (Información sensible)
+    /// </summary>
+    [HttpGet("almacen/{almacenId}")]
+    [Authorize(Policy = Policies.InventarioSensible)]
+    public async Task<IActionResult> GetByAlmacen(int almacenId)
+    {
+        try
+        {
+            var existencias = await _existenciaService.GetExistenciasByAlmacenAsync(almacenId);
+            return Ok(existencias);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Error al obtener existencias por almacén", error = ex.Message });
+        }
+    }
+
+    /// <summary>
+    /// Obtener productos con stock bajo (Alertas operativas)
+    /// </summary>
+    [HttpGet("stock-bajo")]
+    [Authorize(Policy = Policies.AlmacenOCompras)]
+    public async Task<IActionResult> GetStockBajo()
+    {
+        try
+        {
+            var existencias = await _existenciaService.GetProductosConStockBajoAsync();
+            return Ok(existencias);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Error al obtener productos con stock bajo", error = ex.Message });
+        }
+    }
+
+    /// <summary>
+    /// Obtener existencia por producto y almacén (Información sensible)
+    /// </summary>
+    [HttpGet("producto/{productoId}/almacen/{almacenId}")]
+    [Authorize(Policy = Policies.InventarioSensible)]
+    public async Task<IActionResult> GetByProductoYAlmacen(int productoId, int almacenId)
+    {
+        try
+        {
+            var existencia = await _existenciaService.GetExistenciaByProductoYAlmacenAsync(productoId, almacenId);
+            if (existencia == null)
+                return NotFound(new { message = $"No se encontró existencia para el producto {productoId} en el almacén {almacenId}" });
+
+            return Ok(existencia);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Error al obtener existencia", error = ex.Message });
+        }
+    }
+}

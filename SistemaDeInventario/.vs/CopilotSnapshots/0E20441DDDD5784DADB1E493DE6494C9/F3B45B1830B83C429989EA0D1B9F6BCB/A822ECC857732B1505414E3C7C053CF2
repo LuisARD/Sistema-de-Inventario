@@ -1,0 +1,154 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi;
+using System.Text;
+using SistemaDeInventario.Infrastructure;
+using SistemaDeInventario.Infrastructure.Persistence;
+using SistemaDeInventarioWebAPI.Authorization;
+using SistemaDeInventarioWebAPI.Authorization.Handlers;
+using SistemaDeInventarioWebAPI.Authorization.Requirements;
+
+namespace SistemaDeInventarioWebAPI
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            var builder = WebApplication.CreateBuilder(args);
+
+            // Configurar serialización JSON para endpoints mínimos
+            builder.Services.ConfigureHttpJsonOptions(options =>
+            {
+                options.SerializerOptions.PropertyNamingPolicy = null;
+                options.SerializerOptions.WriteIndented = true;
+            });
+
+            // Agregar Infrastructure (DbContext + Repositorios + Servicios)
+            builder.Services.AddInfrastructure(builder.Configuration);
+
+            // Configurar Autenticación JWT
+            var jwtSettings = builder.Configuration.GetSection("JwtSettings");
+            var secretKey = jwtSettings["SecretKey"];
+            
+            builder.Services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = jwtSettings["Issuer"],
+                    ValidAudience = jwtSettings["Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey)),
+                    ClockSkew = TimeSpan.Zero
+                };
+            });
+
+            // Configurar Authorization Policies
+            builder.Services.AddAuthorizationBuilder()
+                .AddPolicy(Policies.AdminOnly, policy =>
+                    policy.Requirements.Add(new RoleRequirement("Administrador")))
+                .AddPolicy(Policies.AdminOrRRHH, policy =>
+                    policy.Requirements.Add(new RoleRequirement("Administrador", "RRHH")))
+                .AddPolicy(Policies.GestorInventario, policy =>
+                    policy.Requirements.Add(new RoleRequirement("Gestor de Inventario")))
+                .AddPolicy(Policies.OperarioAlmacen, policy =>
+                    policy.Requirements.Add(new RoleRequirement("Operario de Almacén")))
+                .AddPolicy(Policies.Logistica, policy =>
+                    policy.Requirements.Add(new RoleRequirement("Logística")))
+                .AddPolicy(Policies.Compras, policy =>
+                    policy.Requirements.Add(new RoleRequirement("Compras")))
+                .AddPolicy(Policies.Auditoria, policy =>
+                    policy.Requirements.Add(new RoleRequirement("Auditoría")))
+                .AddPolicy(Policies.AlmacenOCompras, policy =>
+                    policy.Requirements.Add(new RoleRequirement("Operario de Almacén", "Compras", "Gestor de Inventario", "Administrador")))
+                .AddPolicy(Policies.AdminOLogistica, policy =>
+                    policy.Requirements.Add(new RoleRequirement("Administrador", "Logística")))
+                .AddPolicy(Policies.InventarioSensible, policy =>
+                    policy.Requirements.Add(new RoleRequirement("Administrador", "Gestor de Inventario", "Logística", "Auditoría")));
+
+            // Registrar el handler de autorización
+            builder.Services.AddSingleton<Microsoft.AspNetCore.Authorization.IAuthorizationHandler, RoleAuthorizationHandler>();
+
+            // Agregar controladores con configuración JSON
+            builder.Services.AddControllers()
+                .AddJsonOptions(options =>
+                {
+                    options.JsonSerializerOptions.PropertyNamingPolicy = null;
+                    options.JsonSerializerOptions.WriteIndented = true;
+                    options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+                });
+
+            // Configurar Swagger con JWT
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new()
+                { 
+                    Title = "Sistema de Inventario API", 
+                    Version = "v1",
+                    Description = "API para la gestión de inventario con autenticación JWT y autorización basada en roles"
+                });
+
+                // Configurar seguridad JWT en Swagger
+                c.AddSecurityDefinition("Bearer", new()
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.Http,
+                    Scheme = "bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Description = "Ingrese el token JWT en el formato: Bearer {token}"
+                });
+
+                c.AddSecurityRequirement(new()
+                {
+                    {
+                        new()
+                        {
+                            Reference = new()
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        Array.Empty<string>()
+                    }
+                });
+            });
+
+            var app = builder.Build();
+
+            // Habilitar Swagger
+            app.UseSwagger();
+            app.UseSwaggerUI(options =>
+            {
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "Sistema Inventario API v1");
+                options.RoutePrefix = string.Empty;
+                options.DocumentTitle = "Sistema de Inventario API";
+            });
+
+            app.UseHttpsRedirection();
+            
+            app.UseCors(policy => policy
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
+
+            // IMPORTANTE: El orden es crítico - Authentication debe ir antes de Authorization
+            app.UseAuthentication();
+            app.UseAuthorization();
+
+            app.MapControllers();
+
+            app.Run();
+        }
+    }
+}
