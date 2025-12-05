@@ -11,6 +11,7 @@ const buttones = [
   { to: "/products", label: "Gestión de Productos", icon: "/camion.svg" },
   { to: "/suppliers", label: "Gestión de Proveedores", icon: "/camion.svg" },
   { to: "/products", label: "Control de Inventario", icon: "/btn1.svg" },
+  { to: "/existencias", label: "Control de Existencias", icon: "/btn1.svg" },
   { to: "/movements", label: "Movimientos de Inventario", icon: "/camion.svg" },
   { to: "/categories", label: "Gestión de Categorías", icon: "/btn1.svg" },
   { to: "/reports", label: "Reportes", icon: "/iconReporte.svg" },

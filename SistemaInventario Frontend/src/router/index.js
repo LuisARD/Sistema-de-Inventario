@@ -14,6 +14,8 @@ import SupplierForm from "../views/suppliers/SupplierForm.vue";
 import CategoriesForm from "../views/categories/CategoriesForm.vue";
 import UserList from "../views/users/UserList.vue";
 import UserForm from "../views/users/UserForm.vue";
+import ExistenciasList from "../views/existencias/ExistenciasList.vue";
+import ExistenciasDetalle from "../views/existencias/ExistenciasDetalle.vue";
 
 const routes = [
   {
@@ -55,6 +57,13 @@ const routes = [
         path: "suppliers/create",
         component: SupplierForm,
         name: "SuppliersCreate",
+      },
+
+      { path: "existencias", component: ExistenciasList, name: "Existencias" },
+      {
+        path: "existencias/producto/:productoId",
+        component: ExistenciasDetalle,
+        name: "ExistenciasDetalle",
       },
 
       { path: "reports", component: ReportsView, name: "Reports" },
