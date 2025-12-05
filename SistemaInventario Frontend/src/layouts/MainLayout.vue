@@ -1,10 +1,22 @@
-<script setup></script>
+<script setup>
+import BtnAsistencia from "../components/btnAsistencia.vue";
+import { useRouter } from 'vue-router';
 
+import { useAuthStore } from "../store/auth";
+const auth = useAuthStore();
+const router = useRouter();
+
+const handleLogout = () => {
+  auth.logout();
+  router.push("/login");
+};
+</script>
+
+=======
 
 <template>
   <!-- Contenedor raíz único -->
   <div class="min-h-screen flex flex-col">
-
     <!-- HEADER -->
     <header class="navbar bg-neutral z-10 text-neutral-content">
       <div class="flex-1">
@@ -12,8 +24,10 @@
           Inventario
         </router-link>
       </div>
-      <div class="flex  items-center">
-        <h3 class="mr-4 ">Hola, user  </h3>
+
+      <div class="flex items-center">
+        <h3 class="mr-4">Hola, {{ auth.user?.NombreCompleto }}</h3>
+
         <img
           src="/iconUser.svg"
           alt="Avatar"
@@ -24,26 +38,14 @@
     </header>
 
     <!-- CONTENIDO -->
-    <main class="main-layout flex-grow">
+    <main class="main-layout">
       <router-view />
     </main>
 
- <footer
-    class="footer sm:footer-horizontal items-center p-4 flex justify-end"
-  >
-    <div class="tooltip mt-10  ">
-    <div
-      class="tooltip-content flex items-center justify-center space-x-2 flex-row-reverse mt-10"
+    <footer
+      class="footer sm:footer-horizontal items-center p-4 flex justify-end"
     >
-      <div class="animate-bounce text-base-100 font-black">
-        Fuera de servicio!!!
-      </div>
-    </div>
-
-    <figcaption class="font-bold flex items-center justify-center space-x-2 text-xl">
-      ¿Necesita asistencia?
-      <img class="w-14 p-2" src="/Group.png" />
-    </figcaption>
+      <BtnAsistencia />
+    </footer>
   </div>
-  </footer>
 </template>

@@ -11,6 +11,7 @@ export const productoSchema = [
       length: "Debe tener al menos 3 caracteres",
     },
   },
+
   {
     $formkit: "text",
     name: "nombre",
@@ -23,6 +24,7 @@ export const productoSchema = [
       length: "Debe tener al menos 3 caracteres",
     },
   },
+
   {
     $formkit: "textarea",
     name: "descripcion",
@@ -35,28 +37,41 @@ export const productoSchema = [
       length: "Debe tener al menos 5 caracteres",
     },
   },
+
+  /* -----------------------------
+    CATEGORÍA (SELECT)
+  ----------------------------- */
   {
-    $formkit: "text",
+    $formkit: "select",
     name: "categoria",
     label: "Categoría",
+    placeholder: "Seleccione una categoría",
+    options: "$categorias",
     validation: "required",
-    inputClass: "input input-bordered w-full",
+    inputClass: "select select-bordered w-full",
     outerClass: "mb-4 flex flex-col gap-1",
     validationMessages: {
       required: "La categoría es obligatoria",
     },
   },
+
+  /* -----------------------------
+    PROVEEDOR (SELECT)
+  ----------------------------- */
   {
-    $formkit: "text",
+    $formkit: "select",
     name: "proveedor",
     label: "Proveedor",
+    placeholder: "Seleccione un proveedor",
+    options: "$proveedores",
     validation: "required",
-    inputClass: "input input-bordered w-full",
+    inputClass: "select select-bordered w-full",
     outerClass: "mb-4 flex flex-col gap-1",
     validationMessages: {
       required: "El proveedor es obligatorio",
     },
   },
+
   {
     $formkit: "number",
     name: "precio_compra",
@@ -70,6 +85,7 @@ export const productoSchema = [
       number: "Debe ser un número válido",
     },
   },
+
   {
     $formkit: "number",
     name: "precio_venta",
@@ -83,6 +99,7 @@ export const productoSchema = [
       number: "Debe ser un número válido",
     },
   },
+
   {
     $formkit: "text",
     name: "unidad_medida",
@@ -95,6 +112,7 @@ export const productoSchema = [
       required: "La unidad de medida es obligatoria",
     },
   },
+
   {
     $formkit: "number",
     name: "stock_minimo",

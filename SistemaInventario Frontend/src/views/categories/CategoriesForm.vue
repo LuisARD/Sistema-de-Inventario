@@ -1,97 +1,94 @@
+<script setup>
+import { ref, onMounted } from "vue";
+import { useRouter } from "vue-router";
+import { useCategoríasStore } from "../../store/categorias";
+import { categoriaSchema } from "../../schema/categoriaSchema";
+
+const router = useRouter();
+const categoriasStore = useCategoríasStore();
+
+const formRef = ref(null);
+
+// Base para limpiar el formulario
+const categoriaBase = {
+  nombre: "",
+  descripcion: "",
+};
+
+// Modelo reactivo (solo para inspección si quieres)
+const categoria = ref({ ...categoriaBase });
+
+// Si viene de editar, solo PRELLENA, pero siempre crea
+onMounted(() => {
+  const c = categoriasStore.categoriaActual;
+
+  if (c) {
+    const values = {
+      nombre: c.CategoriaNombre ?? c.nombre ?? "",
+      descripcion: c.Descripcion ?? c.descripcion ?? "",
+    };
+
+    Object.assign(categoria.value, values);
+
+    if (formRef.value?.node?.input) {
+      formRef.value.node.input({ ...values });
+    }
+  }
+});
+
+// Crear categoría (NO EDITA)
+const crearCategoria = async () => {
+  try {
+    const data = formRef.value?.node?.value ?? categoria.value;
+
+    const payload = {
+      Nombre: data.nombre,
+      Descripcion: data.descripcion,
+    };
+
+    await categoriasStore.addItem(payload);
+
+    categoriasStore.categoriaActual = null;
+
+    // Reset visual y reactivo
+    if (formRef.value?.node?.input) {
+      formRef.value.node.input({ ...categoriaBase });
+    }
+    Object.assign(categoria.value, categoriaBase);
+
+    
+  } catch (e) {
+    console.error("Error al crear categoría:", e);
+  }
+};
+</script>
+
 <template>
-  <div class="min-h-screen bg-white p-5">
-    <!-- Header -->
-    <div class="flex justify-between items-center mb-10">
-      <div class="flex items-center gap-4">
-        <div class="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center text-white text-2xl">
-          +
-        </div>
-        <h1 class="text-3xl text-gray-800 font-light">Categorías de productos</h1>
-      </div>
-      <div class="flex items-center gap-4">
-        <span class="text-sm text-gray-600">¡Hola, Bienvenido!</span>
-        <div class="w-8 h-8 border-2 border-gray-600 rounded-full flex items-center justify-center">
-          👤
-        </div>
-        <button class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full text-sm transition">
-          Cerrar sesión
-        </button>
-      </div>
-    </div>
+  <div class="min-h-screen p-6 flex justify-center">
+    <div class="card w-full max-w-3xl bg-base-100 shadow p-8">
+      <h1 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+        <img src="/btn1.svg" class="w-7 h-7" />
+        Crear Categoría
+      </h1>
 
-    <!-- Formulario -->
-    <form @submit.prevent="crearCategoria" class="max-w-4xl">
-      <div class="grid grid-cols-2 gap-6 mb-8">
-        <!-- Nombre de la categoría -->
-        <div class="flex flex-col">
-          <label class="text-sm text-gray-700 mb-2">Nombre de la categoría</label>
-          <input
-            v-model="categoria.nombre"
-            type="text"
-            class="border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-orange-500 transition"
-            required
-          />
+      <FormKit
+        ref="formRef"
+        type="form"
+        :actions="false"
+        @submit="crearCategoria"
+        class="space-y-6"
+      >
+        <FormKitSchema :schema="categoriaSchema" />
+
+        <div class="flex justify-end pt-4">
+          <button
+            type="submit"
+            class="btn btn-primary rounded-full px-10"
+          >
+            Crear Categoría
+          </button>
         </div>
-
-        <!-- Descripción -->
-        <div class="flex flex-col">
-          <label class="text-sm text-gray-700 mb-2">Descripción</label>
-          <input
-            v-model="categoria.descripcion"
-            type="text"
-            class="border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-orange-500 transition"
-          />
-        </div>
-      </div>
-
-      <!-- Botón -->
-      <div class="flex justify-end mt-12">
-        <button
-          type="submit"
-          class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full text-base transition"
-        >
-          Crear Categorias
-        </button>
-      </div>
-    </form>
-
-    <!-- Footer -->
-    <div class="fixed bottom-8 right-8 flex items-center gap-2 text-sm text-gray-400">
-      <span>¿Necesita asistencia?</span>
-      <div class="w-6 h-6 border-2 border-gray-400 rounded-full flex items-center justify-center text-xs">
-        🎧
-      </div>
+      </FormKit>
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'CategoriesForm',
-  data() {
-    return {
-      categoria: {
-        nombre: '',
-        descripcion: ''
-      }
-    }
-  },
-  methods: {
-    crearCategoria() {
-      console.log('Categoría creada:', this.categoria)
-      // Aquí puedes hacer la llamada a tu API
-      this.limpiarFormulario()
-    },
-    limpiarFormulario() {
-      this.categoria = {
-        nombre: '',
-        descripcion: ''
-      }
-    }
-  }
-}
-</script>
-
-<style scoped>
-/* Estilos adicionales si los necesitas */
-</style>

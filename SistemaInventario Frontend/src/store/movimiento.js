@@ -1,21 +1,38 @@
+// store/movimientos.js
 import { defineStore } from "pinia";
-import { useCrudApi } from "../composable/useCrudApi";
 import { ref } from "vue";
+import { useCrudApi } from "../composable/useCrudApi";
 
 export const useMovimientoStore = defineStore("movimientos", () => {
+  const movimientos = ref([]);
+  const movimientoActual = ref(null);
 
-    const movimientos = ref([])
+  const {
+    fetchItems,
+    createItemApi,
+    updateItemApi,
+    deleteItemApi,
+    loading,
+    error,
+  } = useCrudApi({ movimientos });
 
+  // 👇 Cambia SOLO el endpoint y el nombre del array
+  const fetchMovimiento = () => fetchItems("Movimientos", "movimientos");
+  const addItem = (nuevo) =>
+    createItemApi("Movimientos", "movimientos", nuevo);
+  const editItem = (id, datos) =>
+    updateItemApi("Movimientos", "movimientos", id, datos);
+  const deleteItem = (id) =>
+    deleteItemApi("Movimientos", "movimientos", id);
 
-    const {fetchItems, createItemApi, loading, error} = useCrudApi({movimientos})
-
-
-    const fetchMovimientos = () => fetchItems("Movimientos", "movimientos")
-
-    const addItem = (nuevoMovimiento) => createItemApi("Movimientos", "movimientos", nuevoMovimiento)
-
-
-    return {
-        fetchMovimientos, addItem, loading,error
-    }
-})
+  return {
+    movimientos,
+    movimientoActual,
+    fetchMovimiento,
+    addItem,
+    editItem,
+    deleteItem,
+    loading,
+    error,
+  };
+});

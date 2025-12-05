@@ -40,8 +40,9 @@ export const usuarioSchema = [
     name: "rol",
     label: "Rol del usuario",
     options: [
-      { value: "usuario", label: "Usuario" },
-      { value: "admin", label: "Administrador" },
+      { value: "1", label: "Usuario" },
+      { value: "2", label: "Administrador" },
+      { value: "3", label: "Supervisor" },
     ],
     validation: "required",
     inputClass: "select select-bordered w-full",

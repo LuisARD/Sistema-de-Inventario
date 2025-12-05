@@ -1,35 +1,34 @@
 import { defineStore } from "pinia";
-import API from "../services/axios";
+import { ref } from "vue";
+import { useCrudApi } from "../composable/useCrudApi";
 
-export const useUsuarioStore = defineStore("usuario", {
-  state: () => ({
-    cargando: false,
-    error: null,
-    mensaje: null,
-  }),
+export const useUsuarioStore = defineStore("usuarios", () => {
+  const usuarios = ref([]);
+  const usuarioActual = ref(null);
 
-  action: {
-    async crearUsuario(nuevoUsuario) {
-      this.cargando = true;
-      this.error = null;
-      this.mensaje = null;
+  const {
+    fetchItems,
+    createItemApi,
+    updateItemApi,
+    deleteItemApi,
+    loading,
+    error,
+  } = useCrudApi({ usuarios });
 
-      try {
-        const { data } = await API.post("/Acceso/Registrarse", nuevoUsuario);
+  const fetchUsuario = () => fetchItems("Usuarios", "usuarios");
+  const addItem = (nuevoUsuario) => createItemApi("Usuarios", "usuarios", nuevoUsuario);
+  const editItem = (usuarioID, datosActualizado) =>
+    updateItemApi("Usuarios", "usuarios", usuarioID, datosActualizado);
+  const deleteItem = (usuarioID) => deleteItemApi("Usuarios", "usuarios", usuarioID);
 
-        this.mensaje = data?.mensaje || "Usuario creado correctamente";
-
-        return data;
-      } catch (err) {
-        this.error =
-          err.response?.data?.message ||
-          err.response?.data ||
-          "Ocurrio un error al registrar el usuario";
-        console.error("Error al crear usuario:", this.error);
-        throw err;
-      }finally{
-        this.cargando = false
-      }
-    },
-  },
+  return {
+    usuarios,
+    usuarioActual,
+    fetchUsuario,
+    addItem,
+    editItem,
+    deleteItem,
+    loading,
+    error,
+  };
 });

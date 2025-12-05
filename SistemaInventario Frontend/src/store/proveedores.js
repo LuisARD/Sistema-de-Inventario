@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 import { ref } from "vue";
 import { useCrudApi } from "../composable/useCrudApi";
 
-export const useProveedores = defineStore("proveedores", () => {
+export const useProveedoresStore = defineStore("proveedores", () => {
 
 const proveedores = ref([])
 

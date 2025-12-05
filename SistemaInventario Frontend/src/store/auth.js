@@ -17,7 +17,6 @@ export const useAuthStore = defineStore("auth", {
         });
 
         // depuración: ver estructura recibida
-        console.log("login response:", respuesta?.data);
 
         // Guardar toda la respuesta en localStorage
         try {
