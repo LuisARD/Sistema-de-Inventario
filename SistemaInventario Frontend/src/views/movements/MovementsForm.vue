@@ -5,6 +5,7 @@ import { movimientoSchema } from "../../schema/movimientoSchema";
 import { useMovimientoStore } from "../../store/movimiento";
 import { useUsuarioStore } from "../../store/usuario";
 import { useCrudForm } from "../../composable/useCrudForm";
+import API from "../../services/axios";
 
 const router = useRouter();
 const formRef = ref(null);
@@ -58,18 +59,22 @@ const formDataForFormKit = computed(() => ({
 
 
 // submit final
-const onSubmit = (data) => {
+const onSubmit = async (data) => {
   const payload = {
     TipoMovimiento: data.TipoMovimiento,
     Motivo: data.Motivo,
-    ReferenciaDocumento: Number(data.ReferenciaDocumento),
+     ReferenciaDocumento: String(data.ReferenciaDocumento),
     UsuarioId: Number(data.UsuarioId),
     AlmacenOrigenId: Number(data.AlmacenOrigenId),
     AlmacenDestinoId: Number(data.AlmacenDestinoId),
+   
   };
 
-  if (editId.value) saveEdit({ id: editId.value, ...payload });
-  else handleSubmit(payload);
+  if (data.TipoMovimiento === "Entrada") {
+    await API.post("/Movimientos/entrada", payload);
+  } else {
+    await API.post("/Movimientos/salida", payload);
+  }
 
   formRef.value?.node.reset();
   router.push("/movements");
@@ -84,25 +89,24 @@ const onSubmit = (data) => {
       </h1>
 
       <FormKit
-  v-if="usuariosOptions.length"
-  ref="formRef"
-  type="form"
-  :actions="false"
-  @submit="onSubmit"
->
-  <FormKitSchema
-    :schema="movimientoSchema"
-    :data="formDataForFormKit"
-    :classes="{ outer: 'grid grid-cols-1 md:grid-cols-2 gap-6' }"
-  />
+        v-if="usuariosOptions.length"
+        ref="formRef"
+        type="form"
+        :actions="false"
+        @submit="onSubmit"
+      >
+        <FormKitSchema
+          :schema="movimientoSchema"
+          :data="formDataForFormKit"
+          :classes="{ outer: 'grid grid-cols-1 md:grid-cols-2 gap-6' }"
+        />
 
-  <FormKit
-    type="submit"
-    :label="editId ? 'Actualizar' : 'Guardar'"
-    input-class="btn btn-primary rounded-full px-10 mt-8"
-  />
-</FormKit>
-
+        <FormKit
+          type="submit"
+          :label="editId ? 'Actualizar' : 'Guardar'"
+          input-class="btn btn-primary rounded-full px-10 mt-8"
+        />
+      </FormKit>
     </div>
   </div>
 </template>

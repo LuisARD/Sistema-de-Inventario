@@ -26,7 +26,7 @@ export function useCrudApi(store) {
     }
   };
 
-  const createItemApi = async (resource, key, nuevo) => {
+  const createItemApi = async (resource, key, nuevo, tipo) => {
     error.value = null;
 
     
