@@ -36,7 +36,7 @@ const buttones = [
           class="w-full md:w-[280px] rounded-xl py-6 shadow-lg hover:opacity-90 transition flex justify-center items-center border-2 border-transparent hover:border-primary hover:border-2 duration-300 delay-75 lg:gap-x-4"
         >
           <div
-            class="flex justify-between items-center gap-x-6 w-50 text-center"
+            class="flex justify-between items-center gap-x-6 w-50 text-center icons-place"
           >
             <img :src="btn.icon" class="w-10 h-10 mb-2 " />
             <span class="text-xl font-semibold w-50">{{ btn.label }}</span>
