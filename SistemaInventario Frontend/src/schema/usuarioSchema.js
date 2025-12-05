@@ -1,4 +1,4 @@
-export const usuarioSchema = [
+export const usuarioSchema = (isEdit = false) => [
   {
     $formkit: "text",
     name: "nombre",
@@ -30,7 +30,7 @@ export const usuarioSchema = [
     validation: "length:6",
     inputClass: "input input-bordered w-full",
     outerClass: "mb-4 flex flex-col gap-1",
-    help: "Dejar en blanco para mantener la contraseña actual (solo en edición)",
+    ...(isEdit && { help: "Dejar en blanco para mantener la contraseña actual" }),
     validationMessages: {
       length: "Debe tener al menos 6 caracteres",
     },

@@ -26,10 +26,15 @@ onMounted(() => {
   usuarioStore.fetchUsuario();
 });
 
-// filtro
+// filtro mejorado - busca en todos los campos
 const usuariosFiltrados = computed(() => {
+  const q = buscar.value?.trim().toLowerCase();
+  if (!q) return usuarioStore.usuarios;
+  
   return usuarioStore.usuarios.filter((u) =>
-    u.NombreCompleto.toLowerCase().includes(buscar.value.toLowerCase())
+    Object.values(u).some((v) =>
+      String(v ?? "").toLowerCase().includes(q)
+    )
   );
 });
 
@@ -45,25 +50,52 @@ const editarUsuario = (u) => {
 </script>
 
 <template>
-  <div class="p-6">
+  <div class="min-h-screen bg-white p-5">
 
-    <div class="flex justify-between items-center mb-6">
-      <h1 class="text-3xl font-bold">Gestión de usuarios</h1>
-
-      <button class="btn btn-primary" @click="crearUsuario">
-        Crear usuario
-      </button>
+    <!-- HEADER -->
+    <div class="flex items-center justify-between mb-8 p-5 bg-base-100 shadow rounded-xl">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 bg-primary text-white rounded-xl flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" 
+                  d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+        </div>
+        <h1 class="text-3xl font-medium text-neutral">Gestión de Usuarios</h1>
+      </div>
     </div>
 
-    <input
-      v-model="buscar"
-      type="text"
-      placeholder="Buscar usuario..."
-      class="input input-bordered w-full max-w-xs mb-4"
-    />
+    <!-- CONTAINER -->
+    <div class="max-w-6xl mx-auto bg-base-100 p-8 rounded-xl shadow">
 
-    <table class="table w-full">
-      <thead class="bg-base-200 text-sm">
+      <!-- CONTROLS -->
+      <div class="flex items-center justify-between mb-6">
+
+        <!-- SEARCH -->
+        <div class="w-40">
+          <input
+            type="text"
+            v-model="buscar"
+            placeholder="🔍 Buscar"
+            class="input input-bordered w-full"
+          >
+        </div>
+
+        <!-- BUTTON -->
+        <button 
+          class="btn btn-primary rounded-full px-8"
+          @click="crearUsuario"
+        >
+          Crear Usuario
+        </button>
+      </div>
+
+      <!-- TABLE -->
+      <div class="overflow-x-auto rounded-lg border border-base-300">
+
+        <table class="table table-zebra w-full">
+          <thead class="bg-base-200">
         <tr>
           <th>ID</th>
           <th>Nombre</th>
@@ -101,8 +133,15 @@ const editarUsuario = (u) => {
             </button>
           </td>
         </tr>
+        
+        <!-- Sin usuarios -->
+        <tr v-if="usuariosFiltrados.length === 0">
+          <td colspan="6" class="text-center py-4">No hay usuarios</td>
+        </tr>
       </tbody>
 
     </table>
+      </div>
+    </div>
   </div>
 </template>

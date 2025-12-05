@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 import { useRouter } from "vue-router";
 import { usuarioSchema } from "../../schema/usuarioSchema";
 import { useUsuarioStore } from "../../store/usuario";
@@ -24,6 +24,9 @@ const { formData, editId, handleSubmit, saveEdit } = useCrudForm(
   usuarioBase,
   formRef
 );
+
+// Schema dinámico según modo edición
+const schema = computed(() => usuarioSchema(!!editId.value));
 
 // Cargar datos al editar
 onMounted(() => {
@@ -92,23 +95,45 @@ const onSubmit = (data) => {
 </script>
 
 <template>
-  <div class="min-h-screen p-6">
-    <div class="max-w-3xl mx-auto bg-base-100 p-10 rounded-xl shadow">
-      <h1 class="text-2xl font-semibold text-center mb-6">
-        {{ editId ? "Editar Usuario" : "Crear Usuario" }}
-      </h1>
+  <div class="min-h-screen bg-white p-5">
+    <!-- HEADER -->
+    <div class="flex items-center justify-between mb-8 p-5 bg-base-100 shadow rounded-xl">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 bg-primary text-white rounded-xl flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" 
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+          </svg>
+        </div>
+        <h1 class="text-3xl font-medium text-neutral">
+          {{ editId ? "Editar Usuario" : "Crear Usuario" }}
+        </h1>
+      </div>
+    </div>
 
+    <!-- CONTAINER -->
+    <div class="max-w-4xl mx-auto bg-base-100 p-8 rounded-xl shadow">
+      
       <FormKit ref="formRef" type="form" :actions="false" @submit="onSubmit">
-        <FormKitSchema
-          :schema="usuarioSchema"
-          :classes="{ outer: 'grid grid-cols-1 md:grid-cols-2 gap-6' }"
-        />
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <FormKitSchema :schema="schema" />
+        </div>
 
-        <FormKit
-          type="submit"
-          :label="editId ? 'Actualizar' : 'Guardar'"
-          input-class="btn btn-primary rounded-full px-10 mt-8"
-        />
+        <div class="flex gap-4 justify-end mt-8">
+          <button 
+            type="button" 
+            @click="router.push('/usuario')" 
+            class="btn btn-outline"
+          >
+            Cancelar
+          </button>
+          <FormKit
+            type="submit"
+            :label="editId ? 'Actualizar Usuario' : 'Guardar Usuario'"
+            input-class="btn btn-primary px-8"
+          />
+        </div>
       </FormKit>
     </div>
   </div>

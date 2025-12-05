@@ -93,7 +93,7 @@ const handleLogin = async (data) => {
         <p v-if="error" class="text-error text-center mt-2">{{ error }}</p>
       </FormKit>
     </fieldset>
-    <a to="/">dasd</a>
+    <a to="/"></a>
   </section>
 </template>
 
