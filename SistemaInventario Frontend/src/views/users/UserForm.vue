@@ -15,6 +15,7 @@ const usuarioBase = {
   email: "",
   password: "",
   rol: "",
+  activo: true,
 };
 
 // useCrudForm reutilizado
@@ -35,6 +36,7 @@ onMounted(() => {
       email: u.Email,
       password: "", // nunca mostrar la real
       rol:  u.RolId ?? u.rol,
+      activo: u.Activo ?? true,
     });
 
     // setear en FormKit
@@ -48,13 +50,19 @@ onMounted(() => {
 
 // Enviar formulario
 const onSubmit = (data) => {
+  // Asegurar que RolId sea un número
+  const rolId = typeof data.rol === 'string' ? parseInt(data.rol, 10) : Number(data.rol);
+  
   const payload = {
-    
     NombreCompleto: data.nombre,
     Email: data.email,
     Password: data.password,
-    RolId: (data.rol),
+    RolId: rolId,
+    Activo: Boolean(data.activo),
   };
+
+  // Log para debugging (puedes quitarlo después)
+  console.log('Payload enviado:', payload);
 
   if (editId.value) {
     delete payload.Password;
