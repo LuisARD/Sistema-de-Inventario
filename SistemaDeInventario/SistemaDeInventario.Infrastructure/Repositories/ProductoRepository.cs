@@ -11,6 +11,14 @@ public class ProductoRepository : Repository<Producto>, IProductoRepository
     {
     }
 
+    public override async Task<IEnumerable<Producto>> GetAllAsync()
+    {
+        return await _dbSet
+            .Include(p => p.Categoria)
+            .Include(p => p.Proveedor)
+            .ToListAsync();
+    }
+
     public async Task<Producto?> GetByCodigoSkuAsync(string codigoSku)
     {
         return await _dbSet

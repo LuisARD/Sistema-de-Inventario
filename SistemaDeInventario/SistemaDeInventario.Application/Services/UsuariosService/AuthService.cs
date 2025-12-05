@@ -78,8 +78,8 @@ public class AuthService : IAuthService
         }
         catch
         {
-            return false;
         }
+            return false;
     }
 
     private string GenerateJwtToken(Domain.Entities.Usuario usuario)

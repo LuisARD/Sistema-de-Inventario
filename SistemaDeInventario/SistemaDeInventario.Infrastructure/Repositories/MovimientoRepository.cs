@@ -11,6 +11,18 @@ public class MovimientoRepository : Repository<Movimiento>, IMovimientoRepositor
     {
     }
 
+    public override async Task<IEnumerable<Movimiento>> GetAllAsync()
+    {
+        return await _dbSet
+            .Include(m => m.Usuario)
+            .Include(m => m.AlmacenOrigen)
+            .Include(m => m.AlmacenDestino)
+            .Include(m => m.DetalleMovimientos)
+            .ThenInclude(d => d.Producto)
+            .OrderByDescending(m => m.FechaMovimiento)
+            .ToListAsync();
+    }
+
     public async Task<Movimiento?> GetMovimientoConDetallesAsync(int movimientoId)
     {
         return await _dbSet
