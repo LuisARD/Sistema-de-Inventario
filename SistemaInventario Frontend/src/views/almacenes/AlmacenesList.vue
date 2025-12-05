@@ -1,50 +1,50 @@
 <script setup>
 import { onMounted, ref, computed } from "vue";
-import { useCategoríasStore } from "../../store/categorias";
+import { useAlmacenesStore } from "../../store/almacenes";
 import { useRouter } from "vue-router";
 import { useCrudForm } from "../../composable/useCrudForm";
 import { useAuthStore } from "../../store/auth";
 
-const categoriasStore = useCategoríasStore();
+const almacenesStore = useAlmacenesStore();
 const authStore = useAuthStore();
 const searchQuery = ref("");
-const categoriaBase = {
+const almacenBase = {
   nombre: "",
-  descripcion: "",
+  ubicacion: "",
 };
 const formRef = ref(null);
 const router = useRouter();
 
-const { handleRemove, handleEdit } = useCrudForm(categoriasStore, categoriaBase, formRef);
+const { handleRemove } = useCrudForm(almacenesStore, almacenBase, formRef);
 
-// Cargar categorías al montar
+// Cargar almacenes al montar
 onMounted(() => {
-  categoriasStore.fetchCategorías();
+  almacenesStore.fetchAlmacenes();
 });
 
-// Filtrado simple: busca en nombre y descripción
-const filteredCategorias = computed(() => {
+// Filtrado simple
+const filteredAlmacenes = computed(() => {
   const q = searchQuery.value?.trim().toLowerCase();
-  if (!q) return categoriasStore.categorias;
-  return categoriasStore.categorias.filter((c) =>
-    Object.values(c).some((v) =>
+  if (!q) return almacenesStore.almacenes;
+  return almacenesStore.almacenes.filter((a) =>
+    Object.values(a).some((v) =>
       String(v ?? "").toLowerCase().includes(q)
     )
   );
 });
 
-const btnCrearCategoria = () => {  
-  categoriasStore.categoriaActual = null;
-  router.push('/categories/create');
+const btnCrearAlmacen = () => {  
+  almacenesStore.almacenActual = null;
+  router.push('/almacenes/create');
 }
 
-const editarCategoria = (categoria) => {
-  categoriasStore.categoriaActual = categoria;
-  router.push('/categories/create');
+const editarAlmacen = (almacen) => {
+  almacenesStore.almacenActual = almacen;
+  router.push('/almacenes/create');
 }
 
-// Verificar permisos de escritura (CategoriasWrite)
-const canWrite = computed(() => {
+// Verificar permisos (AlmacenesAccess)
+const canAccess = computed(() => {
   const role = authStore.user?.RolNombre;
   return ['Admin', 'Supervisor'].includes(role);
 });
@@ -61,12 +61,13 @@ const canWrite = computed(() => {
           <div class="w-12 h-12 bg-primary text-white rounded-xl flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-6l-2-2H5a2 2 0 0 0-2 2z"/>
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
             </svg>
           </div>
 
           <h1 class="text-xl sm:text-2xl lg:text-3xl font-medium text-neutral">
-            {{ canWrite ? 'Gestión de Categorías' : 'Ver Categorías' }}
+            {{ canAccess ? 'Gestión de Almacenes' : 'Ver Almacenes' }}
           </h1>
         </div>
 
@@ -89,11 +90,11 @@ const canWrite = computed(() => {
         </div>
 
         <button
-          v-if="canWrite"
+          v-if="canAccess"
           class="btn btn-info rounded-full px-6 sm:px-8 w-full sm:w-auto"
-          @click="btnCrearCategoria"
+          @click="btnCrearAlmacen"
         >
-          Crear Categoría
+          Crear Almacén
         </button>
       </div>
 
@@ -105,25 +106,32 @@ const canWrite = computed(() => {
             <tr>
               <th>ID</th>
               <th>Nombre</th>
-              <th>Descripción</th>
-              <th v-if="canWrite" class="text-center">Acción</th>
+              <th>Ubicación</th>
+              <th>Estado</th>
+              <th v-if="canAccess" class="text-center">Acción</th>
             </tr>
           </thead>
 
           <tbody>
             <tr
-              v-for="categoria in filteredCategorias"
-              :key="categoria.CategoriaId"
+              v-for="almacen in filteredAlmacenes"
+              :key="almacen.AlmacenId"
             >
-              <td>{{ categoria.CategoriaId }}</td>
-              <td class="font-medium">{{ categoria.Nombre }}</td>
-              <td>{{ categoria.Descripcion ?? "-" }}</td>
+              <td>{{ almacen.AlmacenId }}</td>
+              <td class="font-medium">{{ almacen.Nombre }}</td>
+              <td>{{ almacen.Ubicacion ?? "-" }}</td>
+              <td>
+                <span 
+                  :class="almacen.Activo ? 'badge badge-success' : 'badge badge-error'"
+                >
+                  {{ almacen.Activo ? 'Activo' : 'Inactivo' }}
+                </span>
+              </td>
 
-              <td v-if="canWrite" class="flex justify-center gap-2">
+              <td v-if="canAccess" class="flex justify-center gap-2">
                 <button
-                  v-if="canWrite"
                   class="btn btn-sm btn-ghost"
-                  @click="editarCategoria(categoria)"
+                  @click="editarAlmacen(almacen)"
                   title="Editar"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5"
@@ -135,9 +143,8 @@ const canWrite = computed(() => {
                 </button>
 
                 <button
-                  v-if="canWrite"
                   class="btn btn-sm btn-error text-white"
-                  @click="handleRemove(categoria.CategoriaId)"
+                  @click="handleRemove(almacen.AlmacenId)"
                   title="Eliminar"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5"
@@ -147,13 +154,12 @@ const canWrite = computed(() => {
                     <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
                   </svg>
                 </button>
-                <span v-if="!canWrite" class="text-sm opacity-50">-</span>
               </td>
             </tr>
 
-            <tr v-if="filteredCategorias.length === 0">
-              <td colspan="4" class="text-center py-4 text-sm opacity-70">
-                No hay categorías
+            <tr v-if="filteredAlmacenes.length === 0">
+              <td colspan="5" class="text-center py-4 text-sm opacity-70">
+                No hay almacenes
               </td>
             </tr>
           </tbody>

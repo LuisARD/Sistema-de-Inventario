@@ -3,8 +3,10 @@ import { ref, computed, onMounted } from "vue";
 import { useRouter } from "vue-router";
 import { useMovimientoStore } from "../../store/movimiento";
 import { useCrudForm } from "../../composable/useCrudForm";
+import { useAuthStore } from "../../store/auth";
 
 const router = useRouter();
+const authStore = useAuthStore();
 
 const buscar = ref("");
 const filtroTipo = ref("TODOS");
@@ -68,16 +70,26 @@ const editarMovimiento = (m) => {
   movimientoStore.movimientoActual = m;
   router.push("/movements/create");
 };
+
+// Verificar permisos de escritura (MovimientosWrite)
+const canWrite = computed(() => {
+  const role = authStore.user?.RolNombre;
+  return ['Admin', 'Supervisor'].includes(role);
+});
 </script>
 <template>
   <main class="p-4 sm:p-6">
 
     <header class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-6">
       <h1 class="text-2xl sm:text-3xl font-bold">
-        Movimientos de Inventario
+        {{ canWrite ? 'Movimientos de Inventario' : 'Ver Movimientos de Inventario' }}
       </h1>
 
-      <button class="btn btn-info w-full sm:w-auto" @click="crearMovimiento">
+      <button 
+        v-if="canWrite"
+        class="btn btn-info w-full sm:w-auto" 
+        @click="crearMovimiento"
+      >
         Crear movimiento
       </button>
     </header>

@@ -72,7 +72,7 @@ const handleLogin = async (data) => {
 
         <!-- Contraseña -->
         <FormKit
-          type="text"
+          type="password"
           name="password"
           label="Contraseña"
           v-model="password"

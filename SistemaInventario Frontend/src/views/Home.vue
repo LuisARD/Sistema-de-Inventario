@@ -1,22 +1,94 @@
 <script setup>
 
 import { useAuthStore } from '../store/auth';
+import { computed } from 'vue';
 
 const auth = useAuthStore();
 
+const userRole = computed(() => auth.user?.RolNombre);
 
+// Función para verificar si el usuario tiene acceso a una ruta
+const hasAccess = (roles) => {
+  if (!roles || roles.length === 0) return true;
+  return roles.includes(userRole.value);
+};
 
+// Función para obtener el label correcto según el rol
+const getButtonLabel = (button) => {
+  const role = userRole.value;
+  
+  // Si no tiene permisos de escritura, cambiar "Gestión de" por "Ver"
+  const hasWriteAccess = (button) => {
+    if (button.to === '/categories') {
+      return ['Admin', 'Supervisor'].includes(role);
+    }
+    if (button.to === '/products') {
+      return ['Admin', 'Usuario', 'Supervisor'].includes(role);
+    }
+    if (button.to === '/suppliers') {
+      return ['Admin', 'Supervisor'].includes(role);
+    }
+    if (button.to === '/almacenes') {
+      return ['Admin', 'Supervisor'].includes(role);
+    }
+    if (button.to === '/movements') {
+      return ['Admin', 'Supervisor'].includes(role);
+    }
+    return true;
+  };
+  
+  // Cambiar "Gestión de" por "Ver" si no tiene permisos de escritura
+  if (!hasWriteAccess(button) && button.label.startsWith('Gestión de')) {
+    return button.label.replace('Gestión de', 'Ver');
+  }
+  
+  return button.label;
+};
 
 const buttones = [
-  { to: "/products", label: "Gestión de Productos", icon: "/camion.svg" },
-  { to: "/suppliers", label: "Gestión de Proveedores", icon: "/camion.svg" },
-  { to: "/products", label: "Control de Inventario", icon: "/btn1.svg" },
-  { to: "/existencias", label: "Control de Existencias", icon: "/btn1.svg" },
-  { to: "/movements", label: "Movimientos de Inventario", icon: "/camion.svg" },
-  { to: "/categories", label: "Gestión de Categorías", icon: "/btn1.svg" },
-  { to: "/reports", label: "Reportes", icon: "/iconReporte.svg" },
+  { 
+    to: "/products", 
+    label: "Gestión de Productos", 
+    icon: "/camion.svg",
+    roles: ["Admin", "Usuario", "Supervisor"]
+  },
+  { 
+    to: "/suppliers", 
+    label: "Gestión de Proveedores", 
+    icon: "/camion.svg",
+    roles: ["Admin", "Supervisor"]
+  },
+  { 
+    to: "/existencias", 
+    label: "Control de Existencias", 
+    icon: "/btn1.svg",
+    roles: ["Admin", "Supervisor"]
+  },
+  { 
+    to: "/almacenes", 
+    label: "Gestión de Almacenes", 
+    icon: "/btn1.svg",
+    roles: ["Admin", "Supervisor"]
+  },
+  { 
+    to: "/movements", 
+    label: "Movimientos de Inventario", 
+    icon: "/camion.svg",
+    roles: ["Admin", "Usuario", "Supervisor"]
+  },
+  { 
+    to: "/categories", 
+    label: "Gestión de Categorías", 
+    icon: "/btn1.svg",
+    roles: ["Admin", "Usuario", "Supervisor"]
+  },
+  { 
+    to: "/reports", 
+    label: "Reportes", 
+    icon: "/iconReporte.svg",
+    roles: ["Admin", "Supervisor"]
+  },
 ];
-
 
 </script>
 
@@ -33,6 +105,7 @@ const buttones = [
         <router-link
           v-for="btn in buttones"
           :key="btn.to"
+          v-show="hasAccess(btn.roles)"
           :to="btn.to"
           class="
             w-full
@@ -62,7 +135,7 @@ const buttones = [
               style="filter: invert(27%) sepia(51%) saturate(999%) hue-rotate(200deg) brightness(104%) contrast(10%);"
             />
             <span class="text-sm sm:text-base md:text-lg font-semibold">
-              {{ btn.label }}
+              {{ getButtonLabel(btn) }}
             </span>
           </div>
         </router-link>
