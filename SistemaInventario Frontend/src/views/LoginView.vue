@@ -34,17 +34,18 @@ const handleLogin = async (data) => {
 
 
 <template class="">
+   <div class="bg-login"> 
    <div class="absolute inset-0 bg-black/30"></div>
-  <div class="bg-login"> 
+ 
      
 
-  <BtnAsistencia />
+  
 
   <section
-    class=" flex flex-col justify-center items-center relative z-10 "
+    class=" flex flex-col justify-center items-center relative z-10 h-full "
   >
     <fieldset
-      class="fieldset bg-base-200 border border-base-300 rounded-xl w-full max-w-md p-6 shadow text-neutral py-8"
+      class="fieldset bg-base-200 border border-base-300 rounded-xl w-full h-100 max-w-md p-6 shadow text-neutral py-8"
     >
       <FormKit
         type="form"
