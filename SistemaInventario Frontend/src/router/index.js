@@ -43,9 +43,19 @@ const routes = [
         name: "MovementCreate",
       },
 
-      { path: "categories", component: CategoriesForm, name: "Categories" },
+      { path: "categories", component: CategoriesList, name: "Categories" },
+      {
+        path: "categories/create",
+        component: CategoriesForm,
+        name: "CategoriesCreate",
+      },
 
-      { path: "suppliers", component: SupplierForm, name: "Suppliers" },
+      { path: "suppliers", component: SuppliersList, name: "Suppliers" },
+      {
+        path: "suppliers/create",
+        component: SupplierForm,
+        name: "SuppliersCreate",
+      },
 
       { path: "reports", component: ReportsView, name: "Reports" },
       { path: "usuario", component: UserList, name: "Usuario" },

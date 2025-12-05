@@ -47,11 +47,15 @@ export function useCrudApi(store) {
   const updateItemApi = async (resource, key, id, datosActualizados) => {
     error.value = null;
 
+    console.log(`[UPDATE] Endpoint: PUT /${resource}/${id}`);
+    console.log('[UPDATE] Payload:', JSON.stringify(datosActualizados, null, 2));
+
     try {
-      await API.put(`/${resource}/${id}`, datosActualizados);
+      const response = await API.put(`/${resource}/${id}`, datosActualizados);
+      console.log('[UPDATE] Respuesta exitosa:', response.data);
       editItem(id, datosActualizados, key);
     } catch (err) {
-      console.error(`Error al actualizar ${resource}`, err);
+      console.error(`[UPDATE] Error al actualizar ${resource}/${id}:`, err.response?.data || err.message);
       error.value = err;
       throw err;
     }
