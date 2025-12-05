@@ -149,7 +149,6 @@ const editarMovimiento = (m) => {
       <h3 class="font-bold text-2xl mb-4">Detalles del Movimiento</h3>
 
       <div v-if="movimientoSeleccionado">
-        <p><strong>ID:</strong> {{ movimientoSeleccionado.MovimientoId }}</p>
         <p><strong>Fecha:</strong> {{ movimientoSeleccionado.FechaMovimiento }}</p>
         <p><strong>Tipo:</strong> {{ movimientoSeleccionado.TipoMovimiento }}</p>
         <p><strong>Motivo:</strong> {{ movimientoSeleccionado.Motivo }}</p>
