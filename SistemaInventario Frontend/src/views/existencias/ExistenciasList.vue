@@ -16,9 +16,12 @@ onMounted(async () => {
 
 // Filtrado de existencias
 const filteredExistencias = computed(() => {
-  let data = selectedTab.value === "stock-bajo" 
-    ? existenciasStore.stockBajo 
-    : existenciasStore.existencias;
+  let data = existenciasStore.existencias;
+
+  // Si el tab es stock-bajo, filtrar solo los que tienen StockBajo = true
+  if (selectedTab.value === "stock-bajo") {
+    data = data.filter(e => e.StockBajo === true || e.CantidadActual <= e.StockMinimo);
+  }
 
   const q = searchQuery.value?.trim().toLowerCase();
   if (!q) return data;
@@ -30,14 +33,12 @@ const filteredExistencias = computed(() => {
   );
 });
 
-const cargarStockBajo = async () => {
+const cargarStockBajo = () => {
   selectedTab.value = "stock-bajo";
-  await existenciasStore.fetchStockBajo();
 };
 
-const cargarTodas = async () => {
+const cargarTodas = () => {
   selectedTab.value = "todas";
-  await existenciasStore.fetchExistencias();
 };
 
 // Función para obtener clase de alerta según el stock
