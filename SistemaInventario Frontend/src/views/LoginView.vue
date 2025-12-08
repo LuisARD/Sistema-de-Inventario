@@ -94,7 +94,7 @@ const handleLogin = async (data) => {
           <span v-else>Acceder</span>
         </button>
 
-        <p v-if="error" class="text-error text-center mt-2">{{ error }}</p>
+        <p v-if="error" class="text-error text-center mt-2 text-2xl font-bold">{{ error }}</p>
       </FormKit>
     </fieldset>
     <a to="/"></a>

@@ -27,7 +27,7 @@ const routes = [
   {
     path: "/",
     component: MainLayout,
-    // meta: { requiresAuth: true },
+    meta: { requiresAuth: true },
     children: [
       { path: "", component: Home, name: "Home" },
 
@@ -81,12 +81,19 @@ const router = createRouter({
 router.beforeEach((to) => {
   const auth = useAuthStore();
 
+  // 1️⃣ BLOQUEAR acceso sin login
   if (to.meta.requiresAuth && !auth.token) {
-    return "/login";
+    return { path: "/login" };
   }
 
-  if (to.meta.requiresAdmin && auth.user.RolNombre !== "admin") {
-    return "/"; // o "/productos"
+  // 2️⃣ BLOQUEAR login si ya está autenticado
+  if (to.path === "/login" && auth.token) {
+    return { path: "/" };
+  }
+
+  // 3️⃣ BLOQUEAR rutas de admin
+  if (to.meta.requiresAdmin && auth.user?.RolNombre !== "admin") {
+    return { path: "/" };
   }
 });
 

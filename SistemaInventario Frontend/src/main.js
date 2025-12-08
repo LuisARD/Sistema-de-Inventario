@@ -8,6 +8,12 @@ import { plugin, defaultConfig } from '@formkit/vue'
 
 const app = createApp(App)
 app.use(createPinia())
-app.use(plugin, defaultConfig)
+app.use(plugin, defaultConfig({
+    config:{
+        classes:{
+             message: "text-red-500 text-sm mt-1 font-bold"
+        }
+    }
+}))
 app.use(router)
 app.mount('#app')

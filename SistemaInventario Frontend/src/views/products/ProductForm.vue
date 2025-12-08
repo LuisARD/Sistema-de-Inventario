@@ -55,7 +55,6 @@ onMounted(() => {
   }
 });
 
-
 // Fetch inicial
 onMounted(async () => {
   try {
@@ -100,7 +99,6 @@ const { formData, editId, handleEdit, saveEdit, handleSubmit, handleRemove } =
 
 // Funcion de envío EXACTA al estilo anterior
 const onSubmit = (data) => {
-
   // 🔥 ARMAS EL PAYLOAD EXACTO QUE EL BACKEND QUIERE
   const payload = {
     ProductoId: editId.value,
@@ -118,16 +116,13 @@ const onSubmit = (data) => {
   // 👇 AQUÍ reemplazas "data" por "payload"
   if (editId.value) {
     saveEdit(payload);
-     router.push('/products');
-   
   } else {
     handleSubmit(payload);
   }
 
   formRef.value.node.reset();
-  
+   router.push('/products');
 };
-
 
 const schema = productoSchema;
 </script>
