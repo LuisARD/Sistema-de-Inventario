@@ -3,8 +3,10 @@ import { onMounted, ref, computed } from "vue";
 import { useProveedoresStore } from "../../store/proveedores";
 import { useRouter } from "vue-router";
 import { useCrudForm } from "../../composable/useCrudForm";
+import { useAuthStore } from "../../store/auth";
 
 const proveedoresStore = useProveedoresStore();
+const authStore = useAuthStore();
 const searchQuery = ref("");
 const proveedorBase = {
   nombre_empresa: "",
@@ -43,6 +45,12 @@ const editarProveedor = (proveedor) => {
   proveedoresStore.proveedorActual = proveedor;
   router.push('/suppliers/create');
 }
+
+// Verificar permisos (ProveedoresAccess)
+const canAccess = computed(() => {
+  const role = authStore.user?.RolNombre;
+  return ['Admin', 'Supervisor'].includes(role);
+});
 </script>
 
 <template>
@@ -64,7 +72,7 @@ const editarProveedor = (proveedor) => {
         </figure>
 
         <h1 class="text-3xl font-medium text-neutral">
-          Gestión de Proveedores
+          {{ canAccess ? 'Gestión de Proveedores' : 'Ver Proveedores' }}
         </h1>
       </div>
     </header>
@@ -87,7 +95,8 @@ const editarProveedor = (proveedor) => {
         </form>
 
         <!-- BOTÓN -->
-        <button 
+        <button
+          v-if="canAccess"
           class="btn btn-info rounded-full px-8 w-full sm:w-auto"
           @click="btnCrearProveedor"
         >
@@ -107,7 +116,7 @@ const editarProveedor = (proveedor) => {
               <th scope="col">Teléfono</th>
               <th scope="col">Email</th>
               <th scope="col">Dirección</th>
-              <th scope="col">Acción</th>
+              <th v-if="canAccess" scope="col">Acción</th>
             </tr>
           </thead>
 
@@ -124,10 +133,11 @@ const editarProveedor = (proveedor) => {
               <td>{{ proveedor.Direccion ?? "-" }}</td>
 
               <!-- ACCIONES -->
-              <td class="flex gap-2">
+              <td v-if="canAccess" class="flex gap-2">
 
                 <!-- EDITAR -->
-                <button 
+                <button
+                  v-if="canAccess"
                   class="btn btn-sm btn-ghost"
                   @click="editarProveedor(proveedor)"
                   aria-label="Editar proveedor"
@@ -141,7 +151,8 @@ const editarProveedor = (proveedor) => {
                 </button>
 
                 <!-- ELIMINAR -->
-                <button 
+                <button
+                  v-if="canAccess"
                   class="btn btn-sm btn-error text-white"
                   @click="handleRemove(proveedor.ProveedorId)"
                   aria-label="Eliminar proveedor"
@@ -153,6 +164,7 @@ const editarProveedor = (proveedor) => {
                     <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
                   </svg>
                 </button>
+                <span v-if="!canAccess" class="text-sm opacity-50">-</span>
 
               </td>
             </tr>

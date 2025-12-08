@@ -16,12 +16,15 @@ import UserList from "../views/users/UserList.vue";
 import UserForm from "../views/users/UserForm.vue";
 import ExistenciasList from "../views/existencias/ExistenciasList.vue";
 import ExistenciasDetalle from "../views/existencias/ExistenciasDetalle.vue";
+import AlmacenesList from "../views/almacenes/AlmacenesList.vue";
+import AlmacenesForm from "../views/almacenes/AlmacenesForm.vue";
 
 const routes = [
   {
     path: "/login",
     component: LoginView,
     name: "Login",
+    meta: { requiresGuest: true },
   },
 
   {
@@ -31,44 +34,102 @@ const routes = [
     children: [
       { path: "", component: Home, name: "Home" },
 
-      { path: "products", component: ProductsList, name: "Products" },
+      { 
+        path: "products", 
+        component: ProductsList, 
+        name: "Products",
+        meta: { roles: ["Admin", "Usuario", "Supervisor"] }
+      },
       {
         path: "products/create",
         component: ProductForm,
         name: "ProductCreate",
+        meta: { roles: ["Admin", "Usuario", "Supervisor"] }
       },
 
-      { path: "movements", component: MovementsList, name: "Movements" },
+      { 
+        path: "movements", 
+        component: MovementsList, 
+        name: "Movements",
+        meta: { roles: ["Admin", "Usuario", "Supervisor"] }
+      },
       {
         path: "movements/create",
         component: MovementsForm,
         name: "MovementCreate",
+        meta: { roles: ["Admin", "Supervisor"] }
       },
 
-      { path: "categories", component: CategoriesList, name: "Categories" },
+      { 
+        path: "categories", 
+        component: CategoriesList, 
+        name: "Categories",
+        meta: { roles: ["Admin", "Usuario", "Supervisor"] }
+      },
       {
         path: "categories/create",
         component: CategoriesForm,
         name: "CategoriesCreate",
+        meta: { roles: ["Admin", "Supervisor"] }
       },
 
-      { path: "suppliers", component: SuppliersList, name: "Suppliers" },
+      { 
+        path: "suppliers", 
+        component: SuppliersList, 
+        name: "Suppliers",
+        meta: { roles: ["Admin", "Supervisor"] }
+      },
       {
         path: "suppliers/create",
         component: SupplierForm,
         name: "SuppliersCreate",
+        meta: { roles: ["Admin", "Supervisor"] }
       },
 
-      { path: "existencias", component: ExistenciasList, name: "Existencias" },
+      { 
+        path: "existencias", 
+        component: ExistenciasList, 
+        name: "Existencias",
+        meta: { roles: ["Admin", "Supervisor"] }
+      },
       {
         path: "existencias/producto/:productoId",
         component: ExistenciasDetalle,
         name: "ExistenciasDetalle",
+        meta: { roles: ["Admin", "Supervisor"] }
       },
 
-      { path: "reports", component: ReportsView, name: "Reports" },
-      { path: "usuario", component: UserList, name: "Usuario" },
-      { path: "usuario/create", component: UserForm, name: "UsuarioForm" },
+      { 
+        path: "almacenes", 
+        component: AlmacenesList, 
+        name: "Almacenes",
+        meta: { roles: ["Admin", "Supervisor"] }
+      },
+      {
+        path: "almacenes/create",
+        component: AlmacenesForm,
+        name: "AlmacenesCreate",
+        meta: { roles: ["Admin", "Supervisor"] }
+      },
+
+      { 
+        path: "reports", 
+        component: ReportsView, 
+        name: "Reports",
+        meta: { roles: ["Admin", "Supervisor"] }
+      },
+      { 
+        path: "usuario", 
+        component: UserList, 
+        name: "Usuario",
+        meta: { roles: ["Admin", "Supervisor"] }
+      },
+      { 
+        path: "usuario/create", 
+        component: UserForm, 
+        name: "UsuarioForm",
+        meta: { roles: ["Admin", "Supervisor"] }
+      },
     ],
   },
 ];
@@ -78,22 +139,15 @@ const router = createRouter({
   routes,
 });
 
-router.beforeEach((to) => {
+router.beforeEach((to, from, next) => {
   const auth = useAuthStore();
 
-  // 1️⃣ BLOQUEAR acceso sin login
   if (to.meta.requiresAuth && !auth.token) {
-    return { path: "/login" };
+    return "/login";
   }
 
-  // 2️⃣ BLOQUEAR login si ya está autenticado
-  if (to.path === "/login" && auth.token) {
-    return { path: "/" };
-  }
-
-  // 3️⃣ BLOQUEAR rutas de admin
-  if (to.meta.requiresAdmin && auth.user?.RolNombre !== "admin") {
-    return { path: "/" };
+  if (to.meta.requiresAdmin && auth.user.RolNombre !== "admin") {
+    return "/"; // o "/productos"
   }
 });
 

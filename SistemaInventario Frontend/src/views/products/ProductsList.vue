@@ -3,7 +3,10 @@ import { onMounted, ref, computed } from "vue";
 import { useProductosStore } from "../../store/producto";
 import { useRouter } from "vue-router";
 import { useCrudForm } from "../../composable/useCrudForm";
+import { useAuthStore } from "../../store/auth";
+
 const productosStore = useProductosStore();
+const authStore = useAuthStore();
 const searchQuery = ref("");
 const producto = {
   nombre: "",
@@ -44,6 +47,12 @@ const editarProducto = (product) => {
   router.push('/products/create');
 }
 
+// Verificar permisos de escritura (ProductosWrite)
+const canWrite = computed(() => {
+  const role = authStore.user?.RolNombre;
+  return ['Admin', 'Usuario', 'Supervisor'].includes(role);
+});
+
 // Acciones (implementar navegación/modales según tu app)
 
 
@@ -64,7 +73,7 @@ const editarProducto = (product) => {
           </svg>
         </figure>
 
-        <h1 class="text-3xl font-medium text-neutral">Gestión de Productos</h1>
+        <h1 class="text-3xl font-medium text-neutral">{{ canWrite ? 'Gestión de Productos' : 'Ver Productos' }}</h1>
       </div>
     </header>
 
@@ -86,7 +95,8 @@ const editarProducto = (product) => {
         </form>
 
         <!-- BOTÓN -->
-        <button 
+        <button
+          v-if="canWrite"
           class="btn btn-info rounded-full px-8 w-full sm:w-auto"
           @click="btnCrearProducto"
         >
@@ -109,7 +119,7 @@ const editarProducto = (product) => {
               <th scope="col">Precio venta</th>
               <th scope="col">Unidad</th>
               <th scope="col">Stock mínimo</th>
-              <th scope="col">Acción</th>
+              <th v-if="canWrite" scope="col">Acción</th>
             </tr>
           </thead>
 
@@ -126,8 +136,9 @@ const editarProducto = (product) => {
               <td>{{ product.StockMinimo }}</td>
 
               <!-- ACCIONES -->
-              <td class="flex gap-2">
-                <button 
+              <td v-if="canWrite" class="flex gap-2">
+                <button
+                  v-if="canWrite"
                   class="btn btn-sm btn-ghost"
                   @click="editarProducto(product)"
                   aria-label="Editar producto"
@@ -139,7 +150,8 @@ const editarProducto = (product) => {
                   </svg>
                 </button>
 
-                <button 
+                <button
+                  v-if="canWrite"
                   class="btn btn-sm btn-error text-white"
                   @click="handleRemove(product.ProductoId)"
                   aria-label="Eliminar producto"
